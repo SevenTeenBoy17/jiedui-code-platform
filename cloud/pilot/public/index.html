@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="description" content="结对编程平台云端 N1 试用：指定账号登录、创建作品与保存作品版本。">
+  <title>云端试用 N1 · 结对编程平台</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到主要内容</a>
+  <section id="login-view" class="login-layout" aria-labelledby="login-title">
+    <div class="welcome-panel">
+      <span class="wordmark">结对编程 <span>学习工作台</span></span>
+      <div class="welcome-copy">
+        <span class="eyebrow light">CLOUD PILOT / N1</span>
+        <h1>每一次想法，<br>都有自己的版本。</h1>
+        <p>从创建作品开始，<br>把你的编程过程稳稳保存下来。</p>
+        <div class="code-illustration" aria-hidden="true"><span>&lt;</span><i>idea</i><span>/&gt;</span></div>
+      </div>
+      <p class="welcome-foot">独立试用空间 · 不改变本地版</p>
+    </div>
+    <main id="main-content" class="login-main" tabindex="-1">
+      <div class="login-card">
+        <span class="eyebrow">指定人员试用</span>
+        <h2 id="login-title">欢迎回来</h2>
+        <p class="muted intro">使用管理员分配的试用账号进入。</p>
+        <div id="login-status" class="notice" role="status" aria-live="polite">正在检查登录状态…</div>
+        <button id="discard-login-draft" class="button secondary recovery-discard" type="button" hidden>放弃本页暂存草稿</button>
+        <form id="login-form">
+          <label for="email">邮箱</label>
+          <input id="email" name="email" type="email" autocomplete="username" required maxlength="254" placeholder="请输入试用账号邮箱">
+          <label for="password">密码</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required maxlength="256" placeholder="请输入密码">
+          <button id="login-button" class="button primary full" type="submit">进入我的作品 <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="scope-note"><strong>云端试用 N1，仅账号与作品版本</strong><p>本阶段支持创建、保存和回看作品。AI 对话、测评、教师反馈与学习画像尚未迁移，不在本次试用范围。</p></div>
+      </div>
+    </main>
+  </section>
+
+  <div id="workspace-view" class="workspace" hidden>
+    <aside class="sidebar" aria-label="试用工作台导航">
+      <div class="sidebar-brand"><span class="brand-symbol" aria-hidden="true">&lt;/&gt;</span><strong>结对编程<span>云端学习工作台</span></strong></div>
+      <div class="profile"><div class="profile-initial" aria-hidden="true">我</div><div><strong id="user-name"></strong><span id="user-role"></span></div></div>
+      <nav aria-label="当前功能"><a class="nav-current" href="#workspace-main" aria-current="page"><span aria-hidden="true">▤</span> 我的作品</a></nav>
+      <div class="migration-note"><span class="eyebrow light">后续迁移</span><p>AI 结对对话</p><p>测评与教师反馈</p><p>学习证据与画像</p><small>以上功能暂未开放</small></div>
+      <div class="sidebar-bottom"><span class="pilot-tag">N1 · 指定人员试用</span><button id="logout-button" type="button" class="logout-button">退出登录 <span aria-hidden="true">↗</span></button></div>
+    </aside>
+    <main id="workspace-main" class="workspace-main" tabindex="-1">
+      <header class="page-header"><div><span class="eyebrow">MY WORKSPACE</span><h1>我的作品</h1><p class="muted">写下想法，保存版本，随时回来继续。</p></div><span class="scope-pill">云端试用 N1</span></header>
+      <div class="scope-strip"><span class="scope-dot" aria-hidden="true"></span><span>仅账号与作品版本 · 不运行代码 · 版本数量不代表能力或成绩</span></div>
+      <div id="workspace-status" class="notice workspace-notice" role="status" aria-live="polite" hidden></div>
+      <div id="draft-recovery" class="notice recovery-panel" hidden><p>本页还有待恢复的草稿。核对云端版本后才能重新打开；刷新或关闭页面会丢失这份暂存。</p><div class="recovery-actions"><button id="retry-draft-recovery" class="button secondary" type="button">重新核对并恢复</button><button id="discard-workspace-draft" class="button secondary" type="button">放弃暂存草稿</button></div></div>
+      <div class="work-grid">
+        <section class="project-panel card" aria-labelledby="projects-heading">
+          <div class="section-header"><h2 id="projects-heading">作品列表 <span id="project-count" class="count">0</span></h2><button id="refresh-list" type="button" class="icon-button" aria-label="刷新作品列表" title="刷新作品列表">↻</button></div>
+          <button id="new-project" type="button" class="button primary full"><span aria-hidden="true">＋</span> 创建新作品</button>
+          <p class="panel-hint">选择一份作品，继续编辑。</p>
+          <ul id="project-list" class="project-list" aria-label="我的作品列表"></ul>
+          <div id="list-empty" class="list-empty" hidden><span aria-hidden="true">{ }</span><strong>还没有作品</strong><p>点击上方按钮，<br>开始你的第一个版本。</p></div>
+          <p class="panel-footer">只显示当前账号的作品</p>
+        </section>
+        <section class="editor-panel card" aria-labelledby="editor-heading">
+          <div id="editor-empty" class="editor-empty"><div class="empty-symbol" aria-hidden="true">&lt;/&gt;</div><h2 id="editor-heading">给想法一个开始</h2><p>创建一份 Python、C++ 或 C 作品，<br>或从左侧选择已有作品。</p><span class="quiet-label">保存的是源代码，不自动执行程序</span></div>
+          <div id="editor-content" class="editor-content" hidden>
+            <div class="editor-header"><div class="project-title-wrap"><span id="language-badge" class="language-badge"></span><h2 id="project-title"></h2><p id="version-description" class="muted"></p></div><button id="history-button" type="button" class="button secondary">版本记录</button></div>
+            <div id="conflict-notice" class="conflict-notice" role="alert" hidden><p>服务器已有较新的版本。你的草稿仍在下方，尚未被覆盖。</p><button id="load-latest" type="button" class="button secondary">载入最新版本…</button></div>
+            <div class="code-toolbar"><label for="code-input">源代码</label><span id="draft-status" class="draft-status">已载入</span></div>
+            <textarea id="code-input" class="code-input" spellcheck="false" autocomplete="off" autocapitalize="off" aria-describedby="editor-tip draft-status" placeholder="在这里输入你的代码…"></textarea>
+            <div class="editor-footer"><p id="editor-tip">草稿仅在本页内存中；登录失效后同账号可恢复。刷新或关闭页面会丢失未保存内容。</p><div class="editor-actions"><button id="reload-project" type="button" class="button secondary">刷新作品</button><button id="save-button" type="button" class="button primary">保存版本</button></div></div>
+          </div>
+        </section>
+      </div>
+      <footer class="page-foot">作品与历史版本保存在独立云端试用空间。请勿输入真实学生个人信息、密码或其他敏感资料。</footer>
+    </main>
+  </div>
+
+  <dialog id="create-dialog" aria-labelledby="create-title" aria-describedby="create-description">
+    <form id="create-form" class="dialog-body">
+      <div class="dialog-header"><h2 id="create-title">创建新作品</h2><button id="close-create" class="icon-button" type="button" aria-label="关闭创建窗口">×</button></div>
+      <p id="create-description" class="muted">先取一个名字，再选择编程语言。</p>
+      <label for="project-name">作品名称</label><input id="project-name" name="title" required maxlength="80" placeholder="例如：校园温度提醒器">
+      <label for="project-language">编程语言</label><select id="project-language" name="language"><option value="python">Python</option><option value="cpp">C++</option><option value="c">C</option></select>
+      <p class="field-hint">语言创建后不可在本阶段修改；不会自动生成或运行代码。</p>
+      <div id="create-status" class="notice" role="status" aria-live="polite" hidden></div>
+      <div class="dialog-actions"><button id="cancel-create" type="button" class="button secondary">取消</button><button id="create-button" class="button primary" type="submit">创建作品</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="history-dialog" class="history-dialog" aria-labelledby="history-title">
+    <div class="dialog-body"><div class="dialog-header"><div><span class="eyebrow">VERSION HISTORY</span><h2 id="history-title">版本记录</h2></div><button id="close-history" class="icon-button" type="button" aria-label="关闭版本记录">×</button></div>
+      <p class="muted">只读查看已保存内容，不会替换当前草稿。</p>
+      <div id="history-status" class="notice" role="status" aria-live="polite">正在读取版本…</div>
+      <div id="history-content" hidden><label for="version-select">选择版本</label><select id="version-select"></select><label for="history-code">该版本的源代码</label><textarea id="history-code" class="code-input history-code" readonly spellcheck="false"></textarea></div>
+    </div>
+  </dialog>
+</body>
+</html>

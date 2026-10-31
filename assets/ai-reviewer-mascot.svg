@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="title desc">
+  <title id="title">AI reviewer tutor mascot</title>
+  <desc id="desc">A calm glass robot reviewer with a checklist visor and small coding cards.</desc>
+  <defs>
+    <linearGradient id="bot" x1="130" y1="72" x2="363" y2="391" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".46" stop-color="#d9f7ff"/>
+      <stop offset="1" stop-color="#95b7f4"/>
+    </linearGradient>
+    <linearGradient id="visor" x1="166" y1="161" x2="321" y2="259" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#17355f"/>
+      <stop offset=".52" stop-color="#345d8e"/>
+      <stop offset="1" stop-color="#102338"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="138" y1="115" x2="335" y2="343" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#a8fff0"/>
+      <stop offset=".5" stop-color="#72a7ff"/>
+      <stop offset="1" stop-color="#ffab65"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="24" stdDeviation="20" flood-color="#17355f" flood-opacity=".2"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="240" cy="420" rx="132" ry="26" fill="#315f93" opacity=".12"/>
+  <g filter="url(#shadow)">
+    <rect x="116" y="110" width="248" height="252" rx="72" fill="url(#accent)"/>
+    <rect x="135" y="129" width="210" height="214" rx="58" fill="url(#bot)"/>
+    <path d="M156 139c28-25 57-35 104-29 36 4 62 18 81 42-74 6-132 8-185-13Z" fill="#ffffff" opacity=".55"/>
+    <rect x="161" y="181" width="158" height="72" rx="31" fill="url(#visor)"/>
+    <circle cx="208" cy="218" r="10" fill="#9ff6df"/>
+    <circle cx="272" cy="218" r="10" fill="#9ff6df"/>
+    <path d="M213 244c17 12 37 12 54 0" fill="none" stroke="#9ff6df" stroke-width="8" stroke-linecap="round"/>
+    <path d="M168 283h144" stroke="#c7dbf8" stroke-width="11" stroke-linecap="round"/>
+    <path d="M168 312h94" stroke="#c7dbf8" stroke-width="11" stroke-linecap="round"/>
+    <path d="m282 309 14 13 25-32" fill="none" stroke="#43bfaa" stroke-width="11" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M188 97c8-24 25-37 52-37s44 13 52 37" fill="none" stroke="#17355f" stroke-width="13" stroke-linecap="round" opacity=".48"/>
+    <circle cx="240" cy="64" r="19" fill="#ff9a6c"/>
+    <rect x="68" y="198" width="64" height="84" rx="25" fill="#dff9ff"/>
+    <path d="M84 230h27M84 255h20" stroke="#3f8ee8" stroke-width="9" stroke-linecap="round"/>
+    <rect x="348" y="205" width="64" height="84" rx="25" fill="#fff2d3"/>
+    <path d="m365 245 14 14 20-31" fill="none" stroke="#ff8f4f" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M135 328c-23 6-43 23-49 46 35-3 60-16 75-39Z" fill="#78ddce"/>
+    <path d="M345 328c23 6 43 23 49 46-35-3-60-16-75-39Z" fill="#78ddce"/>
+  </g>
+</svg>

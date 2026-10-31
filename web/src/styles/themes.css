@@ -1,0 +1,21 @@
+/* 作用域主题：师生端视觉硬区分（§4.10）。同一语义层，不同映射。
+   企业画风版：学生端＝学员产品（圆角稍大、暖橙 CTA）；教师端＝管理控制台（密度高、圆角收敛）。 */
+
+/* 学生端：清爽白卡 + 暖橙强调，亲和但不幼稚（学而思/猿辅导学员端方向） */
+[data-app="student"] {
+  --color-bg: var(--paper-student);
+  --card-radius: var(--r-lg);
+  --accent-cta: var(--color-accent);
+  --elev: var(--shadow-md);
+}
+
+/* 教师端：数据控制台 + 蓝绿点缀（ClassIn/希沃管理台方向）；--t-* 桥接到全局语义层 */
+[data-app="teacher"] {
+  --color-bg: var(--paper-teacher);
+  --card-radius: var(--r-md);
+  --t-primary: var(--color-primary);
+  --t-accent: var(--color-success);
+  --t-surface: var(--color-surface);
+  --t-grid-gap: var(--sp-4);
+  --elev: var(--shadow-sm);
+}

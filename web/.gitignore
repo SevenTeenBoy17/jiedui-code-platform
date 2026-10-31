@@ -1,0 +1,8 @@
+node_modules/
+dist/
+*.local
+.DS_Store
+
+# Pyodide 运行时（14MB）由 `npm run fetch:pyodide` 生成，不入库。
+# 机房部署时必须先跑这条命令，否则学生端的海龟绘图会退化成"只跑代码不画图"。
+public/pyodide/

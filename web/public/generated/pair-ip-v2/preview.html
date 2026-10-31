@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>结对伙伴 · 双 IP 应用画布与资产目录</title>
+  <style>
+    :root{--ink:oklch(28% .035 285);--muted:oklch(49% .025 285);--paper:oklch(98.7% .005 285);--base:oklch(96% .012 285);--line:oklch(89% .025 285);--purple:oklch(51% .16 285);--soft:oklch(94% .035 285);--green:oklch(40% .075 155);--cream:oklch(97% .022 80);--warm:oklch(43% .08 60);--radius:24px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--base);color:var(--ink);font:16px/1.65 "Segoe UI","Microsoft YaHei",system-ui,sans-serif}button,a,summary{-webkit-tap-highlight-color:transparent}a{color:var(--purple);text-underline-offset:4px}button{font:inherit;cursor:pointer}button,a,summary{outline-offset:4px}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid var(--purple)}button{transition:background-color .18s ease-out,transform .18s ease-out}button:active{transform:translateY(1px)}p{max-width:72ch;margin:.4rem 0 1rem}h1,h2,h3{line-height:1.35;margin:0 0 .55rem}h1{font-size:2.25rem;letter-spacing:-.03em}h2{font-size:1.65rem}h3{font-size:1.1rem}img{max-width:100%;display:block}small,.muted{color:var(--muted)}small{font-size:.83rem}.eyebrow{color:var(--purple);font-size:.8rem;font-weight:700;letter-spacing:.1em}.wrap{width:min(1480px,calc(100% - 64px));margin:auto}.topbar{border-bottom:1px solid var(--line);background:var(--paper)}.topbar .wrap{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 0}.brand{font-weight:750}.nav{display:flex;gap:22px;flex-wrap:wrap}.nav a{text-decoration:none;font-size:.9rem}.intro{display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;padding:42px 0 28px}.intro p{margin-bottom:0}.badge{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:99px;padding:6px 12px;font-size:.8rem;color:var(--muted);background:var(--paper)}.avatar-note{display:flex;align-items:center;gap:14px;max-width:310px;font-size:.85rem}.avatar-note img{width:72px;height:72px;border-radius:50%;background:var(--paper);border:4px solid var(--paper);box-shadow:0 4px 16px oklch(40% .08 285 / .08)}.section{padding:34px 0}.section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:24px;margin-bottom:22px}.section-head p{margin:0}.duo{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-radius:32px;overflow:hidden;border:1px solid var(--line)}.character{display:grid;grid-template-columns:1fr 45%;align-items:center;padding:32px;gap:12px;min-height:340px}.character:first-child{background:var(--cream);border-right:1px solid var(--line)}.character:last-child{background:var(--soft)}.character .art{height:285px;object-fit:contain;width:100%}.character h2{font-size:1.9rem}.role{display:inline-block;color:var(--purple);font-size:.92rem;font-weight:700;margin-bottom:12px}.character:first-child .role{color:var(--warm)}.identity{display:flex;flex-wrap:wrap;gap:7px;margin:15px 0 0;padding:0;list-style:none}.identity li{font-size:.78rem;padding:4px 9px;background:oklch(99% .006 285 / .7);border-radius:7px}.callout{margin-top:18px;padding:14px 18px;border:1px solid var(--line);border-radius:14px;background:var(--paper);color:var(--muted);font-size:.87rem}.catalog{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px 20px}.asset{margin:0;min-width:0}.asset .image{display:flex;justify-content:center;align-items:center;height:245px;border-radius:20px;background:var(--paper);border:1px solid var(--line);overflow:hidden}.asset img{width:90%;height:91%;object-fit:contain}.asset.concept .image{background:var(--cream)}.asset figcaption{padding:12px 3px}.asset h3{margin:0}.asset p{font-size:.85rem;margin:3px 0 7px;color:var(--muted)}.asset a{font-size:.8rem}.tag{display:inline-block;color:var(--green);font-size:.74rem;border-radius:6px;padding:2px 7px;background:oklch(93% .025 155);margin-bottom:6px}.tag.pending{color:var(--warm);background:oklch(94% .035 80)}.interaction{display:grid;grid-template-columns:1fr 1fr;gap:42px;align-items:start}.flow{counter-reset:step;list-style:none;margin:25px 0;padding:0}.flow li{display:grid;grid-template-columns:34px 1fr;gap:15px;margin:0 0 20px}.flow li:before{counter-increment:step;content:counter(step);background:var(--soft);color:var(--purple);font-weight:750;display:grid;place-items:center;width:32px;height:32px;border-radius:10px}.flow p{font-size:.9rem;color:var(--muted);margin:4px 0 0}.mock{background:var(--paper);border:1px solid var(--line);border-radius:26px;padding:20px;position:relative;min-height:540px}.mock-label{font-size:.8rem;color:var(--muted);display:flex;justify-content:space-between;gap:16px}.sheet{position:relative;max-width:425px;margin:20px 0 105px auto;border:1px solid var(--line);border-radius:22px;background:var(--paper);box-shadow:0 12px 35px oklch(40% .08 285 / .11);padding:20px}.sheet[hidden]{display:none}.sheet-header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:16px}.sheet-header strong{font-size:1rem}.icon-button{background:var(--base);border:0;color:var(--ink);border-radius:10px;width:36px;height:36px}.tabs{display:flex;gap:6px;background:var(--base);border-radius:12px;padding:5px}.tabs button{flex:1;border:0;color:var(--muted);background:transparent;border-radius:9px;padding:9px 5px;font-size:.84rem}.tabs button[aria-pressed="true"]{color:var(--purple);background:var(--paper);box-shadow:0 2px 5px oklch(30% .06 285 / .08);font-weight:750}.sheet-description{font-size:.88rem;color:var(--muted);margin:15px 0}.action-list{display:grid;gap:8px}.action-list button{display:flex;justify-content:space-between;text-align:left;border:1px solid var(--line);border-radius:12px;background:var(--paper);padding:11px 13px;color:var(--ink);font-size:.9rem}.action-list button:hover{background:var(--soft)}.action-list button span:last-child{color:var(--purple)}.demo-message{font-size:.8rem;margin:14px 0 0;min-height:2.5em;color:var(--muted)}.launcher{display:flex;align-items:center;gap:15px;position:absolute;right:22px;bottom:20px}.launcher button{border:1px solid var(--line);border-radius:50%;background:var(--soft);width:84px;height:84px;padding:6px}.launcher img{width:100%;height:100%;object-fit:contain}.launcher-label{text-align:right;font-size:.8rem;color:var(--muted)}.launcher-label strong{display:block;color:var(--ink);font-size:.9rem}.details-stack{border-top:1px solid var(--line);margin-top:25px}details{border-bottom:1px solid var(--line);padding:15px 0}summary{cursor:pointer;font-weight:650;list-style-position:inside;padding:4px 0}details p,details ul{font-size:.88rem;color:var(--muted);margin:12px 0 5px}details ul{padding-left:25px}.table-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:20px;background:var(--paper)}table{border-collapse:collapse;width:100%;font-size:.88rem;text-align:left}th,td{padding:15px 19px;border-bottom:1px solid var(--line);vertical-align:top}th{font-weight:700;color:var(--muted);background:var(--soft);white-space:nowrap}tr:last-child td{border-bottom:0}td:first-child{font-weight:650;min-width:130px}td:last-child{min-width:150px}code{font-family:ui-monospace,Consolas,monospace;font-size:.81em;overflow-wrap:anywhere;color:var(--purple)}.shots{display:grid;grid-template-columns:1fr 1fr;gap:16px}.shot{display:flex;align-items:center;gap:16px;padding:19px 22px;background:var(--paper);border:1px solid var(--line);border-radius:16px;text-decoration:none}.shot:hover{background:var(--soft)}.shot span{flex:1}.shot small{display:block}.shot b{font-size:.9rem}.shot .number{flex:0 0 auto;color:var(--purple);font-size:.8rem;font-weight:750}.checks{display:grid;grid-template-columns:1fr 1fr;gap:25px;border-top:1px solid var(--line);padding-top:25px}.checks ul{margin:12px 0 0;padding-left:22px;font-size:.87rem;color:var(--muted)}.checks li{margin:8px 0}.footer{padding:30px 0 40px;border-top:1px solid var(--line);margin-top:35px;font-size:.8rem;color:var(--muted)}.footer a{margin-right:16px}.screen-reader{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+    .qa-gallery{display:grid;grid-template-columns:1fr 1fr;gap:26px 20px;margin:22px 0 28px}.qa-figure{margin:0;min-width:0}.qa-image{position:relative;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--paper)}.qa-image>img{width:100%;height:auto}.qa-figure figcaption{padding:12px 2px;display:flex;align-items:flex-start;justify-content:space-between;gap:12px}.qa-figure figcaption p{margin:3px 0 0;color:var(--muted);font-size:.83rem}.qa-figure figcaption a{font-size:.82rem;white-space:nowrap}.annotation{position:absolute;border:2px solid oklch(57% .21 25);pointer-events:none;box-shadow:0 0 0 1px oklch(99% .006 285 / .85) inset}.annotation.keep{border-color:oklch(46% .12 150)}.annotation-label{position:absolute;top:0;left:0;padding:2px 5px;font-size:11px;line-height:1.3;color:oklch(99% .006 285);background:oklch(48% .17 25);white-space:nowrap}.annotation.keep .annotation-label{background:oklch(39% .1 150)}.legend{font-size:.84rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:18px}.legend span{display:inline-flex;align-items:center;gap:7px}.legend i{display:block;width:13px;height:13px;border:2px solid oklch(57% .21 25)}.legend .keep{border-color:oklch(46% .12 150)}
+    @media(max-width:900px){.qa-gallery{grid-template-columns:1fr}}@media(max-width:420px){.annotation-label{font-size:9px;padding:1px 3px}.qa-figure figcaption{flex-direction:column;gap:7px}}
+    @media(min-width:1500px){.catalog{grid-template-columns:repeat(4,minmax(0,1fr))}.asset .image{height:270px}}
+    @media(max-width:1100px){.character{grid-template-columns:1fr;padding:25px;min-height:0}.character .art{grid-row:1;height:230px}.character h2{font-size:1.6rem}.catalog{grid-template-columns:repeat(3,minmax(0,1fr))}.interaction{gap:24px}.wrap{width:calc(100% - 40px)}}
+    @media(max-width:760px){h1{font-size:1.75rem}h2{font-size:1.4rem}.topbar .wrap,.intro,.section-head{align-items:flex-start}.topbar .wrap{flex-direction:column;gap:10px}.nav{gap:15px}.intro{grid-template-columns:1fr;padding-top:28px;gap:20px}.avatar-note{max-width:none}.avatar-note img{width:52px;height:52px}.duo{grid-template-columns:1fr}.character{grid-template-columns:1fr 40%;padding:22px}.character .art{grid-row:auto;height:210px}.character:first-child{border-right:0;border-bottom:1px solid var(--line)}.character h2{font-size:1.4rem}.identity{display:none}.catalog{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.asset .image{height:200px}.interaction,.checks,.shots{grid-template-columns:1fr}.section-head{flex-direction:column;gap:8px}.mock{min-height:530px}.section{padding:28px 0}.sheet{margin-top:16px}.wrap{width:calc(100% - 28px)}.table-wrap{border-radius:14px}}
+    @media(max-width:420px){.character{grid-template-columns:1fr 38%;gap:5px;padding:20px 16px}.character .art{height:180px}.character p{font-size:.88rem}.asset .image{height:165px}.mock{padding:13px}.sheet{padding:15px}.tabs button{font-size:.78rem}.shot{padding:16px}.nav a{font-size:.82rem}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}button{transition:none}}
+    @media print{.topbar,.nav,.mock,.shots{display:none}.wrap{width:100%}.section{break-inside:avoid}.catalog{grid-template-columns:repeat(3,1fr)}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap"><div class="brand">结对编程伙伴 <span class="badge">IP 应用画布 · 2026.09</span></div><nav class="nav" aria-label="画布章节"><a href="#identities">固定身份</a><a href="#assets">场景素材</a><a href="#interaction">同页助手</a><a href="#surfaces">页面映射</a><a href="#evidence">检查记录</a></nav></div>
+  </header>
+  <main class="wrap">
+    <section class="intro" aria-labelledby="title">
+      <div><div class="eyebrow">PAIR COMPANIONS / V2</div><h1 id="title">熟悉的伙伴，清楚的分工</h1><p class="muted">树小骥陪你拆解眼前的问题，泡泡陪你解释和回看方法。<br>本页是资产目录与交互示意，不是学生记录或 AI 对话结果。</p></div>
+      <div class="avatar-note"><img src="../student-canvas/student-cat-avatar-v2.png" width="72" height="72" alt="保留的原编程猫用户头像"><div><strong>学生左侧用户头像不变</strong><br>保持原猫头像、导航顺序与选中态；用户身份不与 AI 角色混用。</div></div>
+    </section>
+
+    <section id="identities" class="section" aria-labelledby="identity-heading">
+      <h2 id="identity-heading" class="screen-reader">两个角色的固定身份</h2>
+      <div class="duo">
+        <article class="character"><div><span class="role">导航员 · 把问题拆成小步</span><h2>树小骥</h2><p>先看目标，再选路线。陪你厘清任务、拆解步骤、想好怎样测试。</p><ul class="identity"><li>红色额鬃与长尾</li><li>红白上衣</li><li>深蓝鞋</li></ul></div><img class="art" src="horse-welcome.png" alt="红鬃白马树小骥的欢迎姿态"></article>
+        <article class="character"><div><span class="role">领航员 · 让思考说得清楚</span><h2>熊猫泡泡</h2><p>一起说明选择，检查依据。陪你整理计划、寻找反例、回顾方法。</p><ul class="identity"><li>青紫科技护目镜</li><li>可看见眼睛</li><li>绿叶领巾</li></ul></div><img class="art" src="panda-wave.png" alt="戴科技护目镜和绿叶领巾的熊猫泡泡挥手欢迎"></article>
+      </div>
+      <div class="callout">相同角色可以换动作、道具与场景，但保留同一套脸型、配色和识别配饰。切换伙伴只改变引导方式，不改变学生账号、教师权限或真人结对角色。</div>
+    </section>
+
+    <section id="assets" class="section" aria-labelledby="assets-heading">
+      <div class="section-head"><div><div class="eyebrow">01 / ASSET CATALOG</div><h2 id="assets-heading">按场景选择，不把同一张图贴遍全站</h2><p class="muted">5 张新透明 PNG、1 张新构图概念图，以及 1 张复用透明图。</p></div><span class="badge">立体渲染 PNG ≠ 可旋转 3D 模型</span></div>
+      <div class="catalog">
+        <figure class="asset"><div class="image"><img loading="lazy" src="horse-welcome.png" alt="树小骥欢迎场景"></div><figcaption><span class="tag">新透明素材</span><h3>树小骥 · 欢迎</h3><p>欢迎、完成时的轻量鼓励；兼作里程碑替代图。</p><a href="horse-welcome.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset"><div class="image"><img loading="lazy" src="horse-plan.png" alt="树小骥引导任务规划"></div><figcaption><span class="tag">新透明素材</span><h3>树小骥 · 规划</h3><p>编程工坊、任务拆解、步骤梳理。</p><a href="horse-plan.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset"><div class="image"><img loading="lazy" src="../pair-ip-v1/horse-guide.png" alt="树小骥手持路线图"></div><figcaption><span class="tag">复用透明素材</span><h3>树小骥 · 指路</h3><p>导航员默认头像、公共欢迎组合。</p><a href="../pair-ip-v1/horse-guide.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset"><div class="image"><img loading="lazy" src="panda-wave.png" alt="泡泡举手欢迎"></div><figcaption><span class="tag">新透明素材</span><h3>泡泡 · 挥手</h3><p>领航员默认头像、教师端公共伙伴图。</p><a href="panda-wave.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset"><div class="image"><img loading="lazy" src="panda-check.png" alt="泡泡举起手指说明检查要点，另一只手拿着清单"></div><figcaption><span class="tag">新透明素材</span><h3>泡泡 · 检查</h3><p>测评反馈、作品依据、我的数据说明。</p><a href="panda-check.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset"><div class="image"><img loading="lazy" src="panda-thinking.png" alt="泡泡安静思考"></div><figcaption><span class="tag">新透明素材</span><h3>泡泡 · 思考</h3><p>解释方法、回顾、按需展开的帮助。</p><a href="panda-thinking.png" target="_blank" rel="noopener">查看原尺寸 PNG</a></figcaption></figure>
+        <figure class="asset concept"><div class="image"><img loading="lazy" src="horse-celebrate-concept.png" alt="树小骥庆祝构图概念，奶油色背景，未接入平台"></div><figcaption><span class="tag pending">概念图 · 未接入</span><h3>树小骥 · 庆祝构图</h3><p>奶油底原图，抠图待处理。线上使用“欢迎”透明图替代。</p><a href="horse-celebrate-concept.png" target="_blank" rel="noopener">查看构图原图</a></figcaption></figure>
+      </div>
+      <div class="callout">透明资源状态来自主代理的资产检查；本静态目录不替代页面验收。真正的 3D 模型须另外提供可下载的 mesh / glTF 文件，目前不以这些 PNG 代替。</div>
+    </section>
+
+    <section id="interaction" class="section" aria-labelledby="interaction-heading">
+      <div class="section-head"><div><div class="eyebrow">02 / IN-PLACE GUIDANCE</div><h2 id="interaction-heading">点开就能问，原来的工作区留在原处</h2></div></div>
+      <div class="interaction">
+        <div><p>伙伴浮层在形象上方打开。第一层只给出角色、一句职责和三个可行动的入口；需要时再展开解释，不用跳转新页面。</p><ol class="flow"><li><div><strong>点击悬浮形象</strong><p>显示小窗口，保留作品、任务和编辑器位置。</p></div></li><li><div><strong>选择需要的帮助</strong><p>切换角色时，形象、称谓、选中态和三项引导一起变化。</p></div></li><li><div><strong>带着思路继续做</strong><p>学生决定是否采用。解释、测试与原件仍是判断依据。</p></div></li></ol>
+          <div class="details-stack"><details><summary>研究测评中，伙伴可以做什么？</summary><p>只说明测评流程、按钮操作和反馈开放条件。不读取未发布试题，不给答题提示，不替学生作答。已发布结果也须保留教师审核与原件边界。</p></details><details><summary>小屏、短屏和键盘如何使用？</summary><p>浮层高度应随可用空间收缩，内容在窗口内滚动；关闭后焦点回到形象按钮。Escape 可关闭，键盘可切换角色和选择入口。以上为待实际页面验证的交互要求。</p></details><details><summary>教师端与学生端如何对应？</summary><p>共用角色身份，但教师入口表达为看原件、整理反馈、准备复核。角色形象不代表真人教师，也不覆盖教师锁定、账户权限或最后教学判断。</p></details></div>
+        </div>
+        <div class="mock" aria-label="同页浮层交互示意，不连接 AI"><div class="mock-label"><span>同页展开 · 交互示意</span><span>未连接 AI</span></div><section class="sheet" id="demo-sheet" aria-label="伙伴帮助示意"><div class="sheet-header"><strong>今天想怎样一起思考？</strong><button type="button" class="icon-button" id="close-sheet" aria-label="收起伙伴示意">×</button></div><div class="tabs" aria-label="选择示意角色"><button type="button" data-role="guide" aria-pressed="true">树小骥 · 导航员</button><button type="button" data-role="review" aria-pressed="false">泡泡 · 领航员</button></div><p class="sheet-description" id="role-description">陪你厘清任务，把眼前的问题拆成小步。</p><div class="action-list" id="demo-actions"></div><p class="demo-message" id="demo-message" aria-live="polite">这里只演示入口与状态，不生成答案或保存记录。</p></section><div class="launcher"><div class="launcher-label"><strong id="launcher-name">树小骥 · 导航员</strong><span>点击形象展开 / 收起</span></div><button type="button" id="launcher" aria-label="收起树小骥伙伴示意" aria-expanded="true" aria-controls="demo-sheet"><img id="launcher-image" src="../pair-ip-v1/horse-guide.png" alt=""></button></div></div>
+      </div>
+    </section>
+
+    <section id="surfaces" class="section" aria-labelledby="surface-heading">
+      <div class="section-head"><div><div class="eyebrow">03 / SURFACE MAP</div><h2 id="surface-heading">逐页替换清单</h2><p class="muted">下列对应关系来自源码清单。浏览器检查与截图单独登记，不把映射当成已验收。</p></div></div>
+      <div class="table-wrap"><table><caption class="screen-reader">页面、场景素材、功能和检查边界</caption><thead><tr><th scope="col">页面 / 入口</th><th scope="col">图片场景</th><th scope="col">与教学功能的关系</th><th scope="col">保持不变</th></tr></thead><tbody>
+        <tr><td>登录</td><td>树小骥指路 + 泡泡挥手</td><td>欢迎与角色介绍，不承诺自动完成任务</td><td>登录表单、默认账号与鉴权</td></tr>
+        <tr><td>学习首页</td><td>双伙伴欢迎组合</td><td>承接教师任务、阶段与下一步入口</td><td>左侧用户猫头像、导航顺序</td></tr>
+        <tr><td>编程工坊 / IDE</td><td>树小骥规划</td><td>目标拆解、步骤和测试思路</td><td>代码原件、运行与任务数据</td></tr>
+        <tr><td>结对编程台</td><td>按角色切换；规划 / 检查</td><td>导航与复核两类帮助，内容按需展开</td><td>真人角色、教师锁定、原权限</td></tr>
+        <tr><td>测评中心</td><td>泡泡检查；树小骥完成态</td><td>区分过程反馈、研究测评与结果发布</td><td>原话、空值、独立作答条件</td></tr>
+        <tr><td>思维成长</td><td>共用浮动伙伴与公共顶栏</td><td>帮助说明依据与下一步，不替换成长证据</td><td>任务 / 单元范围、支持与冲突原件</td></tr>
+        <tr><td>我的数据 / 作品</td><td>泡泡检查；既有树小骥封面</td><td>解释记录用途，回到作品与测试原件</td><td>保存数不作为能力分数</td></tr>
+        <tr><td>教师课堂 / 任务</td><td>泡泡挥手；树小骥任务空态</td><td>公共伙伴提示，教师保留最终判断</td><td>教师身份、实际处置与权限</td></tr>
+      </tbody></table></div>
+      <details><summary>哪些地方明确不替换？</summary><ul><li>学生侧栏用户猫头像；本次保留原文件及其哈希。</li><li>已完成的树小骥语言作品封面，以及学生代码和作品原件。</li><li>Python 的 turtle 库、内部 API 的兼容 role id 与学科图标。</li><li>应用之外的蓝色像素桌面宠物，不属于产品 IP。</li></ul></details>
+    </section>
+
+    <section id="evidence" class="section" aria-labelledby="evidence-heading">
+      <div class="section-head"><div><div class="eyebrow">04 / ACTUAL PAGE EVIDENCE</div><h2 id="evidence-heading">实际页面与替换位置</h2><p class="muted">已采集 4 张真实截图，完成有限本地视觉检查；完整结果见本轮记录。教师其他列表页仍按源码映射，不扩展宣称已访问。</p></div></div>
+      <div class="legend"><span><i aria-hidden="true"></i>红框：本轮替换 / 升级区域</span><span><i class="keep" aria-hidden="true"></i>绿框：保留的用户猫头像</span><span>框和标签是 CSS 叠层，原截图像素未修改。</span></div>
+      <div class="qa-gallery">
+        <figure class="qa-figure"><div class="qa-image"><img loading="lazy" src="qa-home.png" width="1440" height="900" alt="真实学习首页截图，双 IP 欢迎组合与原左侧猫用户头像"><div class="annotation" aria-hidden="true" style="left:20.8333%;top:13.8889%;width:22.9167%;height:23.3333%"><span class="annotation-label">替换：双伙伴欢迎</span></div><div class="annotation keep" aria-hidden="true" style="left:3.4722%;top:3.8889%;width:10.0694%;height:15%"><span class="annotation-label">保留：用户猫头像</span></div></div><figcaption><div><strong>01 · 学习首页</strong><p>1440 × 900。欢迎组合更新，左侧用户形象保留。</p></div><a href="qa-home.png" target="_blank" rel="noopener">打开未标注原图 ↗</a></figcaption></figure>
+        <figure class="qa-figure"><div class="qa-image"><img loading="lazy" src="qa-panel.png" width="1440" height="900" alt="真实悬浮伙伴窗口截图，右侧红框标明同页角色窗口的升级区域"><div class="annotation" aria-hidden="true" style="left:74.5833%;top:16.6667%;width:23.8889%;height:72.2222%"><span class="annotation-label">升级：同页角色浮层</span></div></div><figcaption><div><strong>02 · 悬浮伙伴展开</strong><p>1440 × 900。形象上方展开，工作区保留在当前页。</p></div><a href="qa-panel.png" target="_blank" rel="noopener">打开未标注原图 ↗</a></figcaption></figure>
+        <figure class="qa-figure"><div class="qa-image"><img loading="lazy" src="qa-login.png" width="1440" height="810" alt="真实登录页截图，双 IP 欢迎组合与原登录表单"></div><figcaption><div><strong>03 · 登录页面</strong><p>1440 × 810。对照欢迎组合、表单可用区域与插画边缘。</p></div><a href="qa-login.png" target="_blank" rel="noopener">打开原图 ↗</a></figcaption></figure>
+        <figure class="qa-figure"><div class="qa-image"><img loading="lazy" src="qa-assessment.png" width="1366" height="768" alt="真实测评页面截图，展示测评布局及更新后的角色图像"></div><figcaption><div><strong>04 · 测评页面</strong><p>1366 × 768。对照角色与版面；权限和测评边界另以交互检查为准。</p></div><a href="qa-assessment.png" target="_blank" rel="noopener">打开原图 ↗</a></figcaption></figure>
+      </div>
+      <div class="checks"><div><h3>必须通过的本地检查</h3><ul><li>左侧用户猫头像、导航顺序与选中态保持。</li><li>真实透明边缘，没有烘焙棋盘格、拉伸或重要配饰裁切。</li><li>角色切换同步文字与三项动作，不触发真人换位记录。</li><li>桌面、窄屏、短屏、Escape 和焦点回归均检查。</li><li>研究测评不提供答题帮助，教师锁定不被绕过。</li></ul></div><div><h3>当前交付边界</h3><ul><li>本页包含静态目录、本地交互示意和真实截图；示意未调用 AI。</li><li>庆祝概念图没有作为透明生产素材接入。</li><li>尚无可下载 mesh / glTF，不宣称真正 3D 建模完成。</li><li>实际构建、浏览器检查与正式门禁结果，以主代理当轮记录为准。</li></ul></div></div>
+    </section>
+  </main>
+  <footer class="footer"><div class="wrap"><p>设计依据：固定识别特征、用姿态表达职责、明确 AI 能力边界。仅借鉴设计方法，不据此推断学习效果。</p><a href="https://design.duolingo.com/illustration/characters" target="_blank" rel="noopener">Duolingo 角色规范</a><a href="https://www.salesforce.com/blog/meet-trailhead-characters-blog/" target="_blank" rel="noopener">Salesforce 角色体系</a><a href="https://www.microsoft.com/en-us/haxtoolkit/guideline/make-clear-what-the-system-can-do/" target="_blank" rel="noopener">Microsoft HAX 能力边界</a></div></footer>
+  <script>
+    (() => {
+      const personas = {
+        guide: { name: '树小骥 · 导航员', image: '../pair-ip-v1/horse-guide.png', description: '陪你厘清任务，把眼前的问题拆成小步。', actions: ['先弄清任务要做什么', '一起拆成几个小步骤', '想想怎样检查程序'] },
+        review: { name: '泡泡 · 领航员', image: 'panda-wave.png', description: '陪你解释选择，回顾计划和检查依据。', actions: ['说说我为什么这样做', '检查有没有遗漏的情况', '回顾这次学到的方法'] }
+      };
+      const sheet = document.getElementById('demo-sheet');
+      const launcher = document.getElementById('launcher');
+      const message = document.getElementById('demo-message');
+      let selected = 'guide';
+      function setOpen(open, returnFocus = false) {
+        sheet.hidden = !open;
+        launcher.setAttribute('aria-expanded', String(open));
+        launcher.setAttribute('aria-label', `${open ? '收起' : '展开'}${personas[selected].name}伙伴示意`);
+        if (returnFocus) launcher.focus();
+      }
+      function render(role) {
+        selected = role;
+        const persona = personas[role];
+        document.querySelectorAll('[data-role]').forEach(button => button.setAttribute('aria-pressed', String(button.dataset.role === role)));
+        document.getElementById('role-description').textContent = persona.description;
+        document.getElementById('launcher-name').textContent = persona.name;
+        document.getElementById('launcher-image').src = persona.image;
+        const list = document.getElementById('demo-actions');
+        list.replaceChildren();
+        persona.actions.forEach(action => {
+          const button = document.createElement('button'); button.type = 'button';
+          const label = document.createElement('span'); label.textContent = action;
+          const arrow = document.createElement('span'); arrow.textContent = '›'; arrow.setAttribute('aria-hidden', 'true');
+          button.append(label, arrow);
+          button.addEventListener('click', () => { message.textContent = `已选择示意入口：${action}。本画布未调用 AI，也不保存学习记录。`; });
+          list.append(button);
+        });
+        message.textContent = '这里只演示入口与状态，不生成答案或保存记录。';
+        setOpen(!sheet.hidden);
+      }
+      document.querySelectorAll('[data-role]').forEach(button => button.addEventListener('click', () => render(button.dataset.role)));
+      launcher.addEventListener('click', () => setOpen(sheet.hidden));
+      document.getElementById('close-sheet').addEventListener('click', () => setOpen(false, true));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape' && !sheet.hidden) { setOpen(false, true); } });
+      render(selected);
+    })();
+  </script>
+</body>
+</html>

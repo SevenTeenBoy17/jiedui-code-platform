@@ -1,0 +1,200 @@
+{
+  "note": "Excluded items remain unchanged in the original local workspace. This is a safe source handoff, not a backup of all raw files.",
+  "items": [
+    {
+      "path": "cloud/pilot/supabase/.temp",
+      "kind": "directory",
+      "reason": "Supabase CLI local cache; excluded by the original ignore rules"
+    },
+    {
+      "path": ".agent-supervisor",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".code-review-graph",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".codex-fullstack-server.pid",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": ".codex-screenshots",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".codex-supervisor",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".git",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".netlify",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".playwright-cli",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".runtime",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": ".superpowers",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "6.13课题活页修改.docx",
+      "kind": "file",
+      "reason": "research/binary document held for separate privacy and rights review"
+    },
+    {
+      "path": "backend/__pycache__",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "cloud/full-product/.netlify",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "cloud/pilot/.netlify",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "data/backups",
+      "kind": "directory",
+      "reason": "reproducible build/runtime or private backup"
+    },
+    {
+      "path": "data/mock-db.json",
+      "kind": "file",
+      "reason": "local mutable data; legacy server creates synthetic defaults when absent"
+    },
+    {
+      "path": "output/pdf/结对编程智能体-产品介绍册.pdf",
+      "kind": "file",
+      "reason": "research/binary document held for separate privacy and rights review"
+    },
+    {
+      "path": "output/pdf/结对编程智能体-产品宣传册.pdf",
+      "kind": "file",
+      "reason": "research/binary document held for separate privacy and rights review"
+    },
+    {
+      "path": "qa-artifacts",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/.env",
+      "kind": "file",
+      "reason": "private environment configuration"
+    },
+    {
+      "path": "server/.pytest_cache",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/.venv",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/app/__pycache__",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/jiedui.db",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/jiedui.db-shm",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/jiedui.db-wal",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/scripts/__pycache__",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/tests/__pycache__",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "server/_acceptance.log",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/_verify_fixes.log",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/_verify_study.log",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    },
+    {
+      "path": "server/__pycache__",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "tmp",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "web/dist",
+      "kind": "directory",
+      "reason": "reproducible build/runtime or private backup"
+    },
+    {
+      "path": "web/node_modules",
+      "kind": "directory",
+      "reason": "runtime, local tooling, history, dependencies or unreviewed QA artifacts"
+    },
+    {
+      "path": "web/public/pyodide",
+      "kind": "directory",
+      "reason": "reproducible build/runtime or private backup"
+    },
+    {
+      "path": "work_docx_extract.txt",
+      "kind": "file",
+      "reason": "research/binary document held for separate privacy and rights review"
+    },
+    {
+      "path": "海龟编辑器2-x64-2.7.11.exe",
+      "kind": "file",
+      "reason": "database, secret material, logs, binaries or archives"
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="480" viewBox="0 0 480 480" role="img" aria-labelledby="title desc">
+  <title id="title">AI turtle tutor mascot</title>
+  <desc id="desc">A friendly translucent turtle coding tutor with a glass shell and tiny headset.</desc>
+  <defs>
+    <linearGradient id="shell" x1="101" y1="86" x2="381" y2="397" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8feff"/>
+      <stop offset=".42" stop-color="#8ee5d2"/>
+      <stop offset="1" stop-color="#3f8ee8"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="151" y1="151" x2="335" y2="329" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#efffff"/>
+      <stop offset=".55" stop-color="#baf4dc"/>
+      <stop offset="1" stop-color="#74d7c6"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="125" y1="95" x2="357" y2="364" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset=".45" stop-color="#b8e9ff"/>
+      <stop offset="1" stop-color="#ff9a6c"/>
+    </linearGradient>
+    <filter id="shadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="25" stdDeviation="20" flood-color="#23538f" flood-opacity=".22"/>
+    </filter>
+  </defs>
+
+  <ellipse cx="239" cy="420" rx="131" ry="24" fill="#315f93" opacity=".12"/>
+  <g filter="url(#shadow)">
+    <path d="M125 281c-35-10-59-33-61-61-3-32 24-51 59-35 19 9 37 27 48 47Z" fill="#7ee0c7"/>
+    <path d="M355 281c35-10 59-33 61-61 3-32-24-51-59-35-19 9-37 27-48 47Z" fill="#7ee0c7"/>
+    <path d="M157 317c-16 23-22 55-11 72 12 18 42 13 59-11 15-22 19-55 8-72-12-17-39-13-56 11Z" fill="#5bb6e8"/>
+    <path d="M323 317c16 23 22 55 11 72-12 18-42 13-59-11-15-22-19-55-8-72 12-17 39-13 56 11Z" fill="#5bb6e8"/>
+    <path d="M240 84c83 0 151 63 151 151 0 99-68 176-151 176S89 334 89 235C89 147 157 84 240 84Z" fill="url(#rim)"/>
+    <path d="M240 106c70 0 126 53 126 128 0 84-56 150-126 150s-126-66-126-150c0-75 56-128 126-128Z" fill="url(#shell)"/>
+    <path d="M134 215c24-43 61-68 106-68s82 25 106 68c-30-18-66-28-106-28s-76 10-106 28Z" fill="#ffffff" opacity=".34"/>
+    <path d="M161 256c15-57 42-86 79-86s64 29 79 86c-21-14-48-22-79-22s-58 8-79 22Z" fill="#215f9e" opacity=".13"/>
+    <path d="M174 239c5-50 27-81 66-81s61 31 66 81c-19-9-41-14-66-14s-47 5-66 14Z" fill="#ffffff" opacity=".24"/>
+    <path d="M175 235c0-46 29-78 65-78s65 32 65 78c0 51-29 89-65 89s-65-38-65-89Z" fill="url(#skin)"/>
+    <circle cx="213" cy="235" r="12" fill="#17355f"/>
+    <circle cx="267" cy="235" r="12" fill="#17355f"/>
+    <circle cx="209" cy="231" r="4" fill="#fff"/>
+    <circle cx="263" cy="231" r="4" fill="#fff"/>
+    <path d="M220 270c13 12 27 12 40 0" fill="none" stroke="#17355f" stroke-width="9" stroke-linecap="round"/>
+    <path d="M144 181c-34-25-34-58 1-77 23 25 30 55 20 89Z" fill="#ff9d70"/>
+    <path d="M336 181c34-25 34-58-1-77-23 25-30 55-20 89Z" fill="#ff9d70"/>
+    <path d="M184 126c33-20 79-21 113-1" fill="none" stroke="#17355f" stroke-width="12" stroke-linecap="round" opacity=".55"/>
+    <rect x="303" y="154" width="56" height="35" rx="16" fill="#ffffff" opacity=".88"/>
+    <path d="M319 171h23" stroke="#42c6b1" stroke-width="8" stroke-linecap="round"/>
+  </g>
+</svg>

@@ -1,0 +1,6 @@
+# 后端依赖（开发，Python 3.12–3.14 验证）
+fastapi>=0.115
+uvicorn>=0.30
+PyJWT>=2.8
+pydantic>=2.7
+python-multipart>=0.0.9

@@ -1,0 +1,52 @@
+{
+  "version": 6,
+  "updated": "2026-06-21",
+  "secrets": {
+    "policy": "No provider API keys are stored in this repository or returned by the API."
+  },
+  "coding": {
+    "primaryModel": "claude-sonnet-4-6",
+    "fallbackModel": "gpt-5.3-codex-spark",
+    "fallbackAfterMs": 1000,
+    "routingRule": "Use the primary coding model first; switch to fallback only when primary model loading exceeds the threshold."
+  },
+  "image": {
+    "model": "gpt-image-2",
+    "purpose": "High-quality UI illustration, mascot, and image editing assets.",
+    "separationRule": "Image generation must use the image model path, not the coding-model routing block."
+  },
+  "runtime": {
+    "auditRetention": 20,
+    "secretRedaction": true,
+    "deterministicFallbackProbe": "simulatePrimaryLatencyMs",
+    "routeEvidence": ["path", "selectedModel", "fallbackUsed", "observedPrimaryLatencyMs", "secretSafe"]
+  },
+  "provider": {
+    "adapter": "codex-model-gateway",
+    "defaultMode": "local-simulated",
+    "secretEnv": "CODEX_MODEL_API_KEY",
+    "liveEnableEnv": "CODEX_ENABLE_LIVE_MODEL",
+    "outboundCallsByDefault": 0,
+    "statusEndpoint": "/api/ai/provider/status",
+    "probeEndpoint": "/api/ai/provider/probe",
+    "certificationEndpoint": "/api/ai/provider/certification",
+    "livePlanEndpoint": "/api/ai/provider/live-plan",
+    "liveCallEndpoint": "/api/ai/provider/live-call",
+    "liveCallGuard": ["CODEX_MODEL_API_KEY", "CODEX_ENABLE_LIVE_MODEL=1", "CODEX_MODEL_BASE_URL", "X-CodeX-Live-Model: allow"],
+    "transport": {
+      "phase": "2P",
+      "localhostMockVerified": true,
+      "defaultOutboundCalls": 0,
+      "allowedPaths": ["/v1/responses", "/v1/images"],
+      "loopbackHosts": ["127.0.0.1", "localhost", "::1"],
+      "timeoutEnv": "CODEX_MODEL_TIMEOUT_MS",
+      "responseStorage": "redacted-summary-only"
+    }
+  },
+  "studentSafety": {
+    "doNotRevealRawReasoning": true,
+    "minorSafeMode": true,
+    "allowedTutorModes": ["turtle", "reviewer"],
+    "responseShape": ["role", "message", "ctTags", "safetyLabel", "explanationSummary"]
+  }
+}

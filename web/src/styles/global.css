@@ -1,0 +1,107 @@
+@import './tokens.css';
+@import './themes.css';
+@import './motion.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; }
+html, body, #app { height: 100%; margin: 0; }
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 滚动条（企业风：更细、更淡） */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: rgba(26,34,51,.14); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(26,34,51,.26); }
+
+/* 焦点态（可访问性 WCAG AA） */
+:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+/* 动画 */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.fade-in { animation: fadeIn .35s var(--ease); }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+
+/* 低配降级 / 减少动效（§4.11）：关闭装饰动画，降低 GPU/CPU 负担 */
+:root[data-cap="low"] .fade-in,
+:root[data-cap="low"] .float,
+:root[data-reduced-motion="true"] .fade-in,
+:root[data-reduced-motion="true"] .float { animation: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001ms !important; animation-iteration-count: 1 !important;
+    transition-duration: .001ms !important; scroll-behavior: auto !important;
+  }
+}
+
+/* 卡片工具类（原「玻璃拟态」类名保留，材质改为企业白卡：
+   不透明白底 + 1px 细边框 + 浅投影 —— 教育大厂控制台的标准卡片质感。
+   backdrop-filter 已彻底移除：低端课机不再付磨砂代价，低配分支自然退化为同一材质。 */
+.glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: var(--glass-radius);
+}
+.glass--strong { background: var(--glass-bg-strong); box-shadow: var(--shadow-md); }
+[data-app="teacher"] .glass { background: var(--glass-bg-teacher); }
+
+/* —— 企业风通用元件（新增，供各视图渐进采用）—— */
+/* 页头：标题 + 说明 + 右侧动作区 */
+.page-head { display: flex; align-items: flex-end; justify-content: space-between; gap: var(--sp-4); margin-bottom: var(--sp-4); }
+.page-head__title { font-size: var(--fs-lg); font-weight: var(--fw-bold); color: var(--color-text); line-height: var(--lh-tight); }
+.page-head__desc { font-size: var(--fs-xs); color: var(--color-text-3); margin-top: 4px; }
+/* 页头返回链接（R6 裁决5）：三级页回上一级用，PageHead 组件 back prop 渲染 */
+.page-head__back { display: inline-flex; align-items: center; gap: 4px; font-size: var(--fs-xs);
+  color: var(--color-text-3); text-decoration: none; margin-bottom: 2px; }
+.page-head__back:hover { color: var(--color-primary); }
+/* 打印隐藏（收编自 ReportView/StudyReportView 的 scoped 定义）：PageHead 内部的返回链接
+   跨组件作用域，父页 scoped 版够不着，必须全局定义 */
+@media print { .no-print { display: none !important; } }
+/* 状态徽标：soft 底 + 深色字（AA 达标），用于轮次/档位/研究阶段等 */
+.chip { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: var(--r-pill);
+  font-size: var(--fs-xs); font-weight: var(--fw-medium); line-height: 1.7; white-space: nowrap; }
+.chip--primary { background: var(--color-primary-soft); color: var(--color-primary-ontext); }
+.chip--accent  { background: var(--tile-orange); color: var(--color-accent-ontext); }
+.chip--success { background: var(--tile-teal); color: var(--color-success-ontext); }
+.chip--warn    { background: #FFF6E0; color: #8A5B00; }
+.chip--danger  { background: var(--color-danger-soft); color: var(--color-danger-ontext); }
+.chip--muted   { background: var(--color-fill-2); color: var(--color-text-3); }
+/* 轻提示：底部居中深底白字（原先各视图 scoped 重复定义的 .toast，收编为全局工具类） */
+.toast { position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%); background: var(--color-text);
+  color: #fff; padding: 8px 18px; border-radius: var(--r-pill); font-size: var(--fs-sm); z-index: var(--z-toast); }
+/* 告警条（R3 裁决9）：原先十余个视图各自 scoped 定义的 .alert，收编为全局工具类 + 令牌 */
+.alert { display: flex; align-items: center; gap: var(--sp-2); font-size: var(--fs-xs); margin: 0;
+  background: var(--color-danger-soft); color: var(--color-danger-ontext); padding: 7px 12px; border-radius: var(--r-md); }
+.alert--warn { background: var(--color-warning-soft); color: var(--color-accent-ontext); }
+.alert .retry { border: none; background: var(--ink-a08); color: var(--color-text-2);
+  font-size: var(--fs-xs); padding: 3px 10px; border-radius: var(--r-pill); cursor: pointer; }
+/* 数据表（R4 裁决1）：三份 scoped .tbl 漂移后的唯一源。五件套：hover/右对齐/tabular/sticky表头/弱分隔线
+   空态双轨制度（R6 裁决6）：表内三态（骨架/错误/无命中）走 colspan 行，真·零数据走表外 EmptyState */
+.tbl { width: 100%; border-collapse: collapse; font-size: var(--fs-sm); }
+.tbl th, .tbl td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border-weak); }
+.tbl th { color: var(--color-text-3); font-weight: var(--fw-medium); }
+.tbl .num { text-align: right; font-variant-numeric: tabular-nums; }
+.tbl thead th { position: sticky; top: calc(-1 * var(--sp-4)); background: var(--color-surface); z-index: 1; }
+.tbl tbody tr:hover { background: var(--color-fill-1); }
+/* 表格滚动容器（R6 裁决7）：基态刻意留空 —— 桌面不设 overflow，保住 .tbl 的 sticky 表头
+   （overflow≠visible 会把吸附上下文劫持进容器，表头就不再吸在页面滚动顶部）；窄屏才换横向滚动 */
+.tbl-scroll {}
+@media (max-width: 768px) {
+  .tbl-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+}
+@media print {
+  .tbl-scroll { overflow: visible; }
+}
+/* 读屏专用：视觉隐藏但可被读屏访问（live region 播报等用途） */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+/* 骨架占位的唯一定义在 motion.css（shimmer 版，含低配降级）——此处不得重复定义，
+   R1 清算过的「同名双定义」不允许复发。 */

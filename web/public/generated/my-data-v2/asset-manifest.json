@@ -1,0 +1,88 @@
+{
+  "target": "blue-v3-2026-09-06",
+  "generator": "GPT built-in imagegen",
+  "calls": 3,
+  "originals": [
+    {
+      "file": "icons-green.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Use case: stylized-concept. Create a production UI asset sprite sheet with EXACTLY 9 separate clay-soft-plastic 3D icons, equal 3 columns by 3 rows, perfectly centered in 9 equal square cells on a perfectly uniform pure chroma green #00FF00 background. Image reference is style-only, never recreate its UI or text. Ultra high definition crisp render, orthographic front-threequarter view, soft studio lighting, blue/cyan/amber accents, friendly school product. Each icon 65% of its cell width, plenty blank green margin, no touch or overlap. Row1: blue open file folder with white papers; ivory artist palette with orange paintbrush; blue speech bubble with three white dots. Row2: two blue classroom file folders; blue clipboard with white checklist; lavender two-person collaboration icon. Row3: teal document with folded corner; amber circular gear; cute orange fox teacher bust in blue jacket with friendly eyes. No letters, numbers, labels, borders, frames, no UI screenshot. Flat green outside each object's edge, no green reflected onto subjects, no shadows on the green backdrop. Preserve the approved reference soft-plastic icon design and polished 3D aesthetic."
+    },
+    {
+      "file": "icons-alpha.png",
+      "width": 1254,
+      "height": 1254,
+      "prompt": "Edit the nine-icon atlas only: remove the green background to true transparent alpha, preserving all nine subjects, layout, colors and sizes."
+    },
+    {
+      "file": "previews-green.png",
+      "width": 1024,
+      "height": 1536,
+      "prompt": "Two separate soft-plastic school programming project previews, stacked on flat chroma green. Top: six rainbow wire loops in a flower on a pale aqua canvas. Bottom: blue question-mark cube with colorful 1 to 10 numbers on a dark navy star backdrop. No UI labels. Style matches approved V3 canvas."
+    }
+  ],
+  "derivatives": {
+    "icons": [
+      {
+        "file": "folder.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "palette.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "feedback.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "classroom.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "clipboard.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "pair.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "document.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "gear.png",
+        "width": 256,
+        "height": 256
+      },
+      {
+        "file": "fox.png",
+        "width": 256,
+        "height": 256
+      }
+    ],
+    "previews": [
+      {
+        "file": "garden.png",
+        "width": 872,
+        "height": 440
+      },
+      {
+        "file": "guess.png",
+        "width": 872,
+        "height": 440
+      }
+    ]
+  },
+  "processing": "Transparent extraction performed by GPT imagegen; local sharp script only splits atlas and crops/resizes preview sheets. Prompt descriptions for calls 2 and 3 are production summaries, not verbatim logs.",
+  "design_boundaries": "Buttons, labels, quantitative ring and test table are live semantic HTML/CSS, never rasterized UI. Green originals preserved. Delivered resolutions are listed honestly, not 4K."
+}

@@ -1,0 +1,69 @@
+# 密钥与本地配置
+server/.env
+.env
+
+# 数据库与运行时产物
+server/*.db
+server/*.db-wal
+server/*.db-shm
+server/logs/
+**/__pycache__/
+*.pyc
+
+# 依赖与构建
+node_modules/
+web/dist/
+server/.venv/
+# 过程挖掘分析环境：pm4py 是 AGPL v3，**不得**写进 server/requirements.txt，
+# 只在这个隔离 venv 里跑 scripts/process_mining.py（安装命令见该脚本头部）。
+scripts/.venv-pm4py/
+qa-artifacts/process-mining/
+
+# Pyodide 运行时（14MB，npm run fetch:pyodide 生成）
+web/public/pyodide/
+
+# 工具与进程残留
+.code-review-graph/
+.codex-supervisor/
+*.pid
+nohup.out
+.imggen/out/
+
+# 独立 Netlify 试用部署：绑定和凭据不进入版本控制
+.netlify/
+cloud/pilot/.env*
+cloud/pilot/supabase/.temp/
+.runtime/netlify-n1-20261013/
+
+# Source-handoff safety: never commit workstation state or real learner data.
+.runtime/
+.agent-supervisor/
+.codex-screenshots/
+.playwright-cli/
+.superpowers/
+**/.env
+**/.env.*
+!**/.env.example
+*.local.env
+**/.netlify/
+**/.pytest_cache/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite3-wal
+*.sqlite3-shm
+*.log
+*.pem
+*.key
+*.pfx
+*.p12
+*.bak
+*.latest
+data/mock-db.json
+data/backups/
+qa-artifacts/
+tmp/

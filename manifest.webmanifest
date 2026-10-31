@@ -1,0 +1,17 @@
+{
+  "name": "CodeX / AI小海龟",
+  "short_name": "AI小海龟",
+  "description": "面向初中信息科技课堂的结对编程智能体平台",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#F7FAFF",
+  "theme_color": "#4A90E2",
+  "icons": [
+    {
+      "src": "./assets/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

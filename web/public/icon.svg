@@ -1,0 +1,14 @@
+<svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="结对编程智能体">
+  <rect width="96" height="96" rx="22" fill="#2968E8"/>
+  <path d="m24 41 6-23 17 12c7-3 14-3 21 0l16-12 5 24c4 6 6 13 6 22 0 20-16 30-37 30S21 84 21 64c0-9 1-17 3-23z" fill="#414B60" stroke="#253149" stroke-width="3" stroke-linejoin="round"/>
+  <path d="m30 37 2-10 8 7zm47-1-9-2 8-7z" fill="#FF8772"/>
+  <path d="M29 63c4 17 15 24 29 24s25-7 29-24c-8 4-15 4-21 1-4 5-13 5-17 0-6 3-12 3-20-1z" fill="#F9FAFC"/>
+  <path d="M55 32h7l4 33H48z" fill="#F9FAFC"/>
+  <ellipse cx="42" cy="54" rx="8" ry="10" fill="#fff"/>
+  <ellipse cx="72" cy="54" rx="8" ry="10" fill="#fff"/>
+  <circle cx="44" cy="56" r="4" fill="#7C431B"/>
+  <circle cx="70" cy="56" r="4" fill="#7C431B"/>
+  <path d="M53 66q5-4 9 0-1 5-5 5t-4-5" fill="#FF8878"/>
+  <path d="M33 82h49l-5 14H38z" fill="#FF922D"/>
+  <path d="m45 88-5 4 5 4m24-8 5 4-5 4m-9-10-5 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

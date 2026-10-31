@@ -1,0 +1,207 @@
+决策1·方案A（guidance-fading：档位只作用于 navigator，driver 工具能力不随档位削弱）
+=====================================================================================
+状态：**未应用**。这是供拍板后 `git apply` 的补丁，本轮不落地。
+
+  cd D:/VB/jiedui-code-platform/CX
+  git apply --check "docs/文献研读/decision1_planA_guidance_fading.diff"   # 先干跑
+  git apply         "docs/文献研读/decision1_planA_guidance_fading.diff"
+  cd server && python -m pytest -q                                          # 应为 233+7 passed
+
+改动清单：
+  ① server/app/ai.py  PROMPT_VERSION  v1 → v2（提示词拼装语义变了，仓库纪律强制升位）
+  ② server/app/ai.py  新增 _is_navigator()（谓词单一真源；原来两处各写一遍，方案A 会成第三处）
+  ③ server/app/ai.py  _system() 档位段只拼给 navigator；锚点条件改用同一谓词
+  ④ server/app/ai.py  chat() 的 is_navigator 改用同一谓词
+  ⑤ server/tests/test_learner.py  同步（该测试用默认 role=turtle=driver 断言档位段在场，必然红）
+  ⑥ server/tests/test_ai_scaffold_role.py  新增，把方案A 语义与红线不放宽钉死
+
+未改动（**刻意**）：BASE_RULE 红线原文、SOCRATIC_OVERRIDE、SCAFFOLD 四档文本、
+FORMULA_VERSION、任何库表。方案A 不放宽任何安全约束。
+
+diff --git a/server/app/ai.py b/server/app/ai.py
+index 7d5fd51..c323ea5 100644
+--- a/server/app/ai.py
++++ b/server/app/ai.py
+@@ -28,7 +28,15 @@ AI_MODEL = os.getenv("AI_MODEL", "claude-sonnet-4-6")
+ # 提示词版本（定稿 §B7）：BASE_RULE / ROLE_PROMPT / SCAFFOLD / SOCRATIC_OVERRIDE 中
+ # **任何一处**改动都要手动升位。改了提示词而不升位，跨版本的四分类占比会被当成同一条曲线
+ # 读，「navigator 更爱提问了」实际是换了 prompt —— manipulation check 就此失效。
+-PROMPT_VERSION = "ai-prompt/v1"
++#
++# v2（决策1·方案A，外部调研 R2 §3.1 / R3）：档位段（SCAFFOLD）从「无条件拼给两个角色」
++# 改为「只拼给 navigator」。渐退自此只作用于**教学型指导**（领航员的提示细节量），
++# 驾驶员的**分析型能力**（按指令写关键片段、沙箱执行、报错回显）全程满能力、不随档位下降。
++# 这是 Hsu(2026) SFM 所要求的 guidance-fading 与 tool-fading 的分离；
++# BASE_RULE 的「禁完整可运行答案代码」红线在所有档位、所有角色下**原样生效**，未放宽。
++# ⚠️ 跨版本不可比：ai_reply_log.prompt_version 为 'ai-prompt/v1' 与 'ai-prompt/v2' 的
++#    四分类占比**必须分开报**，不得合并成一条曲线。
++PROMPT_VERSION = "ai-prompt/v2"
+ 
+ BASE_RULE = (
+     "你是部署在初中信息科技结对编程平台上的 AI 编程导师，面向初中生，用简体中文。"
+@@ -100,6 +108,17 @@ def _anchor_seg(anchors: list[str]) -> str:
+     )
+ 
+ 
++def _is_navigator(role: str, socratic: bool) -> bool:
++    """「本轮是不是领航员」的**单一真源**。
++
++    这个谓词此前在两处各写一遍（_system 的锚点条件、chat() 的 anchors/hop/四分类条件），
++    方案A 会让它变成第三处。三份拷贝里有一份漏改，就会出现「档位按 driver 算、
++    四分类按 navigator 记」这种自相矛盾的样本 —— 而这种样本在 manipulation check 里
++    看不出来，只会把效应量拌成噪声。
++    """
++    return bool(socratic) or role == "reviewer"
++
++
+ def _system(role: str, scaffold: int, code: str | None, socratic: bool = False,
+             anchors: list[str] | None = None) -> str:
+     """拼 system prompt。
+@@ -110,12 +129,20 @@ def _system(role: str, scaffold: int, code: str | None, socratic: bool = False,
+ 
+     锚点只给 navigator（reviewer，或被强制苏格拉底顶成 reviewer 的场合）：
+     driver 拿到锚点会照着关键决策点直写代码 —— 泄露面从「说出来」扩成「写出来」。
++
++    档位段同样**只给 navigator**（决策1·方案A）：渐退撤的是「教学型指导的强度」，
++    不是「分析型工具的能力」。driver 在任何档位下都保持同一份写码授权 ——
++    此前 0 档时 driver 会同时收到「按学生的指令写关键片段」与「不给提示细节」
++    两条互相矛盾的指令，模型的实际行为不可预测，等于自变量在 driver 这一侧未被操纵。
+     """
+     role_seg = ROLE_PROMPT["reviewer"] if socratic else ROLE_PROMPT.get(role, ROLE_PROMPT["turtle"])
+-    parts = [BASE_RULE, role_seg, SCAFFOLD.get(scaffold, SCAFFOLD[1])]
++    nav = _is_navigator(role, socratic)
++    parts = [BASE_RULE, role_seg]
++    if nav:
++        parts.append(SCAFFOLD.get(scaffold, SCAFFOLD[1]))
+     if socratic:
+         parts.append(SOCRATIC_OVERRIDE)
+-    if anchors and (socratic or role == "reviewer"):
++    if anchors and nav:
+         parts.append(_anchor_seg(anchors))     # 排在角色契约/反越狱之后：只加参照，不加授权
+     if code:
+         parts.append(f"<学生当前代码>\n{code[:2000]}\n</学生当前代码>")
+@@ -231,7 +258,7 @@ def chat(req: ChatReq, user: dict = Depends(current_user)):
+     #     无论档位几档本轮都不写任何可运行代码（既有语义原样保留）。
+     scaffold = req.scaffold if req.scaffold is not None else L.get_state(uid)["scaffold_level"]
+     room = (req.roomId or "").strip()[:64]
+-    is_navigator = socratic or req.role == "reviewer"
++    is_navigator = _is_navigator(req.role, socratic)
+     anchors = L.active_anchors(room) if (room and is_navigator) else []
+     system = _system(req.role, scaffold, safe_code or None, socratic, anchors)
+     messages = safe_hist + [{"role": "user", "content": safe_msg}]
+diff --git a/b/server/tests/test_ai_scaffold_role.py b/server/tests/test_ai_scaffold_role.py
+new file mode 100644
+index 0000000..2f6cc5a
+--- /dev/null
++++ b/server/tests/test_ai_scaffold_role.py
+@@ -0,0 +1,68 @@
++"""决策1·方案A（guidance-fading）的语义钉死测试。
++
++方案A 的主张只有一句：**渐退撤的是教学型指导的强度，不是分析型工具的能力**。
++它在代码里的全部落点就是「SCAFFOLD 段只拼给 navigator」。
++这条语义一旦被后人「顺手改回去」，论文对 Hsu(2026) SFM 的整段回应即失效，
++而 CI 不会有任何反应 —— 所以必须有测试直接断言拼装结果。
++"""
++import pytest
++
++from app.ai import (BASE_RULE, PROMPT_VERSION, ROLE_PROMPT, SCAFFOLD,
++                    SOCRATIC_OVERRIDE, _is_navigator, _system)
++
++
++@pytest.mark.parametrize("level", [0, 1, 2, 3])
++def test_driver_never_gets_scaffold_segment(level):
++    """driver（小狐·驾驶员）在**任何档位**下都不含档位段：工具能力不随渐退削弱。"""
++    s = _system("turtle", level, None, socratic=False)
++    assert ROLE_PROMPT["turtle"] in s
++    for seg in SCAFFOLD.values():
++        assert seg not in s, f"driver 在档位 {level} 拿到了档位段：{seg}"
++
++
++@pytest.mark.parametrize("level", [0, 1, 2, 3])
++def test_navigator_gets_exactly_its_own_scaffold_segment(level):
++    """navigator（小枭·领航员）按档位拿到且仅拿到**本档**的段：渐退在 navigator 侧真实生效。"""
++    s = _system("reviewer", level, None, socratic=False)
++    assert SCAFFOLD[level] in s
++    for other, seg in SCAFFOLD.items():
++        if other != level:
++            assert seg not in s
++
++
++@pytest.mark.parametrize("level", [0, 3])
++def test_socratic_forces_navigator_and_keeps_fading(level):
++    """强制苏格拉底把 driver 顶成 navigator —— 档位段随之回归，渐退不被角色切换绕开。
++
++    这条同时是方案A 的**旁路闸门**测试：学生把 role 改成 turtle 想绕开渐退时，
++    只要教师锁了苏格拉底，档位段仍然在场且写码授权被顶掉。
++    """
++    s = _system("turtle", level, None, socratic=True)
++    assert SCAFFOLD[level] in s
++    assert SOCRATIC_OVERRIDE in s
++    assert "按学生的指令写关键片段" not in s          # 写码授权仍被顶掉（既有语义不变）
++
++
++@pytest.mark.parametrize("role", ["turtle", "reviewer"])
++@pytest.mark.parametrize("level", [0, 1, 2, 3])
++def test_red_line_survives_every_role_and_level(role, level):
++    """最高红线（禁完整可运行答案代码）在所有角色 × 所有档位下原样在场 ——
++    方案A **没有**放宽任何红线，这是它能被接受的前提。"""
++    s = _system(role, level, None, socratic=False)
++    assert BASE_RULE in s
++    assert "绝对禁止直接输出完整、可复制运行的题目答案代码" in s
++
++
++def test_is_navigator_is_the_single_source_of_truth():
++    """谓词单一真源：三处判断必须同源，否则会出现「档位按 driver 算、四分类按 navigator 记」。"""
++    assert _is_navigator("reviewer", False) is True
++    assert _is_navigator("turtle", True) is True
++    assert _is_navigator("turtle", False) is False
++    assert _is_navigator("unknown", False) is False    # 未知角色回落 driver，不得意外拿到档位段
++
++
++def test_prompt_version_bumped_with_the_semantics():
++    """语义改了就必须升位：v1 的 ai_reply_log 四分类与 v2 的不可合并成一条曲线。"""
++    assert PROMPT_VERSION == "ai-prompt/v2", (
++        "SCAFFOLD 拼装语义已改为方案A，PROMPT_VERSION 必须同步升到 ai-prompt/v2；"
++        "不升位则跨版本 manipulation check 失效（ai.py 顶部的纪律注释）")
+diff --git a/server/tests/test_learner.py b/server/tests/test_learner.py
+index 330f270..d63d3c0 100644
+--- a/server/tests/test_learner.py
++++ b/server/tests/test_learner.py
+@@ -493,7 +493,11 @@ def test_policy_source_never_touches_ct_scores():
+ def test_ai_chat_reads_scaffold_from_learner_state(client, teacher, monkeypatch):
+     """档位权威来源是 learner_state（第二波 §4.0：组装 prompt 前按学生读档位，
+     不再透传前端参数）：缺省请求按库里档位拼 system；教师改档下一轮对话即生效；
+-    req.scaffold 只有显式给值时才作为覆盖生效。"""
++    req.scaffold 只有显式给值时才作为覆盖生效。
++
++    ⚠️ 本测试的请求一律带 role='reviewer'：决策1·方案A 之后档位段**只拼给 navigator**，
++    用默认 role（turtle=driver）断言档位段在场会红 —— 那不是回归，是方案A 的语义本身。
++    driver 侧的语义由 test_ai_scaffold_role.py 专门钉死。"""
+     import app.ai as ai_mod
+     captured = {}
+ 
+@@ -507,17 +511,21 @@ def test_ai_chat_reads_scaffold_from_learner_state(client, teacher, monkeypatch)
+     tok = {"Authorization": "Bearer " + _login(client, "student", "sc1")}
+ 
+     # 从未写过档：按缺省满档 3 组装（读库缺省，而不是旧的前端缺省 1）
+-    client.post("/api/ai/chat", json={"message": "这道题该怎么想？"}, headers=tok)
++    client.post("/api/ai/chat",
++                json={"message": "这道题该怎么想？", "role": "reviewer"}, headers=tok)
+     assert ai_mod.SCAFFOLD[3] in captured["system"]
+ 
+     # 教师渐退降到 0：不带 scaffold 的下一轮对话立即按 0 档组装 —— 渐退干预真正进场
+     client.put("/api/learner/state/stu-sc1", json={"scaffold_level": 0}, headers=teacher)
+-    client.post("/api/ai/chat", json={"message": "我还是没想出来"}, headers=tok)
++    client.post("/api/ai/chat",
++                json={"message": "我还是没想出来", "role": "reviewer"}, headers=tok)
+     assert ai_mod.SCAFFOLD[0] in captured["system"]
+     assert ai_mod.SCAFFOLD[3] not in captured["system"]
+ 
+     # 显式覆盖：req.scaffold 非 None 视为覆盖并可信（教师面板/学生显式调档才带值）
+-    client.post("/api/ai/chat", json={"message": "再给一点方向", "scaffold": 2}, headers=tok)
++    client.post("/api/ai/chat",
++                json={"message": "再给一点方向", "role": "reviewer", "scaffold": 2},
++                headers=tok)
+     assert ai_mod.SCAFFOLD[2] in captured["system"]
+ 
+ 

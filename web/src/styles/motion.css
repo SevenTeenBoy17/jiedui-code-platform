@@ -1,0 +1,95 @@
+/* 动效令牌（V1 · 对应 V2 方案 D4）。
+   分级：L0 = 本文件 CSS 令牌 + <Transition>（覆盖 ~85%，0 KB）；
+        L1 = useMotion 薄封装（WAAPI，~2KB）；L2 = GSAP 仅教研叙事页动态 import。
+   降级唯一入口：只改写下面的 --d-* 变量，全站生效（见文末）。 */
+:root {
+  /* —— 时长 —— */
+  --d-instant: 90ms;
+  --d-fast: 160ms;
+  --d-base: 240ms;
+  --d-slow: 380ms;
+  --d-page: 300ms;
+  /* —— 缓动 —— */
+  --e-out: cubic-bezier(.22, 1, .36, 1);      /* 入场/展开：快出慢收 */
+  --e-in: cubic-bezier(.4, 0, 1, 1);          /* 退场 */
+  --e-inout: cubic-bezier(.4, 0, .2, 1);      /* 位移/通用 */
+  --e-spring: cubic-bezier(.34, 1.56, .64, 1);/* 抽屉/弹性微抬 */
+  /* —— stagger 步长（配合 --i 使用）—— */
+  --d-stagger: 45ms;
+}
+
+/* ============ 页面转场 ============
+   ⚠️ 踩坑记录（V3 实测）：路由级 <Transition mode="out-in"> 在**快速连续导航**时会卡在
+   `page-leave-active` 态，导致新页面根本不渲染（DOM 停留在旧页）。加 position:absolute 更糟。
+   结论：**页面级不做 CSS 转场**，改用 `<component :key="route.path" class="fade-in">` 让新内容自身入场，
+   稳健且零卡死风险。下面的 .page-* 仅保留给「确定不会快速连点」的场景（如学生端引导流）。 */
+.page-enter-active { transition: opacity var(--d-page) var(--e-out), transform var(--d-page) var(--e-out); }
+.page-leave-active { transition: opacity var(--d-fast) var(--e-in), transform var(--d-fast) var(--e-in); }
+.page-enter-from { opacity: 0; transform: translateY(8px); }
+.page-leave-to { opacity: 0; transform: translateY(-4px); }
+
+/* ============ 卡片入场 stagger（元素上写 style="--i:3"）============ */
+@keyframes riseIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.stagger > * {
+  animation: riseIn var(--d-base) var(--e-out) both;
+  animation-delay: calc(var(--i, 0) * var(--d-stagger));
+}
+
+/* ============ Hover 微交互 ============ */
+.hov-lift { transition: transform var(--d-fast) var(--e-out), box-shadow var(--d-fast) var(--e-out); }
+.hov-lift:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+
+/* 光泽扫过（用于瓷片/CTA，仅 hover 触发一次） */
+.hov-sheen { position: relative; overflow: hidden; }
+.hov-sheen::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(105deg, transparent 35%, rgba(255,255,255,.55) 50%, transparent 65%);
+  transform: translateX(-120%);
+}
+.hov-sheen:hover::after { transition: transform 620ms var(--e-out); transform: translateX(120%); }
+
+/* ============ 抽屉 / 折叠（Peek 用）============ */
+.peek-enter-active { transition: transform var(--d-base) var(--e-spring), opacity var(--d-fast) var(--e-out); }
+.peek-leave-active { transition: transform var(--d-fast) var(--e-in), opacity var(--d-fast) var(--e-in); }
+.peek-enter-from, .peek-leave-to { transform: translateX(24px); opacity: 0; }
+
+.collapse-enter-active, .collapse-leave-active {
+  transition: grid-template-rows var(--d-base) var(--e-inout), opacity var(--d-fast) var(--e-inout);
+}
+.collapse-enter-from, .collapse-leave-to { grid-template-rows: 0fr; opacity: 0; }
+
+/* ============ AI 思考态（三点呼吸）============ */
+@keyframes dotPulse { 0%, 80%, 100% { opacity: .25; transform: scale(.85); } 40% { opacity: 1; transform: none; } }
+.think-dot { animation: dotPulse 1.2s var(--e-inout) infinite; }
+.think-dot:nth-child(2) { animation-delay: .16s; }
+.think-dot:nth-child(3) { animation-delay: .32s; }
+
+/* ============ 预警脉冲（仅高危，教学区专用）============ */
+@keyframes riskPulse { 0% { box-shadow: 0 0 0 0 rgba(232,93,117,.45); } 70% { box-shadow: 0 0 0 10px rgba(232,93,117,0); } 100% { box-shadow: 0 0 0 0 rgba(232,93,117,0); } }
+.pulse-risk { animation: riskPulse 2s var(--e-out) infinite; }
+
+/* ============ 骨架屏 ============ */
+@keyframes shimmer { to { background-position: 200% 0; } }
+.skeleton {
+  background: linear-gradient(90deg, var(--color-fill-2) 25%, var(--color-fill-1) 37%, var(--color-fill-2) 63%) 0 0 / 200% 100%;
+  animation: shimmer 1.4s linear infinite; border-radius: var(--r-md); color: transparent !important;
+}
+
+/* ============ 降级：唯一入口 ============
+   低配 / 用户要求减少动效 → 把时长压到 0.01ms，所有 L0/L1 动效自动失效（无需改组件）。 */
+:root[data-cap="low"],
+:root[data-reduced-motion="true"] {
+  --d-instant: .01ms; --d-fast: .01ms; --d-base: .01ms; --d-slow: .01ms; --d-page: .01ms; --d-stagger: 0ms;
+}
+:root[data-cap="low"] .hov-sheen::after,
+:root[data-reduced-motion="true"] .hov-sheen::after { display: none; }
+:root[data-cap="low"] .think-dot,
+:root[data-cap="low"] .pulse-risk,
+:root[data-cap="low"] .skeleton { animation: none !important; }
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --d-instant: .01ms; --d-fast: .01ms; --d-base: .01ms; --d-slow: .01ms; --d-page: .01ms; --d-stagger: 0ms;
+  }
+  .think-dot, .pulse-risk, .skeleton { animation: none !important; }
+}

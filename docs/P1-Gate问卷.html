@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>P1-Gate · 10 分钟匿名问卷（打印版）</title>
+<style>
+  /* A4 打印版式。屏幕上也按纸面宽度显示，所见即所得。 */
+  @page { size: A4; margin: 18mm 16mm; }
+  * { box-sizing: border-box; }
+  body { font: 12pt/1.9 "Microsoft YaHei", "PingFang SC", sans-serif; color: #111;
+         max-width: 178mm; margin: 0 auto; padding: 8mm 0; }
+  h1 { font-size: 15pt; margin: 0 0 2mm; }
+  .sub { font-size: 9.5pt; color: #555; margin: 0 0 6mm; }
+  .q { margin: 0 0 7mm; }
+  .q b { display: block; margin-bottom: 1.5mm; }
+  .opts label { margin-right: 10mm; white-space: nowrap; }
+  .box { border: 0.4mm solid #999; border-radius: 2mm; padding: 3mm 4mm; }
+  .icons { display: flex; gap: 9mm; align-items: flex-end; margin: 3mm 0 2mm; }
+  .icons figure { margin: 0; text-align: center; }
+  /* 26px ≈ 6.9mm @96dpi —— 题 3 必须按界面真实渲染尺寸出示，放大了就测不出问题 */
+  .icons img { width: 6.9mm; height: 6.9mm; image-rendering: auto; display: block; margin: 0 auto 1mm; }
+  .icons figcaption { font-size: 8pt; color: #777; }
+  .blank { display: inline-block; border-bottom: 0.3mm solid #888; min-width: 26mm; height: 5mm; vertical-align: bottom; }
+  .teacher { background: #f4f4f4; }
+  footer { margin-top: 8mm; padding-top: 3mm; border-top: 0.3mm dashed #aaa; font-size: 8.5pt; color: #666; }
+  @media print { .noprint { display: none; } }
+</style>
+</head>
+<body>
+  <p class="noprint" style="background:#fff7e0;padding:3mm 4mm;border-radius:2mm;font-size:10pt">
+    🖨 直接 Ctrl+P 打印本页（A4，默认边距）。学生匿名填写，纸质回收，<b>不录入任何系统</b>。
+  </p>
+
+  <h1>编程课小问卷（匿名 · 约 3 分钟）</h1>
+  <p class="sub">没有对错，选你真实的想法。不写名字。</p>
+
+  <div class="q">
+    <b>1. 课上的两个 AI 搭档形象——小狐（帮你写代码的）和小枭（只提问让你自己写的），你觉得：</b>
+    <span class="opts">
+      <label>① 挺好</label>
+      <label>② 无所谓</label>
+      <label>③ 有点幼稚</label>
+    </span>
+  </div>
+
+  <div class="q">
+    <b>2. 你更希望 AI 是：</b>
+    <span class="opts">
+      <label>① 帮我写代码</label>
+      <label>② 只提问，让我自己写</label>
+      <label>③ 看情况换</label>
+    </span>
+  </div>
+
+  <div class="q">
+    <b>3. 下面六个小图标，你觉得它们分别代表什么？（按界面里的真实大小印出，看不清就写"看不清"）</b>
+    <div class="box">
+      <div class="icons">
+        <figure><img src="../web/src/assets/generated/ct_decompose.png" alt=""><figcaption>A</figcaption></figure>
+        <figure><img src="../web/src/assets/generated/ct_abstract.png" alt=""><figcaption>B</figcaption></figure>
+        <figure><img src="../web/src/assets/generated/ct_model.png" alt=""><figcaption>C</figcaption></figure>
+        <figure><img src="../web/src/assets/generated/ct_algorithm.png" alt=""><figcaption>D</figcaption></figure>
+        <figure><img src="../web/src/assets/generated/ct_verify.png" alt=""><figcaption>E</figcaption></figure>
+        <figure><img src="../web/src/assets/generated/ct_transfer.png" alt=""><figcaption>F</figcaption></figure>
+      </div>
+      A <span class="blank"></span>　B <span class="blank"></span>　C <span class="blank"></span><br>
+      D <span class="blank"></span>　E <span class="blank"></span>　F <span class="blank"></span>
+    </div>
+  </div>
+
+  <div class="q teacher box">
+    <b>（老师页 · 只问 2 位老师）你会把教研页面的截图放进评审/结题材料吗？</b>
+    <span class="opts">
+      <label>① 会</label>
+      <label>② 不会</label>
+      <label>③ 看做得好不好</label>
+    </span>
+  </div>
+
+  <footer>
+    <b>回收后的判读（老师看，学生不用管）</b><br>
+    · 题 1 选③的比例 <b>&gt; 40%</b> → 学生端形象元素降级为纯文字＋图标，不再用角色立绘。<br>
+    · 题 3（对照答案：A 分解 · B 抽象 · C 建模 · D 算法设计 · E 验证优化 · F 迁移）正确率 <b>≥ 70%</b> → 保留六维图标；
+      <b>&lt; 70%</b> → 图标改为「图标＋二字标签」。<br>
+    · 老师题选①/③ 的任一位 → 教研区去卡通化（D9）排期做；两位都选② → 不做。<br>
+    · 本问卷是 10 分钟现场问询，非量表，无信效度检验 —— 结果只用于推翻/保留设计假设，<b>不进研究报告</b>。
+  </footer>
+</body>
+</html>

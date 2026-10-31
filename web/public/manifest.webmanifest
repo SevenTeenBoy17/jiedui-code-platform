@@ -1,0 +1,21 @@
+{
+  "name": "结对编程智能体",
+  "short_name": "结对编程智能体",
+  "description": "结对编程智能体平台 — 培养初中生计算思维",
+  "start_url": "/?source=pwa",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "theme_color": "#4A90E2",
+  "background_color": "#F7FAFF",
+  "lang": "zh-CN",
+  "orientation": "any",
+  "icons": [
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "any" },
+    { "src": "/icon.svg", "type": "image/svg+xml", "sizes": "any", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "开始编程", "url": "/student/ide" },
+    { "name": "教师工作台", "url": "/teacher" }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "pair-ip-v2",
+  "created": "2026-09-08",
+  "identity": {
+    "protectedAvatar": "student-cat-avatar-v2.png",
+    "guide": "树小骥 导航员: white horse red forelock mane tail red-white polo blue shoes",
+    "review": "熊猫泡泡 领航员: black-white panda clear cyan-purple technology goggles bamboo-leaf green scarf"
+  },
+  "pipeline": "GPT built-in Imagegen creation, Runway user-selected background removal; no mesh generated",
+  "prompts": [
+    {
+      "name": "panda-wave",
+      "prompt": "Use case: stylized-concept. Create ONE individual project-ready character cutout for a Chinese K12 programming partner app. Reference image is an identity/style reference, NOT a poster to copy. The same PANDA character as supplied: plump friendly black and ivory furry panda, round ears, brown sparkling visible eyes, peach blush, cheerful round face, triangular moss-green bandana with pale bamboo-leaf symbol. CRITICAL: wears the updated futuristic clear-lens goggles exactly like reference: chunky graphite frame outlined by cyan and purple light strips, round side ear modules and strap. Eyes remain visible through clear lenses, no dark sunglasses. Premium soft 3D plush-toy render, soft neutral studio lighting, clear silhouette, friendly not intimidating. Full body completely inside frame including ears and feet, generous 10% transparent margin. Genuine TRANSPARENT alpha background, isolated object cutout, not a checkerboard print, not white or colored backdrop, no ground plane, no text, no watermark, no poster panels. Consistent anatomy and costume.\nPose: standing upright with weight on both feet, one paw raised waving hello, other arm relaxed. Clean simple welcoming icon, no extra props."
+    },
+    {
+      "name": "panda-check",
+      "prompt": "Use case: stylized-concept. Create ONE individual project-ready character cutout for a Chinese K12 programming partner app. Reference image is an identity/style reference, NOT a poster to copy. The same PANDA character as supplied: plump friendly black and ivory furry panda, round ears, brown sparkling visible eyes, peach blush, cheerful round face, triangular moss-green bandana with pale bamboo-leaf symbol. CRITICAL: wears the updated futuristic clear-lens goggles exactly like reference: chunky graphite frame outlined by cyan and purple light strips, round side ear modules and strap. Eyes remain visible through clear lenses, no dark sunglasses. Premium soft 3D plush-toy render, soft neutral studio lighting, clear silhouette, friendly not intimidating. Full body completely inside frame including ears and feet, generous 10% transparent margin. Genuine TRANSPARENT alpha background, isolated object cutout, not a checkerboard print, not white or colored backdrop, no ground plane, no text, no watermark, no poster panels. Consistent anatomy and costume.\nPose: standing with a small cream checklist clipboard in one paw, other paw holding a small magnifying glass next to clipboard (not covering face). Checklist shows only three simple violet circles/lines, NO letters or scores. Thoughtful friendly smile. This is the evidence-review assistant."
+    },
+    {
+      "name": "panda-thinking",
+      "prompt": "Use case: stylized-concept. Create ONE individual project-ready character cutout for a Chinese K12 programming partner app. Reference image is an identity/style reference, NOT a poster to copy. The same PANDA character as supplied: plump friendly black and ivory furry panda, round ears, brown sparkling visible eyes, peach blush, cheerful round face, triangular moss-green bandana with pale bamboo-leaf symbol. CRITICAL: wears the updated futuristic clear-lens goggles exactly like reference: chunky graphite frame outlined by cyan and purple light strips, round side ear modules and strap. Eyes remain visible through clear lenses, no dark sunglasses. Premium soft 3D plush-toy render, soft neutral studio lighting, clear silhouette, friendly not intimidating. Full body completely inside frame including ears and feet, generous 10% transparent margin. Genuine TRANSPARENT alpha background, isolated object cutout, not a checkerboard print, not white or colored backdrop, no ground plane, no text, no watermark, no poster panels. Consistent anatomy and costume.\nPose: sitting neatly on small feet with one paw thoughtfully touching cheek, head slightly tilted, a single small pale-violet question-shaped thought symbol floating close above its free paw. Curious gentle smile, not confused or sad. No extra set dressing."
+    },
+    {
+      "name": "horse-plan",
+      "prompt": "Generate ONE isolated full-body mascot production asset from the attached reference, same exact recognizable Shu Xiao Ji horse IP. Cream-white plush horse, large rounded muzzle, soft black-brown eyes, distinct RED swept forelock and mane and tail, red collar and sleeves white polo with small circular red embroidery, BLUE shoes. No unicorn horn. High quality cute 3D rendered soft plush with clean simplified fur, gentle broad studio light, NOT a real mesh. Friendly school-age coding platform. Full limbs and tail visible with 8 percent safe margin. Plain solid light beige background, absolutely no checkerboard, no text, no labels, no collage, no shadows detached from feet. POSE: Standing with blue blueprint board supported against left hip, right hoof holding small blue pencil pointing to three simple nodes with arrows on board. Focused encouraging smile. Small cyan gear placed on board. No writing. 4K detailed render."
+    },
+    {
+      "name": "horse-celebrate",
+      "prompt": "Generate ONE isolated full-body mascot production asset from the attached reference, same exact recognizable Shu Xiao Ji horse IP. Cream-white plush horse, large rounded muzzle, soft black-brown eyes, distinct RED swept forelock and mane and tail, red collar and sleeves white polo with small circular red embroidery, BLUE shoes. No unicorn horn. High quality cute 3D rendered soft plush with clean simplified fur, gentle broad studio light, NOT a real mesh. Friendly school-age coding platform. Full limbs and tail visible with 8 percent safe margin. Plain solid light beige background, absolutely no checkerboard, no text, no labels, no collage, no shadows detached from feet. POSE: Joyfully raising one hoof, other hoof hugging a simple gold star. A few small pastel confetti shapes closely adjacent to head and body, compact silhouette, bright open smile, standing feet grounded. Show encouragement for effort not grades. 4K detailed render."
+    },
+    {
+      "name": "horse-welcome",
+      "prompt": "Generate ONE isolated full-body mascot production asset from the attached reference, same exact recognizable Shu Xiao Ji horse IP. Cream-white plush horse, large rounded muzzle, soft black-brown eyes, distinct RED swept forelock and mane and tail, red collar and sleeves white polo with small circular red embroidery, BLUE shoes. No unicorn horn. High quality cute 3D rendered soft plush with clean simplified fur, gentle broad studio light, NOT a real mesh. Friendly school-age coding platform. Full limbs and tail visible with 8 percent safe margin. Plain solid light beige background, absolutely no checkerboard, no text, no labels, no collage, no shadows detached from feet. POSE: cheerful friendly small wave with right hoof, left hoof relaxed at side, three-quarter front view, no handheld props. Same red forelock and outfit exactly. Clean compact welcoming silhouette suitable for small chat bubble. 4K detailed render."
+    },
+    {
+      "name": "panda-check-correction",
+      "prompt": "Edit exactly this same panda checking mascot. Preserve its identity, body, goggles, green bamboo-leaf scarf, expression, checklist held in right paw, fur, pose and framing. Remove ONLY the entire magnifying glass and its handle from the left paw; the left paw now raised with index claw pointing upwards as a friendly idea. No checkerboard anywhere, including the glass goggles lenses: keep face and eyes clear. Use a completely plain light beige background. Keep high resolution. No text. This is a surgical cleanup to a production web UI asset, not a new character."
+    }
+  ],
+  "production": [
+    "../pair-ip-v1/horse-guide.png",
+    "panda-wave.png",
+    "panda-check.png",
+    "panda-thinking.png",
+    "horse-plan.png",
+    "horse-welcome.png"
+  ],
+  "conceptOnly": [
+    "horse-celebrate-concept.png"
+  ],
+  "degradation": {
+    "celebrate": "Runway subject extraction No detections found twice; no further retry, runtime reuses transparent horse-welcome",
+    "model3d": "to3D upload widget only, user upload required, no downloaded mesh"
+  }
+}

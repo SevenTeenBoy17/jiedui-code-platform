@@ -1,0 +1,319 @@
+{
+  "schema": "my-data-blueprint/v3",
+  "source": "synthetic-design-only",
+  "seed": "fixed-v3-112-not-derived-from-live-92",
+  "unit": "stored database rows, not mastery or unique evidences",
+  "scope": "personal stored records at one synthetic snapshot",
+  "groups": [
+    {
+      "id": "process",
+      "title": "学习过程",
+      "items": [
+        {
+          "category": "ct_events",
+          "title": "运行、报错、求助等",
+          "n": 67
+        },
+        {
+          "category": "ct_snapshots",
+          "title": "历史过程诊断",
+          "n": 0
+        },
+        {
+          "category": "round_snapshot",
+          "title": "每轮过程快照",
+          "n": 0
+        },
+        {
+          "category": "usage_sessions",
+          "title": "使用时段",
+          "n": 1
+        },
+        {
+          "category": "milestones",
+          "title": "学习里程碑",
+          "n": 3
+        },
+        {
+          "category": "task_attempts",
+          "title": "任务尝试",
+          "n": 4
+        }
+      ],
+      "count": 75
+    },
+    {
+      "id": "creative",
+      "title": "作品与设计",
+      "items": [
+        {
+          "category": "projects",
+          "title": "我的作品",
+          "n": 4
+        },
+        {
+          "category": "project_versions",
+          "title": "历史版本",
+          "n": 8
+        },
+        {
+          "category": "design_artifacts",
+          "title": "流程图与伪代码",
+          "n": 2
+        }
+      ],
+      "count": 14
+    },
+    {
+      "id": "feedback",
+      "title": "反馈与依据",
+      "items": [
+        {
+          "category": "learner_state",
+          "title": "学习支持安排",
+          "n": 1
+        },
+        {
+          "category": "policy_suggestion",
+          "title": "调整提示的建议",
+          "n": 0
+        },
+        {
+          "category": "scaffold_log",
+          "title": "提示等级调整",
+          "n": 0
+        },
+        {
+          "category": "inferences",
+          "title": "暂定学习判断",
+          "n": 2
+        },
+        {
+          "category": "evidence_items",
+          "title": "原件编号与版本",
+          "n": 6
+        },
+        {
+          "category": "inference_evidence",
+          "title": "判断与原件的关联",
+          "n": 4
+        }
+      ],
+      "count": 13
+    },
+    {
+      "id": "classroom",
+      "title": "班级与资料管理",
+      "items": [
+        {
+          "category": "class_students",
+          "title": "班级成员",
+          "n": 1
+        },
+        {
+          "category": "study_members",
+          "title": "研究分组",
+          "n": 1
+        },
+        {
+          "category": "seat_map",
+          "title": "课堂座位",
+          "n": 1
+        },
+        {
+          "category": "push_targets",
+          "title": "老师推送的接收记录",
+          "n": 2
+        },
+        {
+          "category": "obs_window",
+          "title": "与我有关的课堂观察",
+          "n": 0
+        },
+        {
+          "category": "risk_events",
+          "title": "使用保护与提醒",
+          "n": 0
+        },
+        {
+          "category": "guardian_consents",
+          "title": "家长同意与撤回",
+          "n": 1
+        }
+      ],
+      "count": 6
+    },
+    {
+      "id": "assessment",
+      "title": "测评记录",
+      "items": [
+        {
+          "category": "assessment_responses",
+          "title": "测评作答与得分",
+          "n": 1
+        },
+        {
+          "category": "assessment_open_log",
+          "title": "答卷打开时间",
+          "n": 1
+        },
+        {
+          "category": "ct_criterion",
+          "title": "平台外测评参考结果",
+          "n": 0
+        },
+        {
+          "category": "cog_load",
+          "title": "学习感受自评",
+          "n": 0
+        }
+      ],
+      "count": 2
+    },
+    {
+      "id": "pair",
+      "title": "结对与 AI",
+      "items": [
+        {
+          "category": "chat_log",
+          "title": "结对角色与时间",
+          "n": 2
+        },
+        {
+          "category": "ai_reply_log",
+          "title": "AI 回复类型记录",
+          "n": 0
+        }
+      ],
+      "count": 2
+    }
+  ],
+  "total_rows": 112,
+  "category_count": 28,
+  "zero_categories": 9,
+  "completion_definition": "完成提交：演示提交回执存在且绑定作品版本，不代表测试全部通过、教师确认或能力达标；现有Project接口不支持此状态。",
+  "projects": [
+    {
+      "id": "DEMO-P01",
+      "title": "循环花园",
+      "language": "python",
+      "edit_mode": "blocks",
+      "version": 3,
+      "submission_id": "S01",
+      "submission_state": "submitted",
+      "tests": {
+        "passed": 3,
+        "total": 3
+      },
+      "teacher_feedback": "unpublished",
+      "evidence_ids": [
+        "DEMO-E01",
+        "DEMO-E02",
+        "DEMO-E03",
+        "DEMO-E04"
+      ]
+    },
+    {
+      "id": "DEMO-P02",
+      "title": "猜数小游戏",
+      "language": "cpp",
+      "edit_mode": "code",
+      "version": 2,
+      "submission_id": "S02",
+      "submission_state": "submitted",
+      "tests": {
+        "passed": 2,
+        "total": 3,
+        "record_id": "DEMO-T02",
+        "record_version": 1,
+        "cases": [
+          {
+            "input": "3",
+            "expected": "再大一点",
+            "actual": "再大一点",
+            "result": "pass"
+          },
+          {
+            "input": "7",
+            "expected": "猜对了",
+            "actual": "猜对了",
+            "result": "pass"
+          },
+          {
+            "input": "11",
+            "expected": "超出范围",
+            "actual": "再小一点",
+            "result": "needs_work"
+          }
+        ]
+      },
+      "teacher_feedback": "unpublished",
+      "evidence_ids": [
+        "DEMO-E05",
+        "DEMO-E06"
+      ]
+    },
+    {
+      "id": "DEMO-P03",
+      "title": "校园温度提醒器",
+      "language": "python",
+      "edit_mode": "code",
+      "version": 2,
+      "submission_id": null,
+      "submission_state": "draft",
+      "next_action": "待补测试"
+    },
+    {
+      "id": "DEMO-P04",
+      "title": "班级小统计",
+      "language": "c",
+      "edit_mode": "code",
+      "version": 1,
+      "submission_id": null,
+      "submission_state": "draft",
+      "next_action": "继续草稿"
+    }
+  ],
+  "ai": {
+    "live": false,
+    "label": "AI 导师说明 · 演示",
+    "allowed": "解释可见原件中的输入11与约定范围不符；不新增评分、答案或教师反馈"
+  },
+  "unknown_rules": [
+    "未返回的类别不默认为0",
+    "未来接口新增类别显示未分组待核对，不能丢弃",
+    "retained老师自身操作另列不计入28类",
+    "测试图仅3个给定用例，不推算总体能力",
+    "提交、测试、AI条件、教师反馈分别记录"
+  ],
+  "trace": {
+    "project": "DEMO-P01",
+    "nodes": [
+      {
+        "evidence_id": "DEMO-E01",
+        "type": "analysis",
+        "label": "分析表",
+        "version": 1
+      },
+      {
+        "evidence_id": "DEMO-E02",
+        "type": "code",
+        "label": "作品代码",
+        "version": 3
+      },
+      {
+        "evidence_id": "DEMO-E03",
+        "type": "test",
+        "label": "测试报告",
+        "version": 3
+      },
+      {
+        "evidence_id": "DEMO-E04",
+        "type": "explanation",
+        "label": "我的解释",
+        "version": 1
+      }
+    ],
+    "link_meaning": "同一作品/任务下原件关联，不是能力进步曲线"
+  }
+}
