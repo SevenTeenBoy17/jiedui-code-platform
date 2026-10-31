@@ -1,15 +1,15 @@
 {
-  "createdAt": "2026-10-31T10:49:54.794Z",
-  "mode": "source-snapshot-not-runtime-backup",
-  "filesWithoutManifest": 773,
-  "totalBytesWithoutManifest": 74986599,
+  "createdAt": "2026-10-31T15:24:23.476Z",
+  "mode": "source-and-reviewed-product-material-handoff-not-runtime-backup",
+  "filesWithoutManifest": 819,
+  "totalBytesWithoutManifest": 97306183,
   "selfExcluded": "handoff/file-manifest.json",
   "files": [
     {
-      "path": "_audit_findings.md",
-      "bytes": 53807,
-      "sha256": "819b02cc9c9c1e55acac99367d78ab441369acc4497ae0a64e6d17479094d402",
-      "origin": "unchanged source"
+      "path": ".gitattributes",
+      "bytes": 370,
+      "sha256": "f7f82f7ec07011465d0e36a5fee95ac06427137282fbf5ce847e9e1a09a9632f",
+      "origin": "reviewed product-material supplement or handoff documentation"
     },
     {
       "path": ".github/workflows/ci.yml",
@@ -24,69 +24,63 @@
       "origin": "handoff safety adjustment"
     },
     {
-      "path": "补充与优化升级_开发计划书与技术路线.md",
-      "bytes": 30969,
-      "sha256": "8fe1bfbe6708a2ba7b3f6db9f58ccb1f63453d06f06ba3386d5bb084c7ba74d6",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "登录界面.png",
-      "bytes": 731791,
-      "sha256": "9141ffec840950dc8d72eb869698bcee28d971d66a5210dcb31c2e232a7f2add",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "交付包-UI生图与Codex全栈开发.md",
-      "bytes": 243945,
-      "sha256": "2d7a58dd7d18d70f6935e1ee683683c08761027972f7d21f1a106e5b5497c1ad",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "教师后端界面.jpg",
-      "bytes": 95077,
-      "sha256": "24649a573dd17dba8556efa2be0f1ae12bf2c4d82b129ef911ca02d3c200faf0",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "教师后端界面2.jpg",
-      "bytes": 38364,
-      "sha256": "4aba0107c4897de3f12bc334efc1694a29dcc35aa2f161939c3992231f3a712e",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "教研页设计-量规与报告.md",
-      "bytes": 56702,
-      "sha256": "aa8f9a95d094726202c8fd285b8c47761198c0117443e7d6f1f3422b04d66c26",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "开发实施总纲与进度日志.md",
-      "bytes": 103495,
-      "sha256": "1ef5792fdca15aef4bf15d5e40bd3be63776519cb6a26283df72bb258617c562",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "启动平台.ps1",
-      "bytes": 2675,
-      "sha256": "05d27eb07eb7abddbce33f822fd2aa590f7c6d54768a784f80b656f792f348ab",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "前端UI升级优化方案-review.md",
-      "bytes": 17486,
-      "sha256": "ef18287f821177e4bb488514eebfa4bb9dca5ffb50649e534befc2ea9828c3f3",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "学生用户界面.png",
-      "bytes": 686779,
-      "sha256": "93bb244cb99edf0740f9889cf83337ec7fabe1900e7fe14f5e2c0826dc8eb71f",
-      "origin": "unchanged source"
-    },
-    {
       "path": "AGENTS.md",
       "bytes": 943,
       "sha256": "7dc180ab4f5f97bf1cff6ddb9f8e79e9328394402f4b24e637bb45c729fdb28e",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "CodeX_AI小海龟_全栈开发项目计划书与技术路线.md",
+      "bytes": 28691,
+      "sha256": "dd112f03279d0623265656a25e239e25b9dfdd8a1d68a55e4d91c46a89a48863",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "Codex优化路线-生图与元素优化.md",
+      "bytes": 17339,
+      "sha256": "12338f4a86d5ba112ae4291252e736c99f7bd343a11ad428caee6d97dd9dcec5",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "PRODUCT.md",
+      "bytes": 1570,
+      "sha256": "ea91c450aa5195381d0c26d15a88a05a0e8ae68d8a37c3a98cc1a6c2a36251af",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6252,
+      "sha256": "6ce8bee3f1c91e28fb702d7000fdced262c3e8b6890b28c27c0de51ca9a5e37e",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "SECURITY.md",
+      "bytes": 1915,
+      "sha256": "e08a6513df60a39572139f7cece0829b57e52d790f76151fcf952f8344f36c2f",
+      "origin": "handoff documentation"
+    },
+    {
+      "path": "UI升级路线-简约化与趣味化.md",
+      "bytes": 86448,
+      "sha256": "4e7dd7c5ea5cf8be589195f95ebd0ba8b4b8570c83619837db99778173eba137",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "UI瓷片区样式.jpg",
+      "bytes": 73779,
+      "sha256": "2d11b956a70d1be86d8f37535e4c8ec86ecd846d5035e5a9b20b530d41cd07ee",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "V2前端升级优化路线-review.md",
+      "bytes": 295829,
+      "sha256": "30ea465b55c2ba6038652543fe7b58ce0654f326278a555fa3c566542c2780e6",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "_audit_findings.md",
+      "bytes": 53807,
+      "sha256": "819b02cc9c9c1e55acac99367d78ab441369acc4497ae0a64e6d17479094d402",
       "origin": "unchanged source"
     },
     {
@@ -120,21 +114,27 @@
       "origin": "unchanged source"
     },
     {
-      "path": "backend/main.py",
-      "bytes": 177547,
-      "sha256": "7a0638313b25c409b5c603a3bf2770a0f8adc8a8e1edc8a6829e154e690fb25a",
-      "origin": "unchanged source"
-    },
-    {
       "path": "backend/README.md",
       "bytes": 1075,
       "sha256": "68c63455c6bacf5c885b57b2b22a1a5c6aee7ac8eb432f10e199dcb6f9d23442",
       "origin": "unchanged source"
     },
     {
+      "path": "backend/main.py",
+      "bytes": 177547,
+      "sha256": "7a0638313b25c409b5c603a3bf2770a0f8adc8a8e1edc8a6829e154e690fb25a",
+      "origin": "unchanged source"
+    },
+    {
       "path": "cloud/full-product/.gitignore",
       "bytes": 10,
       "sha256": "8d1e215ddd4d7f6b16fc6ca41aaaabcd42e3d38a1d858e9f440d0ecc16c9b0d5",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "cloud/full-product/README.md",
+      "bytes": 3286,
+      "sha256": "2d71df460620737c2cc2ac57c2142d994158b503a59b83ad226b00593a2e4cc7",
       "origin": "unchanged source"
     },
     {
@@ -162,15 +162,15 @@
       "origin": "unchanged source"
     },
     {
-      "path": "cloud/full-product/README.md",
-      "bytes": 3286,
-      "sha256": "2d71df460620737c2cc2ac57c2142d994158b503a59b83ad226b00593a2e4cc7",
-      "origin": "unchanged source"
-    },
-    {
       "path": "cloud/full-product/tests/deployment.test.mjs",
       "bytes": 1178,
       "sha256": "a717d02f455ec47550aba616f37680a8d7e7366ecd9088097f706fe6b906fa76",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "cloud/pilot/README.md",
+      "bytes": 6073,
+      "sha256": "ceaff60258dd6ead3e37df1f65a69316184a3b5344a57d9ebe80283bd9f7548d",
       "origin": "unchanged source"
     },
     {
@@ -213,12 +213,6 @@
       "path": "cloud/pilot/public/styles.css",
       "bytes": 15863,
       "sha256": "02745572759d9b72036d149a4b18e7468ae0ca13fca4f4dd91d5fd2c45039358",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "cloud/pilot/README.md",
-      "bytes": 6073,
-      "sha256": "ceaff60258dd6ead3e37df1f65a69316184a3b5344a57d9ebe80283bd9f7548d",
       "origin": "unchanged source"
     },
     {
@@ -270,6 +264,12 @@
       "origin": "unchanged source"
     },
     {
+      "path": "cloud/showcase/README.md",
+      "bytes": 2672,
+      "sha256": "f01ed2c04658b47ef7c190c27cb203f10bc7fe31b804a9dc8c7d31ad96de64a6",
+      "origin": "unchanged source"
+    },
+    {
       "path": "cloud/showcase/build.mjs",
       "bytes": 3466,
       "sha256": "1f5c4e18ebd5cd67363d842e318d7894a69da1d2167d29da63a50e78a3ff4687",
@@ -300,24 +300,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "cloud/showcase/README.md",
-      "bytes": 2672,
-      "sha256": "f01ed2c04658b47ef7c190c27cb203f10bc7fe31b804a9dc8c7d31ad96de64a6",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "CodeX_AI小海龟_全栈开发项目计划书与技术路线.md",
-      "bytes": 28691,
-      "sha256": "dd112f03279d0623265656a25e239e25b9dfdd8a1d68a55e4d91c46a89a48863",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "Codex优化路线-生图与元素优化.md",
-      "bytes": 17339,
-      "sha256": "12338f4a86d5ba112ae4291252e736c99f7bd343a11ad428caee6d97dd9dcec5",
-      "origin": "unchanged source"
-    },
-    {
       "path": "data/model-contracts.json",
       "bytes": 2063,
       "sha256": "6a993a5b3a29ae455ab21654da9c4d2d0f6ab0532b9c89aefecd7d7c09f25131",
@@ -330,15 +312,327 @@
       "origin": "unchanged source"
     },
     {
-      "path": "docs/合规/待填清单_10分钟版.md",
-      "bytes": 1890,
-      "sha256": "cdc6ec823630edce4a029f16cca9da176589004008d5f1e4ff61dce5498db35f",
+      "path": "docs/P1-Gate问卷.html",
+      "bytes": 4563,
+      "sha256": "6657dd2b500b046e9695172a2220c2c33984bb638cac182711e523c11747a9f6",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/UI调研_三轮案例与复刻落地.md",
+      "bytes": 8789,
+      "sha256": "eca7d5130b9f558fd899013a76734f7e5d3f517c0f38488f3f3178423e28c540",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/acceptance-history/README.md",
+      "bytes": 2569,
+      "sha256": "83c617b95ecdaffdec2501eb4f5d0b709648e9e386b80a6e64401da2b31ef111",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/full-product-f1-closeout-20261014/acceptance.md",
+      "bytes": 9007,
+      "sha256": "06b5beb964ae5167086108d5ccd7e29e0620bbad98bbebe100c842cbf138f320",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/full-product-f1-closeout-20261014/concurrency-plan.md",
+      "bytes": 28086,
+      "sha256": "f5ed5d5a0b592d1b81e20922da90decbf8ccddb67d8c0da13388d43860b3c5ae",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/full-product-f1-closeout-20261014/f2-readiness-audit.md",
+      "bytes": 29697,
+      "sha256": "8e10170bdee61c646fc2ff3ba75d43356f9e0e8f214896f4445c4a1d050a5809",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-capability-recheck-20261013/acceptance.md",
+      "bytes": 5129,
+      "sha256": "18748d6a82ced6e51a6d0a7bd292785a3676f958342dc64eb1bc9eb925d9caa3",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/IDENTITY-after-old-401.png",
+      "bytes": 65839,
+      "sha256": "7845d656581ef0056c963bbf050ac2a296d08715e95922504b1b68e8242867e2",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/acceptance.md",
+      "bytes": 9546,
+      "sha256": "4d3fdfbadb5be0d98b605b12c317c15ffe8521c3d9f8a8e43e5d36e80359f3fe",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/browser-observations.md",
+      "bytes": 4818,
+      "sha256": "95dfb8ffc9269324ed7dd5e32477f21d84a8c336b685491768f8e34b264f13b7",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/contract.md",
+      "bytes": 5816,
+      "sha256": "62eb6bfe7244b34650f6eae97e4d09eefe0b2e98ce9ca08816756a888eaa29ac",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/disconnect-failed-mobile.png",
+      "bytes": 41387,
+      "sha256": "f8ac74b78175af56999afecbd03c35e282f00f7e9e9983ae3080bae632fd61b5",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/input-focus-mobile.png",
+      "bytes": 39827,
+      "sha256": "0e405d02042c81f2cb346c61a80e02f427cb0a9c7ac8e981c941463f201deb65",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/interaction-review.md",
+      "bytes": 17049,
+      "sha256": "48647ebbe7c69f3b584f8700365201d4d7c2187fe13cd6a58e282dff1fd361ed",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/scoped-review/frontend-recovery.diff",
+      "bytes": 19416,
+      "sha256": "0c71984eb4707b89edd26246708bdcfec7fb2c1bcefab212e910cc679d7c08d4",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/security-review.md",
+      "bytes": 23947,
+      "sha256": "17609d0828e89006bcb332a6d6a30f160af9ae38e15eed34088ff778af1b7e18",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/success-mobile-final.png",
+      "bytes": 43388,
+      "sha256": "9d53425e5cb2fcffe082f84d1914a6b9012cf2aec741d8d2de52cdd8af7b66ee",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/acceptance-history/m1b2-structured-recovery-20261013/teaching-review.md",
+      "bytes": 18125,
+      "sha256": "754e9e8e8cbe475d71dc36e970a9a44d9309c94fdc289cdbb05e995a2532fbcd",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/README.md",
+      "bytes": 2060,
+      "sha256": "5d024001b5bb75bf6270bddf858df5c56136782b56137f655a92990d59a1c5b3",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/archive/结对编程智能体-产品介绍册.pdf",
+      "bytes": 8021860,
+      "sha256": "059b2b297debe3ffabd71fb806487afd12d24c974d55c3a71760c3c8dfb7d74b",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/archive/结对编程智能体-产品宣传册.pdf",
+      "bytes": 6916288,
+      "sha256": "f55e6a9ec6e77c3d62c508fe7f0d58dc01dbeb70b131e6861e47776f0f28740a",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/01-overview-1440-final.png",
+      "bytes": 137580,
+      "sha256": "25a721dbf870675351b2aeb53629e9d41ad2066f59ecd7ad28a1541d65cec08c",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/final-check-1440.png",
+      "bytes": 138932,
+      "sha256": "2b18f705c40c7bdf49b0d0e481c614f2fd39eef7a62d461f086dec3369f6138b",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/final-output-1366.png",
+      "bytes": 106810,
+      "sha256": "1883bc6944ea8e22138f349d07342a29ffcb990759654e3645c6537a72e2b5b1",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/final-p3-result.png",
+      "bytes": 90817,
+      "sha256": "dbb85e4d1ae096e8b3d7393f79bee3f293ba2522ef444977bba5aeb39c58c3ed",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/qa-growth.png",
+      "bytes": 100422,
+      "sha256": "ce0d88a137bb7ff7dd018496080c1a983828b25200282afe3b26425431b6dbf8",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/assets/records-1366.png",
+      "bytes": 312923,
+      "sha256": "52caee05a6848515205e9190201f642347423c9bf255a7f463f9db4c1dd2c3c8",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/build_brochures.py",
+      "bytes": 25348,
+      "sha256": "047ab7e593d2dbaa2d63972d95a259c44ecf049197d52f6d19c164a7db294e60",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/requirements.txt",
+      "bytes": 66,
+      "sha256": "4c8404280670588af01d380a802b737c5530c4953595d9a83406ccf3229db495",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/brochures/validate_brochures.py",
+      "bytes": 2086,
+      "sha256": "cc48d0638391c677fbe578ad3bb25c4133c9a9e55be504c4baa5cf66f6b6b02c",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/deployment/2026-10-13-Netlify亚洲托管迁移清单.md",
+      "bytes": 14035,
+      "sha256": "4861d671d1db2ed9347db0c60c1d7ae9f62cf154f37ceb370860f48733e0a05f",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/deployment/2026-10-13上线预检.md",
+      "bytes": 6323,
+      "sha256": "48b0a3bae69c8135765d257268b98def44354ed74850e169eac31ec558dd7c85",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/deployment/2026-10-14-完整产品上线纠偏方案.md",
+      "bytes": 10815,
+      "sha256": "107b599c0e8fb850828d971b661e1c4794bc03e6a1084dc1878e3d4a1d88ce93",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/design-handoff/README.md",
+      "bytes": 1931,
+      "sha256": "eba628b93c53db89506d3d3751bc31cd09f7077197147f61b72718d11520df35",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/01-my-records.png",
+      "bytes": 1425426,
+      "sha256": "8ce58133a46caf9df8f595039caa49365bba97553e83199b707dc8ab23c8fa56",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/02-research-assessments.png",
+      "bytes": 1426824,
+      "sha256": "e7f2b15514bb08a5983e2cfd57d466c362e6a726933cd48992aace1dd4d0eb97",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/03-submission-feedback-drawer.png",
+      "bytes": 1523689,
+      "sha256": "2491557ed244ede97b8f3c4f994727a3f6c5fb91ca348efd746998937092e6da",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/04-research-receipt-drawer.png",
+      "bytes": 1581469,
+      "sha256": "a612d1bc1840c72048e62ec245138b4e02fcce027af01e47d7fd44cf09339d38",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/blueprint.md",
+      "bytes": 10507,
+      "sha256": "3083738d9a6e5ec8b23cd174c78c22daac5281be7abdca828aeff34e2c0a6ad7",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/prompts.md",
+      "bytes": 15719,
+      "sha256": "6d2bd2c5466a60c3f4ac09fc2575c698d11f45f372a6a9d03635421a481c9e7c",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/assessment-center/frontend-2026-09-06/asset-prompts.json",
+      "bytes": 6682,
+      "sha256": "d715dffd9e8d31d4827e4ce3a9002817dd4bc300255a1b6bd3b90da3d8615888",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/my-data/blue-v3-2026-09-06/design-brief.md",
+      "bytes": 8335,
+      "sha256": "2075b3ca91a719967e5bb8ec70a0006cc9c0431f7c16ee4be1193f0f13a254d8",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/my-data/blue-v3-2026-09-06/prompts.json",
+      "bytes": 15197,
+      "sha256": "17e6fc152b8bbd2be90f4b238a4cd094731cdb81ef62d9220492923ebc1dee95",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/pair-ip-20260908/blueprint.md",
+      "bytes": 7417,
+      "sha256": "5af64ce0d4e0d544fa57857ad416e11a262a25f67471e3dffd21b71bf90b6176",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/pair-ip-20260908/inventory.md",
+      "bytes": 5983,
+      "sha256": "32e81e93f7209e8b798b0662aeeaf98704d73a1f7710e643f3149c62ad9d1d64",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/pair-ip-20260908/research.md",
+      "bytes": 5897,
+      "sha256": "19e6325a9e6acc36fddbc65e540065450546ea89d878b8e468ac3b33a313ad88",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/project-covers-20260907/prompts.json",
+      "bytes": 6421,
+      "sha256": "9b933cdd0ccd7f6b32a86de7298a033548ba0771b08ceb71cc56724e8701e384",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/design-handoff/student-growth/task-1-report.md",
+      "bytes": 20980,
+      "sha256": "7fe118b1821ef5cbeb256f83c80a6723134dcbace3d00c3beae556db615d64c3",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-11-m1a-pair-context-contract.md",
+      "bytes": 9798,
+      "sha256": "4ac156356cc433cd6e6fb0d0b0bc6f6ae57fbe8f4da106b508d1a238fdf7581f",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-11-m1b-assessment-guard-contract.md",
+      "bytes": 5191,
+      "sha256": "287abeea68d798ee32bc05690dacfb74520915f6e508a02eda876077491a4b6b",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-11-pair-learning-review.md",
+      "bytes": 60840,
+      "sha256": "67e323e1030795fde25b607026d1742fdb450e32bf5eda98f7961a01a09d048b",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/superpowers/plans/2026-10-12-trusted-ai-vertical-slice.md",
+      "bytes": 32828,
+      "sha256": "7cf09fbff570293f4892d66ad81377a5eeb44bfea32fa9923ef6e70bd1abc096",
       "origin": "unchanged source"
     },
     {
       "path": "docs/合规/个人信息保护影响评估PIA_草案.md",
       "bytes": 4021,
       "sha256": "40882230a4bea2f01e412ef44b7cc3e815695f6a8ebf2f71bddfaab8e77e77f1",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "docs/合规/待填清单_10分钟版.md",
+      "bytes": 1890,
+      "sha256": "cdc6ec823630edce4a029f16cca9da176589004008d5f1e4ff61dce5498db35f",
       "origin": "unchanged source"
     },
     {
@@ -360,75 +654,45 @@
       "origin": "unchanged source"
     },
     {
-      "path": "docs/计算思维评价升级方案-文献研读综合.md",
-      "bytes": 21627,
-      "sha256": "e5a033e860f4704959804a8423edc7025606d74a10e8de98c7cbefa6ed5201c4",
-      "origin": "unchanged source"
-    },
-    {
       "path": "docs/教师使用手册.md",
       "bytes": 4006,
       "sha256": "f4dc3c3140eed2ebdf01c9f3a9416b848ad5c0a4c455874d31daec8a5b7bc516",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/进校首日检查单.md",
-      "bytes": 4847,
-      "sha256": "b94adb8de844a2779c1a04df692142c55f6f5fac5c00cc3544cb5cb7b8488489",
+      "path": "docs/文献研读/README_三波总览与紧急修订.md",
+      "bytes": 11409,
+      "sha256": "bc58cbc73e1744abe012fa0a14d9e26275a3b77c70a8a8fc2eb6da71e657e604",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/沙箱红队报告.md",
-      "bytes": 5836,
-      "sha256": "ee64afb48968d29be851f6ecf170d5f7cd5b38493f3f90592f66726b3573b88d",
+      "path": "docs/文献研读/README_第二波要点速览.md",
+      "bytes": 10861,
+      "sha256": "3aacd5a959c9acce0dc260f9de18a5c82ff8133ec3cc4895581c1e746c573c8b",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/第二波综合_教学模式与智能体架构.md",
-      "bytes": 81134,
-      "sha256": "dfe901ebb4e2765ab8502288f2dbf97fb8913f4c33ff02c5e3e47ad4e1167690",
+      "path": "docs/文献研读/decision1_addon_scaffold_override.diff",
+      "bytes": 5660,
+      "sha256": "b9ff60da2dad325d0beba2bd888582052f826f5b5e3129d6ff110d3fb40fccfd",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/第三波总审_二次研读与跨波交叉检验.md",
-      "bytes": 74863,
-      "sha256": "b9dc3f43bc9d87313e08e973585cd4bca90760ff56dbf87fb38b36a44f127921",
+      "path": "docs/文献研读/decision1_planA_PLUS_addon.diff",
+      "bytes": 15021,
+      "sha256": "8203b32fc303d8704c1d45de3f0842155f82cb05aa836c248190a3af7f5e2ed6",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/第四波_结对编程文献底座.md",
-      "bytes": 37306,
-      "sha256": "92be5ad80c4c838e3d9b467634ac63cbaf082d87b69e0f27e2494f40c1d11c9d",
+      "path": "docs/文献研读/decision1_planA_guidance_fading.diff",
+      "bytes": 12127,
+      "sha256": "e94eadb21533a63243d1c36ed86f8d484ac697cc6216490a08b10f2f53d33dae",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/第一波综合_计算思维评价原文.md",
-      "bytes": 31152,
-      "sha256": "251932f4ef89edf9dae11bcb547b1050663778ed24755e7909208bf8bbf665a7",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/文献研读/观察表与评分金标准_第一轮草案.md",
-      "bytes": 52016,
-      "sha256": "2a093aaac2beca4e2440b4b170702cebc9715fedd052e44419b19201441411f5",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/文献研读/观察表与评分金标准_定稿.md",
-      "bytes": 122266,
-      "sha256": "d076a10239f020ff9d8d259b4ea70f35ec944a8957b41481b82fadb427854600",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/文献研读/拍板_2026-08-18_七项预注册与D1D3.md",
-      "bytes": 4708,
-      "sha256": "0ac3ce241ee51870e120028ee177974ec863cc016ab406a8e8ed725709c20e9d",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/文献研读/数据体系×文献终审报告.md",
-      "bytes": 26251,
-      "sha256": "5cea999c53dcab77aa2ea32f30a22b14e87063bff0c2ce951feec391545eb36b",
+      "path": "docs/文献研读/decision1_planB_status_quo.md",
+      "bytes": 6935,
+      "sha256": "dd967e693d377184df8836fc7ee585c5e9a8579127396fd88f304ddcdeee68d3",
       "origin": "unchanged source"
     },
     {
@@ -456,51 +720,51 @@
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/01_汤倩雯_高中编程.md",
-      "bytes": 79114,
-      "sha256": "67bd4e11e5ea2ffb279fb3993ebbce4c8655518ae2593c364f459878884feb5e",
+      "path": "docs/文献研读/拍板_2026-08-18_七项预注册与D1D3.md",
+      "bytes": 4708,
+      "sha256": "0ac3ce241ee51870e120028ee177974ec863cc016ab406a8e8ed725709c20e9d",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/02_梁家健_AI-TPACK.md",
-      "bytes": 102158,
-      "sha256": "69595aa7ebc2407ff6452bd4cbfa50e4ca8d1e7fd8e25fbeecc58de78b248084",
+      "path": "docs/文献研读/数据体系×文献终审报告.md",
+      "bytes": 26251,
+      "sha256": "5cea999c53dcab77aa2ea32f30a22b14e87063bff0c2ce951feec391545eb36b",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/03_杨瑞珍_批判性思维.md",
-      "bytes": 85547,
-      "sha256": "f16117357149e02123aac6eca3b4d5a37f16d43a3d7b0df26f34bdcdcdbfd3ae",
+      "path": "docs/文献研读/第一波综合_计算思维评价原文.md",
+      "bytes": 31152,
+      "sha256": "251932f4ef89edf9dae11bcb547b1050663778ed24755e7909208bf8bbf665a7",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/04_石斯瑾_情景教学.md",
-      "bytes": 70324,
-      "sha256": "39f662175ef13d0335536b49381b954ffa7f2a1b28bc23502cb57c02b0057974",
+      "path": "docs/文献研读/第三波总审_二次研读与跨波交叉检验.md",
+      "bytes": 74863,
+      "sha256": "b9dc3f43bc9d87313e08e973585cd4bca90760ff56dbf87fb38b36a44f127921",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/05_宋双程_小学信息科技.md",
-      "bytes": 97724,
-      "sha256": "ba10983a87a4cd052ffdd00761818fae381d24cccf43c187a8a8e6336e500e5c",
+      "path": "docs/文献研读/第二波综合_教学模式与智能体架构.md",
+      "bytes": 81134,
+      "sha256": "dfe901ebb4e2765ab8502288f2dbf97fb8913f4c33ff02c5e3e47ad4e1167690",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/06_吴晓彤_信息技术助教.md",
-      "bytes": 103331,
-      "sha256": "09d00e7ed4558d210dab2797d7e7c6c29e86930477fab5b587d55771441042de",
+      "path": "docs/文献研读/第四波_结对编程文献底座.md",
+      "bytes": 37306,
+      "sha256": "92be5ad80c4c838e3d9b467634ac63cbaf082d87b69e0f27e2494f40c1d11c9d",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/07_许家奇_复杂任务多智能体.md",
-      "bytes": 93758,
-      "sha256": "d086c1fb41ea8188320f1eec4dd48722bff2286bf11d1679397db2ff9b83f5b0",
+      "path": "docs/文献研读/观察表与评分金标准_定稿.md",
+      "bytes": 122266,
+      "sha256": "d076a10239f020ff9d8d259b4ea70f35ec944a8957b41481b82fadb427854600",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/逐篇笔记_第一波/08_王玉雯_初中数学.md",
-      "bytes": 90258,
-      "sha256": "73dc0e520563a87cafe9d15e4a82b0a17ba276fd90c228932ecc55d3c627dfe3",
+      "path": "docs/文献研读/观察表与评分金标准_第一轮草案.md",
+      "bytes": 52016,
+      "sha256": "2a093aaac2beca4e2440b4b170702cebc9715fedd052e44419b19201441411f5",
       "origin": "unchanged source"
     },
     {
@@ -570,93 +834,69 @@
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/decision1_addon_scaffold_override.diff",
-      "bytes": 5660,
-      "sha256": "b9ff60da2dad325d0beba2bd888582052f826f5b5e3129d6ff110d3fb40fccfd",
+      "path": "docs/文献研读/逐篇笔记_第一波/01_汤倩雯_高中编程.md",
+      "bytes": 79114,
+      "sha256": "67bd4e11e5ea2ffb279fb3993ebbce4c8655518ae2593c364f459878884feb5e",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/decision1_planA_guidance_fading.diff",
-      "bytes": 12127,
-      "sha256": "e94eadb21533a63243d1c36ed86f8d484ac697cc6216490a08b10f2f53d33dae",
+      "path": "docs/文献研读/逐篇笔记_第一波/02_梁家健_AI-TPACK.md",
+      "bytes": 102158,
+      "sha256": "69595aa7ebc2407ff6452bd4cbfa50e4ca8d1e7fd8e25fbeecc58de78b248084",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/decision1_planA_PLUS_addon.diff",
-      "bytes": 15021,
-      "sha256": "8203b32fc303d8704c1d45de3f0842155f82cb05aa836c248190a3af7f5e2ed6",
+      "path": "docs/文献研读/逐篇笔记_第一波/03_杨瑞珍_批判性思维.md",
+      "bytes": 85547,
+      "sha256": "f16117357149e02123aac6eca3b4d5a37f16d43a3d7b0df26f34bdcdcdbfd3ae",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/decision1_planB_status_quo.md",
-      "bytes": 6935,
-      "sha256": "dd967e693d377184df8836fc7ee585c5e9a8579127396fd88f304ddcdeee68d3",
+      "path": "docs/文献研读/逐篇笔记_第一波/04_石斯瑾_情景教学.md",
+      "bytes": 70324,
+      "sha256": "39f662175ef13d0335536b49381b954ffa7f2a1b28bc23502cb57c02b0057974",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/README_第二波要点速览.md",
-      "bytes": 10861,
-      "sha256": "3aacd5a959c9acce0dc260f9de18a5c82ff8133ec3cc4895581c1e746c573c8b",
+      "path": "docs/文献研读/逐篇笔记_第一波/05_宋双程_小学信息科技.md",
+      "bytes": 97724,
+      "sha256": "ba10983a87a4cd052ffdd00761818fae381d24cccf43c187a8a8e6336e500e5c",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/文献研读/README_三波总览与紧急修订.md",
-      "bytes": 11409,
-      "sha256": "bc58cbc73e1744abe012fa0a14d9e26275a3b77c70a8a8fc2eb6da71e657e604",
+      "path": "docs/文献研读/逐篇笔记_第一波/06_吴晓彤_信息技术助教.md",
+      "bytes": 103331,
+      "sha256": "09d00e7ed4558d210dab2797d7e7c6c29e86930477fab5b587d55771441042de",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/deployment/2026-10-13-Netlify亚洲托管迁移清单.md",
-      "bytes": 14035,
-      "sha256": "4861d671d1db2ed9347db0c60c1d7ae9f62cf154f37ceb370860f48733e0a05f",
+      "path": "docs/文献研读/逐篇笔记_第一波/07_许家奇_复杂任务多智能体.md",
+      "bytes": 93758,
+      "sha256": "d086c1fb41ea8188320f1eec4dd48722bff2286bf11d1679397db2ff9b83f5b0",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/deployment/2026-10-13上线预检.md",
-      "bytes": 6323,
-      "sha256": "48b0a3bae69c8135765d257268b98def44354ed74850e169eac31ec558dd7c85",
+      "path": "docs/文献研读/逐篇笔记_第一波/08_王玉雯_初中数学.md",
+      "bytes": 90258,
+      "sha256": "73dc0e520563a87cafe9d15e4a82b0a17ba276fd90c228932ecc55d3c627dfe3",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/deployment/2026-10-14-完整产品上线纠偏方案.md",
-      "bytes": 10815,
-      "sha256": "107b599c0e8fb850828d971b661e1c4794bc03e6a1084dc1878e3d4a1d88ce93",
+      "path": "docs/沙箱红队报告.md",
+      "bytes": 5836,
+      "sha256": "ee64afb48968d29be851f6ecf170d5f7cd5b38493f3f90592f66726b3573b88d",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/P1-Gate问卷.html",
-      "bytes": 4563,
-      "sha256": "6657dd2b500b046e9695172a2220c2c33984bb638cac182711e523c11747a9f6",
+      "path": "docs/计算思维评价升级方案-文献研读综合.md",
+      "bytes": 21627,
+      "sha256": "e5a033e860f4704959804a8423edc7025606d74a10e8de98c7cbefa6ed5201c4",
       "origin": "unchanged source"
     },
     {
-      "path": "docs/superpowers/plans/2026-10-11-m1a-pair-context-contract.md",
-      "bytes": 9798,
-      "sha256": "4ac156356cc433cd6e6fb0d0b0bc6f6ae57fbe8f4da106b508d1a238fdf7581f",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/superpowers/plans/2026-10-11-m1b-assessment-guard-contract.md",
-      "bytes": 5191,
-      "sha256": "287abeea68d798ee32bc05690dacfb74520915f6e508a02eda876077491a4b6b",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/superpowers/plans/2026-10-11-pair-learning-review.md",
-      "bytes": 60840,
-      "sha256": "67e323e1030795fde25b607026d1742fdb450e32bf5eda98f7961a01a09d048b",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/superpowers/plans/2026-10-12-trusted-ai-vertical-slice.md",
-      "bytes": 32828,
-      "sha256": "7cf09fbff570293f4892d66ad81377a5eeb44bfea32fa9923ef6e70bd1abc096",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "docs/UI调研_三轮案例与复刻落地.md",
-      "bytes": 8789,
-      "sha256": "eca7d5130b9f558fd899013a76734f7e5d3f517c0f38488f3f3178423e28c540",
+      "path": "docs/进校首日检查单.md",
+      "bytes": 4847,
+      "sha256": "b94adb8de844a2779c1a04df692142c55f6f5fac5c00cc3544cb5cb7b8488489",
       "origin": "unchanged source"
     },
     {
@@ -1098,27 +1338,39 @@
       "origin": "handoff documentation"
     },
     {
+      "path": "handoff/SUPPLEMENT-20261031.md",
+      "bytes": 3541,
+      "sha256": "4c228c789a0f51042d84d19157bdf6be5616699ba93921ccbab9f33f115b5080",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "handoff/VALIDATION.md",
+      "bytes": 2956,
+      "sha256": "83927a869af7bcd2694d9619c54d7a009fd8c9e8d92bdddb287b6bc65d970d65",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
       "path": "handoff/excluded-files.json",
-      "bytes": 6365,
-      "sha256": "fc43d760a18dede768bfdc8facd3c2b0d6345cf9d8d478b34c016766e23da566",
-      "origin": "handoff documentation"
+      "bytes": 14102,
+      "sha256": "7fc2f6206b2ec8d617fef649214f577a0808cda63c8e1a905cf3e51257e7cb4c",
+      "origin": "reviewed product-material supplement or handoff documentation"
     },
     {
       "path": "handoff/local.env.example",
-      "bytes": 509,
-      "sha256": "ba1d287fc42975869021b465b4041efb72ed604ec729d1dd738009a78da30715",
-      "origin": "handoff documentation"
+      "bytes": 935,
+      "sha256": "5ab86b7c4447db4211984f291f5f021267dad5c467ad5572be12e88e48639a4a",
+      "origin": "reviewed product-material supplement or handoff documentation"
+    },
+    {
+      "path": "handoff/material-provenance.json",
+      "bytes": 18793,
+      "sha256": "12c5483e9d414be4d531250c51281f5a54aefe14c839bd4a7ba6a36817424a1e",
+      "origin": "reviewed product-material supplement or handoff documentation"
     },
     {
       "path": "handoff/showcase-acceptance-20261014.md",
       "bytes": 4218,
       "sha256": "a42813b04910606ff4cb521ac4bc6e3bb7434dc301cb25f6ea28ce192059d3d6",
-      "origin": "handoff documentation"
-    },
-    {
-      "path": "handoff/VALIDATION.md",
-      "bytes": 2436,
-      "sha256": "2fb62dd04c7d01b726a1bb05327b60c12c1052694c97c01eb11b82fc1055a3d1",
       "origin": "handoff documentation"
     },
     {
@@ -1140,22 +1392,10 @@
       "origin": "unchanged source"
     },
     {
-      "path": "PRODUCT.md",
-      "bytes": 1570,
-      "sha256": "ea91c450aa5195381d0c26d15a88a05a0e8ae68d8a37c3a98cc1a6c2a36251af",
-      "origin": "unchanged source"
-    },
-    {
       "path": "progress.md",
-      "bytes": 379514,
-      "sha256": "66b4791124527d5f518c4333ee30ff828639976150c883091147afcf29c36ce0",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "README.md",
-      "bytes": 5761,
-      "sha256": "d8b095199cb4b9773e7d8ad2bec21c3f1de9992764c5d4ccf2f110cf19653265",
-      "origin": "handoff documentation"
+      "bytes": 385905,
+      "sha256": "bb6e73970ab28c7eeacf5a9ecae2a1169d0727431d3ea825170ddf27c64e051b",
+      "origin": "reviewed product-material supplement or handoff documentation"
     },
     {
       "path": "scripts/agentic-qa-replay-dossier.mjs",
@@ -1470,10 +1710,10 @@
       "origin": "unchanged source"
     },
     {
-      "path": "SECURITY.md",
-      "bytes": 1915,
-      "sha256": "e08a6513df60a39572139f7cece0829b57e52d790f76151fcf952f8344f36c2f",
-      "origin": "handoff documentation"
+      "path": "server/.env.example",
+      "bytes": 653,
+      "sha256": "f304c1e35ba1c9754a9d5ba855b02a13084886d00ce968722a55c4bf68a70560",
+      "origin": "unchanged source"
     },
     {
       "path": "server/_acceptance.py",
@@ -1524,12 +1764,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "server/.env.example",
-      "bytes": 653,
-      "sha256": "f304c1e35ba1c9754a9d5ba855b02a13084886d00ce968722a55c4bf68a70560",
-      "origin": "unchanged source"
-    },
-    {
       "path": "server/app/__init__.py",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
@@ -1560,15 +1794,15 @@
       "origin": "unchanged source"
     },
     {
-      "path": "server/app/ct_v1_items.py",
-      "bytes": 30230,
-      "sha256": "1bf1fc5216b8ad429885af21d18f078423b691c79545f0a8572dd068a290a0ea",
-      "origin": "unchanged source"
-    },
-    {
       "path": "server/app/ct.py",
       "bytes": 26515,
       "sha256": "2ca7e03230d0827c7ac85e910eb820006bac8b953cc71de52684ca5d044941f6",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "server/app/ct_v1_items.py",
+      "bytes": 30230,
+      "sha256": "1bf1fc5216b8ad429885af21d18f078423b691c79545f0a8572dd068a290a0ea",
       "origin": "unchanged source"
     },
     {
@@ -1680,6 +1914,12 @@
       "origin": "unchanged source"
     },
     {
+      "path": "server/app/store.py",
+      "bytes": 32792,
+      "sha256": "9146e61926ad77886e0e68cfa3cb68c76ad4f313c8970161697c80a30d9887a1",
+      "origin": "unchanged source"
+    },
+    {
       "path": "server/app/store_ai_reply.py",
       "bytes": 6754,
       "sha256": "8047dc2f9ad1d4100be66a0ce007c5925f75c0f3fc55fba83b72b8a2e8c49b5a",
@@ -1725,12 +1965,6 @@
       "path": "server/app/store_study.py",
       "bytes": 29404,
       "sha256": "3590253e47402ec8c97fe84c22538cb41629af2687e29591d1b2139f5719cd2d",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "server/app/store.py",
-      "bytes": 32792,
-      "sha256": "9146e61926ad77886e0e68cfa3cb68c76ad4f313c8970161697c80a30d9887a1",
       "origin": "unchanged source"
     },
     {
@@ -1956,60 +2190,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "specs/IMPL-计算思维六维评价-实现级设计.md",
-      "bytes": 69736,
-      "sha256": "632dd924c589ae63a3c380bc45e7fbf4469b091fbaf0983d1fc50165f7abf735",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-教师预警工作台-实现级设计.md",
-      "bytes": 47676,
-      "sha256": "2c33f9951d1955366ab9c52d8ea7026e0178790df9eab83829e453d665405510",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-流程图伪代码设计工具-实现级设计.md",
-      "bytes": 51298,
-      "sha256": "3cbd358905d88ecbc7f57ea7288eb686f58dd19b57f7663bbb5834a316d0a3ab",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-三语言真实执行-实现级设计.md",
-      "bytes": 58820,
-      "sha256": "fbf552bcd90cf779a6d1eed019ecbc449afe307d6e7fee9385d1c1407ef311ae",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-师生分离登录-实现级设计.md",
-      "bytes": 58366,
-      "sha256": "d37076c361abbdc0db62ab7d751474348a71f336c9e59bd87671cc5bda025356",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-数据安全合规-实现级设计.md",
-      "bytes": 62226,
-      "sha256": "ca365a832f42548ec9e0df359d6126d5327b621f5064c5497061ebdb745109c4",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-双模编辑器-实现级设计.md",
-      "bytes": 52272,
-      "sha256": "d183a455bf71f2e971af30c02e549e4fac347a5442bdae3c285b730a24049e3c",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-双AI导师智能体-实现级设计.md",
-      "bytes": 61380,
-      "sha256": "a16f5664cf85c4f8e057e393e4e95d5aa0209596237b2feae1f0c83c019c848a",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "specs/IMPL-云本地存储-实现级设计.md",
-      "bytes": 52083,
-      "sha256": "1da21da76c2b725e8784be7393e595312cc4078e92b5e82367ec8cac3304dd48",
-      "origin": "unchanged source"
-    },
-    {
       "path": "specs/IMPL-PWA移动低配适配-实现级设计.md",
       "bytes": 11780,
       "sha256": "3f5defba8daeed39b80eb3ac49796eb03172398735ccff73a23ebbe4f762df31",
@@ -2019,6 +2199,60 @@
       "path": "specs/IMPL-UI高保真还原-实现级设计.md",
       "bytes": 18392,
       "sha256": "98401232a1d4eb98dcf21e976b3c023c8dec0cb4707986e97e6c4314e181ff63",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-三语言真实执行-实现级设计.md",
+      "bytes": 58820,
+      "sha256": "fbf552bcd90cf779a6d1eed019ecbc449afe307d6e7fee9385d1c1407ef311ae",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-云本地存储-实现级设计.md",
+      "bytes": 52083,
+      "sha256": "1da21da76c2b725e8784be7393e595312cc4078e92b5e82367ec8cac3304dd48",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-双AI导师智能体-实现级设计.md",
+      "bytes": 61380,
+      "sha256": "a16f5664cf85c4f8e057e393e4e95d5aa0209596237b2feae1f0c83c019c848a",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-双模编辑器-实现级设计.md",
+      "bytes": 52272,
+      "sha256": "d183a455bf71f2e971af30c02e549e4fac347a5442bdae3c285b730a24049e3c",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-师生分离登录-实现级设计.md",
+      "bytes": 58366,
+      "sha256": "d37076c361abbdc0db62ab7d751474348a71f336c9e59bd87671cc5bda025356",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-教师预警工作台-实现级设计.md",
+      "bytes": 47676,
+      "sha256": "2c33f9951d1955366ab9c52d8ea7026e0178790df9eab83829e453d665405510",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-数据安全合规-实现级设计.md",
+      "bytes": 62226,
+      "sha256": "ca365a832f42548ec9e0df359d6126d5327b621f5064c5497061ebdb745109c4",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-流程图伪代码设计工具-实现级设计.md",
+      "bytes": 51298,
+      "sha256": "3cbd358905d88ecbc7f57ea7288eb686f58dd19b57f7663bbb5834a316d0a3ab",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "specs/IMPL-计算思维六维评价-实现级设计.md",
+      "bytes": 69736,
+      "sha256": "632dd924c589ae63a3c380bc45e7fbf4469b091fbaf0983d1fc50165f7abf735",
       "origin": "unchanged source"
     },
     {
@@ -2700,21 +2934,9 @@
       "origin": "unchanged source"
     },
     {
-      "path": "UI瓷片区样式.jpg",
-      "bytes": 73779,
-      "sha256": "2d11b956a70d1be86d8f37535e4c8ec86ecd846d5035e5a9b20b530d41cd07ee",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "UI升级路线-简约化与趣味化.md",
-      "bytes": 86448,
-      "sha256": "4e7dd7c5ea5cf8be589195f95ebd0ba8b4b8570c83619837db99778173eba137",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "V2前端升级优化路线-review.md",
-      "bytes": 295829,
-      "sha256": "30ea465b55c2ba6038652543fe7b58ce0654f326278a555fa3c566542c2780e6",
+      "path": "web/.gitignore",
+      "bytes": 247,
+      "sha256": "4b32368ada33f19ee8c5ca75c4c6d567d7961073a1a91828c680debb7293beaa",
       "origin": "unchanged source"
     },
     {
@@ -2733,12 +2955,6 @@
       "path": "web/_widget_body.html",
       "bytes": 25283,
       "sha256": "49ecabcb2ea331cd6d6f8c51fb0f189749c68e769bee2b21c2b17212b3be7c22",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/.gitignore",
-      "bytes": 247,
-      "sha256": "4b32368ada33f19ee8c5ca75c4c6d567d7961073a1a91828c680debb7293beaa",
       "origin": "unchanged source"
     },
     {
@@ -3186,6 +3402,12 @@
       "origin": "unchanged source"
     },
     {
+      "path": "web/src/App.vue",
+      "bytes": 1196,
+      "sha256": "2a0676eae335ed64c965f82511ed7bbe6f85d9867643ea1d5c7e03d5832b72cb",
+      "origin": "unchanged source"
+    },
+    {
       "path": "web/src/api/ai.ts",
       "bytes": 2434,
       "sha256": "d7a5caeb678c90038ab3f2cbc7cde9327309ee8fbe21900ec61d0556f57d6e47",
@@ -3291,12 +3513,6 @@
       "path": "web/src/api/teacher.ts",
       "bytes": 2293,
       "sha256": "f5bd28860db06cd5779a1e2d380de06afdfd24d9f220f1071f6c1b3870c7d33d",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/src/App.vue",
-      "bytes": 1196,
-      "sha256": "2a0676eae335ed64c965f82511ed7bbe6f85d9867643ea1d5c7e03d5832b72cb",
       "origin": "unchanged source"
     },
     {
@@ -3588,18 +3804,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/assets/generated/mate_fox_cheer.png",
-      "bytes": 183107,
-      "sha256": "34358534196d5d116b3164cda02ba700febe6cdfab7bb1a9c0c9286f9df93cb3",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/src/assets/generated/mate_fox_cheer.webp",
-      "bytes": 35464,
-      "sha256": "0c7f306dd25e2363759104e9731fb512e367d336dae290a160ea9a071567b267",
-      "origin": "unchanged source"
-    },
-    {
       "path": "web/src/assets/generated/mate_fox.png",
       "bytes": 182569,
       "sha256": "dd95d3229c89b9192cfc96a33d5f4743e688edaff96caa624084075681df77c5",
@@ -3612,15 +3816,15 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/assets/generated/mate_owl_think.png",
-      "bytes": 148284,
-      "sha256": "432e99f7a0bf168ed196c8a744592ff4e31cade0de3ecad8edffd5de215e3eec",
+      "path": "web/src/assets/generated/mate_fox_cheer.png",
+      "bytes": 183107,
+      "sha256": "34358534196d5d116b3164cda02ba700febe6cdfab7bb1a9c0c9286f9df93cb3",
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/assets/generated/mate_owl_think.webp",
-      "bytes": 22900,
-      "sha256": "ef5eeade387e6cdd93e0cfa67b2ed0ed50757b0e78a067c2ffe71292be510139",
+      "path": "web/src/assets/generated/mate_fox_cheer.webp",
+      "bytes": 35464,
+      "sha256": "0c7f306dd25e2363759104e9731fb512e367d336dae290a160ea9a071567b267",
       "origin": "unchanged source"
     },
     {
@@ -3633,6 +3837,18 @@
       "path": "web/src/assets/generated/mate_owl.webp",
       "bytes": 26218,
       "sha256": "de23a9b457689a61b4e6b425df274846ae8a4a5df7f9d2e37288c62601197132",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/assets/generated/mate_owl_think.png",
+      "bytes": 148284,
+      "sha256": "432e99f7a0bf168ed196c8a744592ff4e31cade0de3ecad8edffd5de215e3eec",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/assets/generated/mate_owl_think.webp",
+      "bytes": 22900,
+      "sha256": "ef5eeade387e6cdd93e0cfa67b2ed0ed50757b0e78a067c2ffe71292be510139",
       "origin": "unchanged source"
     },
     {
@@ -3882,12 +4098,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/components/student/assessment/assessment-center.css",
-      "bytes": 17230,
-      "sha256": "a285d116783e0c2d2728e96f0f4717f74a728c6a3f92572c3c67b775973dcb75",
-      "origin": "unchanged source"
-    },
-    {
       "path": "web/src/components/student/assessment/AssessmentDetailDrawer.vue",
       "bytes": 37808,
       "sha256": "13ff367447dca26dd7bd170266b6e4c6c50a3dc74fc05499b91f74fa6921dc11",
@@ -3915,6 +4125,12 @@
       "path": "web/src/components/student/assessment/AssessmentResearchPanel.vue",
       "bytes": 3652,
       "sha256": "24569d5fdbb674108fce31ad5a876cab5858f391a0adca9d6f171773730bf3a8",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/components/student/assessment/assessment-center.css",
+      "bytes": 17230,
+      "sha256": "a285d116783e0c2d2728e96f0f4717f74a728c6a3f92572c3c67b775973dcb75",
       "origin": "unchanged source"
     },
     {
@@ -3954,12 +4170,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/components/student/my-data/covers.ts",
-      "bytes": 1263,
-      "sha256": "5f0c22de70e67cbd1415e40df3148bc7bc1a0b142f16865100eb4134779dd25f",
-      "origin": "unchanged source"
-    },
-    {
       "path": "web/src/components/student/my-data/DataCategories.vue",
       "bytes": 10470,
       "sha256": "2464fcf2364c248a8e6c55a571ac880552cb0a5a8a8a6232b46bad8b02f7148c",
@@ -3984,18 +4194,6 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/components/student/my-data/demo-data.json",
-      "bytes": 7615,
-      "sha256": "9f982c0b42ce8c3253842f1e1c7f200cf62e18123c03b5e9cd1bfe4d138aa0b2",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/src/components/student/my-data/model.ts",
-      "bytes": 2700,
-      "sha256": "00eeb1931d49fcd0c39f8041a276fdfb0ae55687a08c3ac83ae8d335969e84a6",
-      "origin": "unchanged source"
-    },
-    {
       "path": "web/src/components/student/my-data/ProjectCover.vue",
       "bytes": 1894,
       "sha256": "2b8e31e5f3aae961cd03f6921d8c469024567ad3ae755186f4522e53a855c0ce",
@@ -4005,6 +4203,24 @@
       "path": "web/src/components/student/my-data/ProjectDetail.vue",
       "bytes": 25049,
       "sha256": "cec3c88802021d47569d3818f5e46d80fbd31746a650efc40a5d6a2c6b226154",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/components/student/my-data/covers.ts",
+      "bytes": 1263,
+      "sha256": "5f0c22de70e67cbd1415e40df3148bc7bc1a0b142f16865100eb4134779dd25f",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/components/student/my-data/demo-data.json",
+      "bytes": 7615,
+      "sha256": "9f982c0b42ce8c3253842f1e1c7f200cf62e18123c03b5e9cd1bfe4d138aa0b2",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/components/student/my-data/model.ts",
+      "bytes": 2700,
+      "sha256": "00eeb1931d49fcd0c39f8041a276fdfb0ae55687a08c3ac83ae8d335969e84a6",
       "origin": "unchanged source"
     },
     {
@@ -4272,6 +4488,12 @@
       "origin": "unchanged source"
     },
     {
+      "path": "web/src/showcase/ShowcaseApp.vue",
+      "bytes": 4072,
+      "sha256": "1e75d2cd8cf252c50853bb3c6fb4cbe33acba3b5f4732e9d0c8e9a935f6ef8a2",
+      "origin": "unchanged source"
+    },
+    {
       "path": "web/src/showcase/auth.ts",
       "bytes": 1490,
       "sha256": "8bb7e3d2b36d039b0f92238d370af4b96a5135fbf8ddf9a7a972212e4f48b6d5",
@@ -4299,12 +4521,6 @@
       "path": "web/src/showcase/python.ts",
       "bytes": 411,
       "sha256": "089d02baf493834179e3c4ab5e2f3f4ecc56d8f9f2c5be20ce636fe70ba4cbc9",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/src/showcase/ShowcaseApp.vue",
-      "bytes": 4072,
-      "sha256": "1e75d2cd8cf252c50853bb3c6fb4cbe33acba3b5f4732e9d0c8e9a935f6ef8a2",
       "origin": "unchanged source"
     },
     {
@@ -4380,15 +4596,15 @@
       "origin": "unchanged source"
     },
     {
-      "path": "web/src/views/student/AssessmentView.vue",
-      "bytes": 13125,
-      "sha256": "f0197cb4785e8d2f554db832a3756a67e2f5765d231b447b0886d473af0f8f50",
-      "origin": "unchanged source"
-    },
-    {
       "path": "web/src/views/student/AssessTasksView.vue",
       "bytes": 4233,
       "sha256": "e63ad9c25dafbcf3afd6dca58c6053f6c607d6ca23ccda602f6c2acb6aa6b809",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/views/student/AssessmentView.vue",
+      "bytes": 13125,
+      "sha256": "f0197cb4785e8d2f554db832a3756a67e2f5765d231b447b0886d473af0f8f50",
       "origin": "unchanged source"
     },
     {
@@ -4431,6 +4647,12 @@
       "path": "web/src/views/student/WorkbenchView.vue",
       "bytes": 28036,
       "sha256": "5a46485f401a3abbc6b40971afb18a13ccf8245f0d3cb75c9f708d4db89ecbfa",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "web/src/views/teacher/StageStub.vue",
+      "bytes": 1220,
+      "sha256": "b2e1d66841dbdfb134948a0bbf184642db935f045502d8c15222586d8e6d6d6a",
       "origin": "unchanged source"
     },
     {
@@ -4479,12 +4701,6 @@
       "path": "web/src/views/teacher/research/StudyView.vue",
       "bytes": 20000,
       "sha256": "343b931fadb6264ed5e9da8d641667c8c6fede2ab0db2f8944567d604b2090bc",
-      "origin": "unchanged source"
-    },
-    {
-      "path": "web/src/views/teacher/StageStub.vue",
-      "bytes": 1220,
-      "sha256": "b2e1d66841dbdfb134948a0bbf184642db935f045502d8c15222586d8e6d6d6a",
       "origin": "unchanged source"
     },
     {
@@ -4641,6 +4857,66 @@
       "path": "web/vite.config.ts",
       "bytes": 1665,
       "sha256": "a1c242f0a67262d0518714e54f2cf8eba30846dde8123ea5cdbdca436747ec0c",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "交付包-UI生图与Codex全栈开发.md",
+      "bytes": 243945,
+      "sha256": "2d7a58dd7d18d70f6935e1ee683683c08761027972f7d21f1a106e5b5497c1ad",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "前端UI升级优化方案-review.md",
+      "bytes": 17486,
+      "sha256": "ef18287f821177e4bb488514eebfa4bb9dca5ffb50649e534befc2ea9828c3f3",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "启动平台.ps1",
+      "bytes": 2675,
+      "sha256": "05d27eb07eb7abddbce33f822fd2aa590f7c6d54768a784f80b656f792f348ab",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "学生用户界面.png",
+      "bytes": 686779,
+      "sha256": "93bb244cb99edf0740f9889cf83337ec7fabe1900e7fe14f5e2c0826dc8eb71f",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "开发实施总纲与进度日志.md",
+      "bytes": 103495,
+      "sha256": "1ef5792fdca15aef4bf15d5e40bd3be63776519cb6a26283df72bb258617c562",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "教师后端界面.jpg",
+      "bytes": 95077,
+      "sha256": "24649a573dd17dba8556efa2be0f1ae12bf2c4d82b129ef911ca02d3c200faf0",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "教师后端界面2.jpg",
+      "bytes": 38364,
+      "sha256": "4aba0107c4897de3f12bc334efc1694a29dcc35aa2f161939c3992231f3a712e",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "教研页设计-量规与报告.md",
+      "bytes": 56702,
+      "sha256": "aa8f9a95d094726202c8fd285b8c47761198c0117443e7d6f1f3422b04d66c26",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "登录界面.png",
+      "bytes": 731791,
+      "sha256": "9141ffec840950dc8d72eb869698bcee28d971d66a5210dcb31c2e232a7f2add",
+      "origin": "unchanged source"
+    },
+    {
+      "path": "补充与优化升级_开发计划书与技术路线.md",
+      "bytes": 30969,
+      "sha256": "8fe1bfbe6708a2ba7b3f6db9f58ccb1f63453d06f06ba3386d5bb084c7ba74d6",
       "origin": "unchanged source"
     }
   ]

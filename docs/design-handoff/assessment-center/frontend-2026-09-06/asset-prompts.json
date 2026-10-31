@@ -1,0 +1,38 @@
+[
+  {
+    "id": "school-temperature",
+    "prompt": "Use case: stylized-concept. Asset type: production cutout illustration for a Chinese children's educational web app. Reference image is STYLE AND SUBJECT reference only, not an edit target. Only the schoolhouse and thermometer illustration on the left of the task panel. A tiny ivory schoolhouse with coral roof, pale blue windows, round clock, tall thermometer at left, peach flower pot, small lavender foliage replacing green foliage. Recreate faithful silhouette, proportions and soft-plastic clay 3D style of that object from the reference. Generate a SINGLE standalone object, centered, complete, generous 12 percent margin, no UI or canvas or text. Ultra high resolution 2048 square requested. Smooth rounded bevels, subtle ambient occlusion, soft upper-left studio light, ivory/lavender/coral palette. Background must be perfectly uniform pure chroma key green #00ff00 including corners, no green spill, no gradient, no ground plane, no drop shadow outside the object. No saturated green on the object, no lettering, no watermark. Only this specified illustration.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/school-temperature.png"
+  },
+  {
+    "id": "calendar-clock",
+    "prompt": "Use case: stylized-concept. Asset type: production cutout illustration for a Chinese children's educational web app. Reference image is STYLE AND SUBJECT reference only, not an edit target. Only the desk calendar and tiny clock in the upper lavender ribbon. Ivory desk calendar, thick lavender binder rings and header, raised orange square dates, lavender clock at lower right. No numerals. Recreate faithful silhouette, proportions and soft-plastic clay 3D style of that object from the reference. Generate a SINGLE standalone object, centered, complete, generous 12 percent margin, no UI or canvas or text. Ultra high resolution 2048 square requested. Smooth rounded bevels, subtle ambient occlusion, soft upper-left studio light, ivory/lavender/coral palette. Background must be perfectly uniform pure chroma key green #00ff00 including corners, no green spill, no gradient, no ground plane, no drop shadow outside the object. No saturated green on the object, no lettering, no watermark. Only this specified illustration.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/calendar-clock.png"
+  },
+  {
+    "id": "checked-notebook",
+    "prompt": "Use case: stylized-concept. Asset type: production cutout illustration for a Chinese children's educational web app. Reference image is STYLE AND SUBJECT reference only, not an edit target. Only the checked spiral notebook illustration in the first learning-before row. Ivory rounded notebook pages on warm orange base, gray binder rings at left, one large low-saturation pale blue-mint raised checkmark. Checkmark must NOT be vivid green. Recreate faithful silhouette, proportions and soft-plastic clay 3D style of that object from the reference. Generate a SINGLE standalone object, centered, complete, generous 12 percent margin, no UI or canvas or text. Ultra high resolution 2048 square requested. Smooth rounded bevels, subtle ambient occlusion, soft upper-left studio light, ivory/lavender/coral palette. Background must be perfectly uniform pure chroma key green #00ff00 including corners, no green spill, no gradient, no ground plane, no drop shadow outside the object. No saturated green on the object, no lettering, no watermark. Only this specified illustration.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/checked-notebook.png"
+  },
+  {
+    "id": "book-pencil",
+    "prompt": "Use case: stylized-concept. Production cutout for a child-friendly Chinese education web app, match a warm ivory and lavender soft-plastic 3D toy-clay illustration system. Subject: A small thick lavender closed exercise notebook with cream rounded pages and a peach/coral pencil resting diagonally on the cover. Simple recognisable silhouette, no lettering, three-quarter front view. One standalone object group centered on perfectly uniform pure chroma-key green #00FF00 background with 15% clear margin. Background no shadows, no gradients, no ground plane, no green spill; object no green material. Soft rounded bevels, matte premium plastic, subtle ambient occlusion only on object, soft upper-left studio light. No UI, no panels, no text, no watermark. Request ultra-high resolution 2048 square. Entire object visible and clear even at 48 pixels.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/book-pencil.png"
+  },
+  {
+    "id": "book-magnifier",
+    "prompt": "Use case: stylized-concept. Production cutout for a child-friendly Chinese education web app, match a warm ivory and lavender soft-plastic 3D toy-clay illustration system. Subject: A small open cream book with lavender cover, and a lilac magnifying glass resting over one page. Simple recognisable silhouette, three-quarter front view, no letters on pages. One standalone object group centered on perfectly uniform pure chroma-key green #00FF00 background with 15% clear margin. Background no shadows, no gradients, no ground plane, no green spill; object no green material. Soft rounded bevels, matte premium plastic, subtle ambient occlusion only on object, soft upper-left studio light. No UI, no panels, no text, no watermark. Request ultra-high resolution 2048 square. Entire object visible and clear even at 48 pixels.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/book-magnifier.png"
+  },
+  {
+    "id": "soft-pencil",
+    "prompt": "Use case: stylized-concept. Production cutout for a child-friendly Chinese education web app, match a warm ivory and lavender soft-plastic 3D toy-clay illustration system. Subject: A single short chunky peach/coral pencil with cream wooden tip and graphite point, lavender eraser, diagonal from bottom-left to top-right. Simple recognisable silhouette. One standalone object group centered on perfectly uniform pure chroma-key green #00FF00 background with 15% clear margin. Background no shadows, no gradients, no ground plane, no green spill; object no green material. Soft rounded bevels, matte premium plastic, subtle ambient occlusion only on object, soft upper-left studio light. No UI, no panels, no text, no watermark. Request ultra-high resolution 2048 square. Entire object visible and clear even at 48 pixels.",
+    "generator": "builtin imagegen",
+    "target": "web/public/generated/assessment-center-v1/soft-pencil.png"
+  }
+]

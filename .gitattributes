@@ -1,0 +1,7 @@
+# Preserve reviewed binary deliverables without line-ending conversion.
+docs/brochures/archive/*.pdf binary
+docs/brochures/assets/*.png binary
+docs/design-handoff/**/*.png binary
+docs/acceptance-history/**/*.png binary
+# This is an archived patch, not a patch to apply; preserve original context spaces.
+docs/acceptance-history/**/scoped-review/*.diff -text -whitespace

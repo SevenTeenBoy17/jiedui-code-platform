@@ -1,0 +1,304 @@
+--- a/web/src/api/pairSessions.ts
++++ b/web/src/api/pairSessions.ts
+@@ -49,6 +49,7 @@
+ export function pairErrorText(error: { status?: number; code?: string }): string {
+   const code = error.code || ''
+   if (code === 'CONFIG_UNAVAILABLE') return '配置读取失败，发送已暂停。请重试读取。'
++  if (code === 'REQUEST_TIMEOUT') return '等待时间较长，结果暂未确认。请按页面提示查询状态或重新读取；不会自动重发。'
+   if (code === 'REQUEST_PENDING') return '结果未确认：请求仍在处理中。请先查询状态，不要重复发送。'
+   if (code === 'REQUEST_RELEASED') return '服务端已处理本次请求，但本页没有收到正文。状态不代表已阅读；确认后可手动发起新问题。'
+   if (code === 'REQUEST_NOT_FOUND') return '未查到本次请求，未自动重发。可手动发起新问题。'
+@@ -74,26 +75,42 @@
+ 
+ const base = '/api/pair/sessions'
+ const idPath = (id: string) => encodeURIComponent(id)
+-async function request<T>(path: string, body?: object): Promise<T> {
+-  let result: Response
++async function request<T>(path: string, body?: object, timeoutMs = 15_000): Promise<T> {
++  const controller = new AbortController()
++  let timer: ReturnType<typeof setTimeout> | undefined
++  const deadline = new Promise<never>((_, reject) => {
++    timer = setTimeout(() => {
++      // Client expiry does not say whether the server completed this request.
++      // Reject first so an abort during body decoding still follows uncertainty recovery.
++      reject(new PairApiError(0, 'REQUEST_TIMEOUT'))
++      controller.abort()
++    }, timeoutMs)
++  })
++  const exchange = async (): Promise<T> => {
++    let result: Response
++    try {
++      const token = useAuthStore().token
++      result = await fetch(base + path, {
++        method: body ? 'POST' : 'GET',
++        headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
++        signal: controller.signal,
++        ...(body ? { body: JSON.stringify(body) } : {}),
++      })
++    } catch { throw new PairApiError(0, 'NETWORK_ERROR') }
++    let data: any
++    try { data = await result.json() } catch { throw new PairApiError(result.ok ? 0 : result.status, 'INVALID_RESPONSE') }
++    if (!result.ok) {
++      const detail = data?.detail
++      // Old M1a routes may still return Chinese/string errors, not a coded object.
++      const legacyCode = typeof detail === 'string' && /授权已撤回/.test(detail) ? 'CONSENT_REVOKED'
++        : typeof detail === 'string' && /需要有效的课堂数据授权|CONSENT_REQUIRED/.test(detail) ? 'CONSENT_REQUIRED' : 'REQUEST_REJECTED'
++      throw new PairApiError(result.status, typeof detail?.code === 'string' ? detail.code : legacyCode, detail?.receipt || null)
++    }
++    return data as T
++  }
+   try {
+-    const token = useAuthStore().token
+-    result = await fetch(base + path, {
+-      method: body ? 'POST' : 'GET',
+-      headers: { 'Content-Type': 'application/json', ...(token ? { Authorization: `Bearer ${token}` } : {}) },
+-      ...(body ? { body: JSON.stringify(body) } : {}),
+-    })
+-  } catch { throw new PairApiError(0, 'NETWORK_ERROR') }
+-  let data: any
+-  try { data = await result.json() } catch { throw new PairApiError(result.ok ? 0 : result.status, 'INVALID_RESPONSE') }
+-  if (!result.ok) {
+-    const detail = data?.detail
+-    // Old M1a routes may still return Chinese/string errors, not a coded object.
+-    const legacyCode = typeof detail === 'string' && /授权已撤回/.test(detail) ? 'CONSENT_REVOKED'
+-      : typeof detail === 'string' && /需要有效的课堂数据授权|CONSENT_REQUIRED/.test(detail) ? 'CONSENT_REQUIRED' : 'REQUEST_REJECTED'
+-    throw new PairApiError(result.status, typeof detail?.code === 'string' ? detail.code : legacyCode, detail?.receipt || null)
+-  }
+-  return data as T
++    return await Promise.race([exchange(), deadline])
++  } finally { clearTimeout(timer) }
+ }
+ 
+ export const pairSessionsApi = {
+@@ -108,6 +125,6 @@
+   openRound: (id: string, request_id: string) => request<PairRound>(`/${idPath(id)}/rounds`, { request_id }),
+   chat: (sid: string, rid: string, payload: PairChatRequest) => request<PairChatReply>(`/${idPath(sid)}/rounds/${idPath(rid)}/chat`, {
+     request_id: payload.request_id, message: payload.message, persona: payload.persona,
+-  }),
++  }, 90_000),
+   getRequestStatus: (sid: string, requestId: string) => request<PairReceipt>(`/${idPath(sid)}/ai-requests/${idPath(requestId)}`),
+ }
+--- a/web/src/views/student/StudioView.vue
++++ b/web/src/views/student/StudioView.vue
+@@ -616,6 +616,7 @@
+ .act:disabled { opacity: .4; cursor: not-allowed; }
+ .composer textarea { flex: 1; border: none; background: transparent; outline: none; resize: none;
+   font: inherit; font-size: var(--fs-base); min-width: 0; max-height: 96px; padding: 8px 4px; color: var(--color-text); }
++.composer textarea:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+ .send { width: 38px; height: 38px; border: none; border-radius: var(--r-pill); background: var(--on-accent-bg);
+   color: var(--on-accent-fg); cursor: pointer; flex-shrink: 0;
+   display: inline-flex; align-items: center; justify-content: center; }
+@@ -633,6 +634,7 @@
+ 
+ @media (max-width: 760px) {
+   .top, .composer { margin-left: var(--sp-2); margin-right: var(--sp-2); }
++  .composer textarea { line-height: 1.6; min-height: calc(3.2em + 16px); }
+   .body { padding-left: var(--sp-2); padding-right: var(--sp-2); }
+   .bubble { max-width: 86%; }
+ }
+--- a/web/tests/trusted-pair-context.contract.cjs
++++ b/web/tests/trusted-pair-context.contract.cjs
+@@ -54,7 +54,7 @@
+     if (read) return response(options.session || session(read[1]))
+     throw new Error(`Unexpected synthetic request: ${url}`)
+   }
+-  const globals = { console, fetch, crypto: { randomUUID: () => `synthetic-${++serial}` }, window: browser,
++  const globals = { console, fetch, AbortController, crypto: { randomUUID: () => `synthetic-${++serial}` }, window: browser,
+     document: browser, setTimeout: () => 0, clearTimeout() {},
+     localStorage: { getItem: k => storage.get(k) ?? null, setItem: (k, v) => storage.set(k, v), removeItem: k => storage.delete(k) } }
+   function load(name) {
+--- a/web/tests/pair-deadline.contract.cjs
++++ b/web/tests/pair-deadline.contract.cjs
+@@ -0,0 +1,192 @@
++// Executes the real API and composable; only transport, clock and auth/lifecycle boundaries are controlled.
++const { test } = require('node:test')
++const assert = require('node:assert/strict')
++const fs = require('node:fs')
++const path = require('node:path')
++const vm = require('node:vm')
++const ts = require('typescript')
++const vue = require('vue')
++const root = path.resolve(__dirname, '../src')
++const flush = async () => { for (let i = 0; i < 8; i++) await Promise.resolve(); await new Promise(setImmediate) }
++const deferred = () => { let resolve; const promise = new Promise(r => { resolve = r }); return { promise, resolve } }
++const response = (value, status = 200) => ({ ok: status >= 200 && status < 300, status, json: async () => value })
++const request = { request_id: 'synthetic-request', message: '合成问题', persona: 'guide' }
++function observe(promise) {
++  const state = { done: false, value: undefined, error: undefined }
++  promise.then(value => { state.value = value; state.done = true }, error => { state.error = error; state.done = true })
++  return state
++}
++function clock() {
++  let now = 0, serial = 0
++  const jobs = new Map()
++  return {
++    setTimeout(fn, delay) { const id = ++serial; jobs.set(id, { at: now + delay, fn }); return id },
++    clearTimeout(id) { jobs.delete(id) },
++    get pending() { return jobs.size },
++    async advance(ms) {
++      const target = now + ms
++      while (true) {
++        const next = [...jobs.entries()].filter(([, job]) => job.at <= target).sort((a, b) => a[1].at - b[1].at)[0]
++        if (!next) break
++        now = next[1].at; jobs.delete(next[0]); next[1].fn(); await flush()
++      }
++      now = target; await flush()
++    },
++  }
++}
++function fixture(t, transport) {
++  const time = clock(), calls = [], cache = new Map(), cleanups = []
++  const auth = vue.reactive({ token: 'synthetic-token', user: { id: 'synthetic-student' } })
++  const life = { ...vue, onUnmounted: callback => cleanups.push(callback) }
++  let serial = 0
++  const fetch = async (url, init) => { const call = { url, init, body: init.body ? JSON.parse(init.body) : null }; calls.push(call); return transport(call) }
++  function load(name) {
++    if (name === '@/stores/auth') return { useAuthStore: () => auth }
++    if (name === 'vue') return life
++    if (cache.has(name)) return cache.get(name)
++    const filename = path.join(root, name.slice(2) + '.ts'), exports = {}
++    cache.set(name, exports)
++    const js = ts.transpileModule(fs.readFileSync(filename, 'utf8'), { compilerOptions: { target: ts.ScriptTarget.ES2022, module: ts.ModuleKind.CommonJS } }).outputText
++    vm.runInNewContext(js, { require: load, exports, fetch, AbortController, setTimeout: time.setTimeout, clearTimeout: time.clearTimeout,
++      crypto: { randomUUID: () => `synthetic-${++serial}` } }, { filename })
++    return exports
++  }
++  const apiModule = load('@/api/pairSessions')
++  function context() {
++    const selected = vue.ref('A'), scope = vue.effectScope()
++    const state = scope.run(() => load('@/composables/useTrustedPairContext').useTrustedPairContext({
++      actor: () => auth.user.id, token: () => auth.token, sessionId: () => selected.value, onContextChange() {},
++    }))
++    t.after(() => { cleanups.forEach(fn => fn()); scope.stop() })
++    return { state, selected }
++  }
++  return { api: apiModule.pairSessionsApi, ApiError: apiModule.PairApiError, errorText: apiModule.pairErrorText, time, calls, auth, context }
++}
++const caps = { mode: 'trusted_required', trusted_chat_enabled: true, trusted_image_enabled: false, history_mode: 'current_question_only' }
++function session(id) {
++  return { session_id: id, task_snapshot: { title: '合成任务' }, human_role: 'driver', status: 'active', project_id: 1,
++    ai_policy: { scaffold: 1, socratic: false, policy_hash: 'synthetic-policy' }, actions: { can_chat: true, can_open_round: false, reason_code: null },
++    rounds: [{ round_id: `round-${id}`, ended_at: null }] }
++}
++function metadata(call) {
++  if (call.url.endsWith('/capabilities')) return response(caps)
++  const match = call.url.match(/\/sessions\/([AB])$/)
++  if (match) return response(session(match[1]))
++  throw new Error(`Unexpected synthetic route ${call.url}`)
++}
++function success(call) {
++  const match = call.url.match(/\/sessions\/([^/]+)\/rounds\/([^/]+)\/chat$/)
++  return { reply: '合成结果', source: 'fallback', receipt: { status: 'released', request_id: call.body.request_id, session_id: match[1], round_id: match[2] } }
++}
++
++test('chat expires at 90 seconds even when the transport never settles, without another POST', async t => {
++  const h = fixture(t, () => new Promise(() => {})), out = observe(h.api.chat('A', 'round-A', request))
++  await h.time.advance(89999); assert.equal(out.done, false)
++  await h.time.advance(1)
++  assert.equal(out.done, true, 'a hanging chat must stop waiting at its deadline')
++  assert.equal(out.error.status, 0); assert.equal(out.error.code, 'REQUEST_TIMEOUT')
++  assert.equal(h.errorText(out.error), '等待时间较长，结果暂未确认。请按页面提示查询状态或重新读取；不会自动重发。')
++  assert.equal(h.calls[0].init.signal.aborted, true); assert.equal(h.calls.length, 1); assert.equal(h.time.pending, 0)
++})
++
++for (const [name, invoke] of [
++  ['capabilities', api => api.getCapabilities()], ['available sessions', api => api.getAvailableSessions()],
++  ['selected session', api => api.getSession('A')], ['open round', api => api.openRound('A', 'synthetic-open')],
++  ['receipt query', api => api.getRequestStatus('A', 'synthetic-request')],
++]) test(`${name} expires at 15 seconds without replay`, async t => {
++  const h = fixture(t, () => new Promise(() => {})), out = observe(invoke(h.api))
++  await h.time.advance(14999); assert.equal(out.done, false)
++  await h.time.advance(1); assert.equal(out.done, true, `${name} cannot remain pending indefinitely`)
++  assert.equal(out.error.status, 0); assert.equal(out.error.code, 'REQUEST_TIMEOUT')
++  assert.equal(h.calls.length, 1); assert.equal(h.calls[0].init.signal.aborted, true); assert.equal(h.time.pending, 0)
++})
++
++test('chat deadline includes body reading and is not reset after late headers', async t => {
++  const headers = deferred(), body = deferred(), h = fixture(t, () => headers.promise)
++  const out = observe(h.api.chat('A', 'round-A', request))
++  await h.time.advance(89000); headers.resolve({ ok: true, status: 200, json: () => body.promise }); await flush()
++  await h.time.advance(999); assert.equal(out.done, false)
++  await h.time.advance(1); assert.equal(out.done, true, 'partial bodies share the original request budget')
++  assert.equal(out.error.status, 0); assert.equal(out.error.code, 'REQUEST_TIMEOUT'); assert.equal(h.time.pending, 0)
++  body.resolve({ reply: 'late body must not replace timeout' }); await flush()
++  assert.equal(out.value, undefined); assert.equal(h.calls.length, 1)
++})
++
++test('completed requests clean their deadline without later aborting their signal', async t => {
++  const h = fixture(t, () => response({ session_id: 'A' }))
++  assert.equal((await h.api.getSession('A')).session_id, 'A')
++  assert.equal(h.time.pending, 0)
++  await h.time.advance(100000)
++  assert.equal(h.calls[0].init.signal?.aborted, false, 'successful requests must have a live, cleaned signal')
++  assert.equal(h.calls.length, 1)
++})
++
++test('HTTP rejection preserves coded recovery and receipt but never exposes arbitrary detail', async t => {
++  const receipt = { session_id: 'A', round_id: 'round-A', request_id: request.request_id, status: 'failed', reason_code: 'OUTPUT_CONSTRAINT_FAILED' }
++  const h = fixture(t, () => response({ detail: { code: 'OUTPUT_CONSTRAINT_FAILED', message: 'SYNTHETIC_PRIVATE_PROVIDER_DETAIL', receipt } }, 422))
++  await assert.rejects(h.api.chat('A', 'round-A', request), e => e instanceof h.ApiError && e.status === 422 && e.code === 'OUTPUT_CONSTRAINT_FAILED' && e.receipt.request_id === request.request_id && !h.errorText(e).includes('SYNTHETIC_PRIVATE'))
++  assert.equal(h.time.pending, 0)
++})
++
++test('body decoding and network errors remain sanitized and clear their timers', async t => {
++  for (const [transport, expected] of [
++    [() => Promise.reject(new Error('SYNTHETIC_NETWORK_SECRET')), 'NETWORK_ERROR'],
++    [() => ({ ok: true, status: 200, json: async () => { throw new Error('SYNTHETIC_BODY_SECRET') } }), 'INVALID_RESPONSE'],
++  ]) {
++    const h = fixture(t, transport)
++    await assert.rejects(h.api.getSession('A'), e => e.status === 0 && e.code === expected && !e.message.includes('SECRET'))
++    assert.equal(h.time.pending, 0)
++  }
++})
++
++test('one receipt timeout does not abort a simultaneous chat', async t => {
++  const chat = deferred(), h = fixture(t, call => call.url.endsWith('/chat') ? chat.promise : new Promise(() => {}))
++  const chatOut = observe(h.api.chat('A', 'round-A', request)), queryOut = observe(h.api.getRequestStatus('A', 'other-request'))
++  await h.time.advance(15000)
++  assert.equal(queryOut.done, true); assert.equal(queryOut.error.status, 0); assert.equal(chatOut.done, false)
++  assert.equal(h.calls[0].init.signal.aborted, false); assert.equal(h.calls[1].init.signal.aborted, true)
++  chat.resolve(response(success(h.calls[0]))); await flush()
++  assert.equal(chatOut.value.receipt.status, 'released'); assert.equal(h.time.pending, 0)
++})
++
++test('chat timeout enters the real composable pending query path and permits only a fresh explicit question after failure', async t => {
++  let terminal = false
++  const h = fixture(t, call => {
++    if (call.url.endsWith('/chat')) return new Promise(() => {})
++    if (call.url.includes('/ai-requests/')) return response({ session_id: 'A', round_id: 'round-A', request_id: 'synthetic-1',
++      status: terminal ? 'failed' : 'pending', ...(terminal ? { reason_code: 'OUTPUT_CONSTRAINT_FAILED' } : {}) })
++    return metadata(call)
++  })
++  const { state } = h.context(); await flush(); assert.equal(state.canSend.value, true)
++  const out = observe(state.send('合成问题', 'guide')); await flush(); await h.time.advance(90000)
++  assert.equal(out.done, true); assert.equal(state.error.value.code, 'REQUEST_PENDING'); assert.equal(state.canSend.value, false)
++  assert.equal(h.calls.filter(c => c.url.endsWith('/chat')).length, 1); assert.equal(h.calls.filter(c => c.url.includes('/ai-requests/')).length, 1)
++  await state.send('不得重复发送', 'guide'); assert.equal(h.calls.filter(c => c.url.endsWith('/chat')).length, 1)
++  terminal = true; await state.checkRequestStatus()
++  assert.equal(state.error.value.code, 'OUTPUT_CONSTRAINT_FAILED'); assert.equal(state.uncertain.value, null); assert.equal(state.canSend.value, true)
++  assert.equal(h.calls.filter(c => c.url.endsWith('/chat')).length, 1); assert.equal(h.time.pending, 0)
++})
++
++test('a timed-out status lookup clears busy state but keeps uncertainty and never reposts', async t => {
++  const h = fixture(t, call => call.url.endsWith('/chat') || call.url.includes('/ai-requests/') ? new Promise(() => {}) : metadata(call))
++  const { state } = h.context(); await flush()
++  const out = observe(state.send('合成问题', 'guide')); await h.time.advance(90000)
++  assert.equal(state.checkingStatus.value, true)
++  await h.time.advance(15000)
++  assert.equal(out.done, true); assert.equal(state.busy.value, false); assert.equal(state.checkingStatus.value, false)
++  assert.equal(state.uncertain.value.requestId, 'synthetic-1'); assert.equal(state.canSend.value, false); assert.equal(state.error.value.status, 0)
++  assert.equal(h.calls.filter(c => c.url.endsWith('/chat')).length, 1); assert.equal(h.time.pending, 0)
++})
++
++test('an old-session deadline cannot query its receipt or clear a newer pending chat', async t => {
++  const b = deferred(), h = fixture(t, call => call.url.endsWith('/chat') ? (call.url.includes('/sessions/A/') ? new Promise(() => {}) : b.promise) : metadata(call))
++  const { state, selected } = h.context(); await flush()
++  const old = observe(state.send('旧A问题', 'guide')); await h.time.advance(45000)
++  selected.value = 'B'; await flush(); const current = observe(state.send('新B问题', 'review')); await flush()
++  await h.time.advance(45000)
++  assert.equal(old.done, true); assert.equal(current.done, false); assert.equal(state.busy.value, true); assert.equal(state.error.value, null)
++  assert.equal(h.calls.filter(c => c.url.includes('/ai-requests/')).length, 0)
++  const bCall = h.calls.find(c => c.url.includes('/sessions/B/') && c.url.endsWith('/chat'))
++  b.resolve(response(success(bCall))); await flush()
++  assert.equal(current.value.receipt.session_id, 'B'); assert.equal(state.busy.value, false); assert.equal(h.time.pending, 0)
++})

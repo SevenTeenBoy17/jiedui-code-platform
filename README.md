@@ -78,6 +78,11 @@ node --test cloud/full-product/tests/*.test.mjs
 
 ## 交接导航
 
+- [补齐材料索引与范围](handoff/SUPPLEMENT-20261031.md)：设计蓝图、提示词、双册及历史评审原件。
+- [产品设计资料](docs/design-handoff/README.md)
+- [宣传册与可编辑制作源码](docs/brochures/README.md)
+- [可信 AI 与完整迁移历史验收](docs/acceptance-history/README.md)
+
 - [架构与接手顺序](handoff/ARCHITECTURE.md)
 - [安全边界与历史风险](SECURITY.md)
 - [本次交接检查](handoff/VALIDATION.md)
@@ -90,6 +95,6 @@ node --test cloud/full-product/tests/*.test.mjs
 
 保留源码、依赖锁文件、SQL 迁移、测试、部署配置、已审阅配置模板、文本产品文档，以及应用依赖的图片/图标/IP 资产。保持原相对路径，方便接手人员直接分析。
 
-不上传真实 `.env`、登录状态、数据库/备份、运行日志、缓存、依赖目录、可再生成的构建产物、未核验研究 DOCX/PDF、原始 QA 截图及第三方安装包。这些原件未被删除，仍在原本地目录；详见排除清单。项目内引用但当前缺失的 Pair-Agent constitution/screens 目录未伪造补齐。
+不上传真实 `.env`、登录状态、数据库/备份、运行日志、缓存、依赖目录、可再生成的构建产物、未核验研究 DOCX/PDF、未经审阅的原始 QA 截图及第三方安装包。2026-10-31 补充仅将经过审阅的本产品双册、必要截图及设计/验收文本单独归档，不整体上传工具目录。这些原件未被删除，仍在原本地目录；详见排除清单和补充材料索引。项目内引用但当前缺失的 Pair-Agent constitution/screens 目录未伪造补齐。
 
 未指定开源许可证；不得因为可访问仓库就推定获得商业再分发权。第三方包/参考资产仍遵守各自许可，`pm4py` 的 AGPL 使用应保持原隔离安排。协作者权限通过 GitHub 仓库邀请管理。

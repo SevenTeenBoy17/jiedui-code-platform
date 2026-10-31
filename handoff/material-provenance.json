@@ -1,0 +1,365 @@
+{
+  "createdAt": "2026-10-31T15:14:43.856Z",
+  "reviewedAuditItems": 27,
+  "directDependenciesAdded": 12,
+  "files": [
+    {
+      "source": ".agent-supervisor/project-covers-20260907/prompts.json",
+      "destination": "docs/design-handoff/project-covers-20260907/prompts.json",
+      "originalBytes": 6421,
+      "originalSha256": "9b933cdd0ccd7f6b32a86de7298a033548ba0771b08ceb71cc56724e8701e384",
+      "destinationBytes": 6421,
+      "destinationSha256": "9b933cdd0ccd7f6b32a86de7298a033548ba0771b08ceb71cc56724e8701e384",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/frontend-2026-09-06/asset-prompts.json",
+      "destination": "docs/design-handoff/assessment-center/frontend-2026-09-06/asset-prompts.json",
+      "originalBytes": 6682,
+      "originalSha256": "d715dffd9e8d31d4827e4ce3a9002817dd4bc300255a1b6bd3b90da3d8615888",
+      "destinationBytes": 6682,
+      "destinationSha256": "d715dffd9e8d31d4827e4ce3a9002817dd4bc300255a1b6bd3b90da3d8615888",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/blueprint.md",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/blueprint.md",
+      "originalBytes": 10139,
+      "originalSha256": "0917c01b4af49923d5963d57570176be7bcbd5bfe97de3a67d4e47dfd9224539",
+      "destinationBytes": 10507,
+      "destinationSha256": "3083738d9a6e5ec8b23cd174c78c22daac5281be7abdca828aeff34e2c0a6ad7",
+      "changed": true
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/prompts.md",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/prompts.md",
+      "originalBytes": 15354,
+      "originalSha256": "74b8567ad4a3e2d1423d582fe73033c15a8c4c83b39209c5e55fb149df55607a",
+      "destinationBytes": 15719,
+      "destinationSha256": "6d2bd2c5466a60c3f4ac09fc2575c698d11f45f372a6a9d03635421a481c9e7c",
+      "changed": true
+    },
+    {
+      "source": ".agent-supervisor/my-data/blue-v3-2026-09-06/design-brief.md",
+      "destination": "docs/design-handoff/my-data/blue-v3-2026-09-06/design-brief.md",
+      "originalBytes": 7987,
+      "originalSha256": "20713fb103a13c1f03b9d141ec9c19f8a5a5d925753c206005491f1b214470ca",
+      "destinationBytes": 8335,
+      "destinationSha256": "2075b3ca91a719967e5bb8ec70a0006cc9c0431f7c16ee4be1193f0f13a254d8",
+      "changed": true
+    },
+    {
+      "source": ".agent-supervisor/my-data/blue-v3-2026-09-06/prompts.json",
+      "destination": "docs/design-handoff/my-data/blue-v3-2026-09-06/prompts.json",
+      "originalBytes": 15197,
+      "originalSha256": "17e6fc152b8bbd2be90f4b238a4cd094731cdb81ef62d9220492923ebc1dee95",
+      "destinationBytes": 15197,
+      "destinationSha256": "17e6fc152b8bbd2be90f4b238a4cd094731cdb81ef62d9220492923ebc1dee95",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/pair-ip-20260908/blueprint.md",
+      "destination": "docs/design-handoff/pair-ip-20260908/blueprint.md",
+      "originalBytes": 7082,
+      "originalSha256": "3330b8e7a70a86d82e4132e732b2bcbf1570759df6f6dba4595f5c4f3b8e9354",
+      "destinationBytes": 7417,
+      "destinationSha256": "5af64ce0d4e0d544fa57857ad416e11a262a25f67471e3dffd21b71bf90b6176",
+      "changed": true
+    },
+    {
+      "source": ".superpowers/sdd/student-growth-experience-plan/task-1-report.md",
+      "destination": "docs/design-handoff/student-growth/task-1-report.md",
+      "originalBytes": 20684,
+      "originalSha256": "a4bd1fa22e9e26dbc694d1897d7baedb91d884a10dc5e09d7fc46bd4dc2fca9b",
+      "destinationBytes": 20980,
+      "destinationSha256": "7fe118b1821ef5cbeb256f83c80a6723134dcbace3d00c3beae556db615d64c3",
+      "changed": true
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/01-my-records.png",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/01-my-records.png",
+      "originalBytes": 1425426,
+      "originalSha256": "8ce58133a46caf9df8f595039caa49365bba97553e83199b707dc8ab23c8fa56",
+      "destinationBytes": 1425426,
+      "destinationSha256": "8ce58133a46caf9df8f595039caa49365bba97553e83199b707dc8ab23c8fa56",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/02-research-assessments.png",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/02-research-assessments.png",
+      "originalBytes": 1426824,
+      "originalSha256": "e7f2b15514bb08a5983e2cfd57d466c362e6a726933cd48992aace1dd4d0eb97",
+      "destinationBytes": 1426824,
+      "destinationSha256": "e7f2b15514bb08a5983e2cfd57d466c362e6a726933cd48992aace1dd4d0eb97",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/03-submission-feedback-drawer.png",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/03-submission-feedback-drawer.png",
+      "originalBytes": 1523689,
+      "originalSha256": "2491557ed244ede97b8f3c4f994727a3f6c5fb91ca348efd746998937092e6da",
+      "destinationBytes": 1523689,
+      "destinationSha256": "2491557ed244ede97b8f3c4f994727a3f6c5fb91ca348efd746998937092e6da",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/04-research-receipt-drawer.png",
+      "destination": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/04-research-receipt-drawer.png",
+      "originalBytes": 1581469,
+      "originalSha256": "a612d1bc1840c72048e62ec245138b4e02fcce027af01e47d7fd44cf09339d38",
+      "destinationBytes": 1581469,
+      "destinationSha256": "a612d1bc1840c72048e62ec245138b4e02fcce027af01e47d7fd44cf09339d38",
+      "changed": false
+    },
+    {
+      "source": "tmp/pdfs/product-brochures-20261013/build_brochures.py",
+      "destination": "docs/brochures/build_brochures.py",
+      "originalBytes": 25068,
+      "originalSha256": "6fb7260a2243acda682bceed430a5458ded668094a2eebd6ee1d8811b815ccca",
+      "destinationBytes": 25348,
+      "destinationSha256": "047ab7e593d2dbaa2d63972d95a259c44ecf049197d52f6d19c164a7db294e60",
+      "changed": true
+    },
+    {
+      "source": "tmp/pdfs/product-brochures-20261013/validate_brochures.py",
+      "destination": "docs/brochures/validate_brochures.py",
+      "originalBytes": 2028,
+      "originalSha256": "99f7ab05869ac0446f48994ecb03e5635d92556a7ac57c6f2df7fb2e00b5a418",
+      "destinationBytes": 2086,
+      "destinationSha256": "cc48d0638391c677fbe578ad3bb25c4133c9a9e55be504c4baa5cf66f6b6b02c",
+      "changed": true
+    },
+    {
+      "source": "output/pdf/结对编程智能体-产品介绍册.pdf",
+      "destination": "docs/brochures/archive/结对编程智能体-产品介绍册.pdf",
+      "originalBytes": 8021860,
+      "originalSha256": "059b2b297debe3ffabd71fb806487afd12d24c974d55c3a71760c3c8dfb7d74b",
+      "destinationBytes": 8021860,
+      "destinationSha256": "059b2b297debe3ffabd71fb806487afd12d24c974d55c3a71760c3c8dfb7d74b",
+      "changed": false
+    },
+    {
+      "source": "output/pdf/结对编程智能体-产品宣传册.pdf",
+      "destination": "docs/brochures/archive/结对编程智能体-产品宣传册.pdf",
+      "originalBytes": 6916288,
+      "originalSha256": "f55e6a9ec6e77c3d62c508fe7f0d58dc01dbeb70b131e6861e47776f0f28740a",
+      "destinationBytes": 6916288,
+      "destinationSha256": "f55e6a9ec6e77c3d62c508fe7f0d58dc01dbeb70b131e6861e47776f0f28740a",
+      "changed": false
+    },
+    {
+      "source": ".runtime/full-product-f1-closeout-20261014/f2-readiness-audit.md",
+      "destination": "docs/acceptance-history/full-product-f1-closeout-20261014/f2-readiness-audit.md",
+      "originalBytes": 30529,
+      "originalSha256": "7ef2761627c41361517685d720aafa039babbc0be2bc48813914746f629fd201",
+      "destinationBytes": 29697,
+      "destinationSha256": "8e10170bdee61c646fc2ff3ba75d43356f9e0e8f214896f4445c4a1d050a5809",
+      "changed": true
+    },
+    {
+      "source": ".runtime/full-product-f1-closeout-20261014/concurrency-plan.md",
+      "destination": "docs/acceptance-history/full-product-f1-closeout-20261014/concurrency-plan.md",
+      "originalBytes": 27736,
+      "originalSha256": "eb891892a97ee69e455e8f05fb8c441a47e286628255c2bd77f473528dc7a86f",
+      "destinationBytes": 28086,
+      "destinationSha256": "f5ed5d5a0b592d1b81e20922da90decbf8ccddb67d8c0da13388d43860b3c5ae",
+      "changed": true
+    },
+    {
+      "source": ".runtime/full-product-f1-closeout-20261014/acceptance.md",
+      "destination": "docs/acceptance-history/full-product-f1-closeout-20261014/acceptance.md",
+      "originalBytes": 8663,
+      "originalSha256": "b9e2ea5c46787fba61272dfc4aa7634921eaa878e538e62ae6983996f014bc3c",
+      "destinationBytes": 9007,
+      "destinationSha256": "06b5beb964ae5167086108d5ccd7e29e0620bbad98bbebe100c842cbf138f320",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-capability-recheck-20261013/acceptance.md",
+      "destination": "docs/acceptance-history/m1b2-capability-recheck-20261013/acceptance.md",
+      "originalBytes": 4786,
+      "originalSha256": "9ea0ef480aa39c886e36b21da3b83c71a21e43ec4d069c3a85c95e78ff393dfa",
+      "destinationBytes": 5129,
+      "destinationSha256": "18748d6a82ced6e51a6d0a7bd292785a3676f958342dc64eb1bc9eb925d9caa3",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/acceptance.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/acceptance.md",
+      "originalBytes": 9202,
+      "originalSha256": "8d1218940f80f063d44e3da37e4babb5c138b4e0302d9937b31719c464e76ab9",
+      "destinationBytes": 9546,
+      "destinationSha256": "4d3fdfbadb5be0d98b605b12c317c15ffe8521c3d9f8a8e43e5d36e80359f3fe",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m0b-teaching-truth-20261011/final-output-1366.png",
+      "destination": "docs/brochures/assets/final-output-1366.png",
+      "originalBytes": 106810,
+      "originalSha256": "1883bc6944ea8e22138f349d07342a29ffcb990759654e3645c6537a72e2b5b1",
+      "destinationBytes": 106810,
+      "destinationSha256": "1883bc6944ea8e22138f349d07342a29ffcb990759654e3645c6537a72e2b5b1",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m0b-teaching-truth-20261011/final-check-1440.png",
+      "destination": "docs/brochures/assets/final-check-1440.png",
+      "originalBytes": 138932,
+      "originalSha256": "2b18f705c40c7bdf49b0d0e481c614f2fd39eef7a62d461f086dec3369f6138b",
+      "destinationBytes": 138932,
+      "destinationSha256": "2b18f705c40c7bdf49b0d0e481c614f2fd39eef7a62d461f086dec3369f6138b",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-teaching-contract-20261013/final-p3-result.png",
+      "destination": "docs/brochures/assets/final-p3-result.png",
+      "originalBytes": 90817,
+      "originalSha256": "dbb85e4d1ae096e8b3d7393f79bee3f293ba2522ef444977bba5aeb39c58c3ed",
+      "destinationBytes": 90817,
+      "destinationSha256": "dbb85e4d1ae096e8b3d7393f79bee3f293ba2522ef444977bba5aeb39c58c3ed",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/assessment-center/frontend-2026-09-06/records-1366.png",
+      "destination": "docs/brochures/assets/records-1366.png",
+      "originalBytes": 312923,
+      "originalSha256": "52caee05a6848515205e9190201f642347423c9bf255a7f463f9db4c1dd2c3c8",
+      "destinationBytes": 312923,
+      "destinationSha256": "52caee05a6848515205e9190201f642347423c9bf255a7f463f9db4c1dd2c3c8",
+      "changed": false
+    },
+    {
+      "source": ".codex-screenshots/pair-ip-v2/qa-growth.png",
+      "destination": "docs/brochures/assets/qa-growth.png",
+      "originalBytes": 100422,
+      "originalSha256": "ce0d88a137bb7ff7dd018496080c1a983828b25200282afe3b26425431b6dbf8",
+      "destinationBytes": 100422,
+      "destinationSha256": "ce0d88a137bb7ff7dd018496080c1a983828b25200282afe3b26425431b6dbf8",
+      "changed": false
+    },
+    {
+      "source": ".codex-screenshots/my-data-v2/01-overview-1440-final.png",
+      "destination": "docs/brochures/assets/01-overview-1440-final.png",
+      "originalBytes": 137580,
+      "originalSha256": "25a721dbf870675351b2aeb53629e9d41ad2066f59ecd7ad28a1541d65cec08c",
+      "destinationBytes": 137580,
+      "destinationSha256": "25a721dbf870675351b2aeb53629e9d41ad2066f59ecd7ad28a1541d65cec08c",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/contract.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/contract.md",
+      "originalBytes": 5474,
+      "originalSha256": "7cf2a9adf55b4a4b4daa5cbf65e3d21faf10b98f8a7c385c5476067556f9f821",
+      "destinationBytes": 5816,
+      "destinationSha256": "62eb6bfe7244b34650f6eae97e4d09eefe0b2e98ce9ca08816756a888eaa29ac",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/scoped-review/frontend-recovery.diff",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/scoped-review/frontend-recovery.diff",
+      "originalBytes": 19416,
+      "originalSha256": "0c71984eb4707b89edd26246708bdcfec7fb2c1bcefab212e910cc679d7c08d4",
+      "destinationBytes": 19416,
+      "destinationSha256": "0c71984eb4707b89edd26246708bdcfec7fb2c1bcefab212e910cc679d7c08d4",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/security-review.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/security-review.md",
+      "originalBytes": 23598,
+      "originalSha256": "10edfa63e2c3be4dc5d5c056ca03840d042867f54e85549131568c50630610d1",
+      "destinationBytes": 23947,
+      "destinationSha256": "17609d0828e89006bcb332a6d6a30f160af9ae38e15eed34088ff778af1b7e18",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/browser-observations.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/browser-observations.md",
+      "originalBytes": 4464,
+      "originalSha256": "6342b773fec7b9ebfdbf0de384357a85b5ffca4ebe862d601bf6300527911c49",
+      "destinationBytes": 4818,
+      "destinationSha256": "95dfb8ffc9269324ed7dd5e32477f21d84a8c336b685491768f8e34b264f13b7",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/teaching-review.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/teaching-review.md",
+      "originalBytes": 17639,
+      "originalSha256": "fa18aa3bd67337ab669d2f32fa0c2cd8c4efef4d6ea69d81ee515ffc1c573958",
+      "destinationBytes": 18125,
+      "destinationSha256": "754e9e8e8cbe475d71dc36e970a9a44d9309c94fdc289cdbb05e995a2532fbcd",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/interaction-review.md",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/interaction-review.md",
+      "originalBytes": 16697,
+      "originalSha256": "4607a7a045a256d69b56771e2289d887a7281fd36179de30df5a997fbf967aed",
+      "destinationBytes": 17049,
+      "destinationSha256": "48647ebbe7c69f3b584f8700365201d4d7c2187fe13cd6a58e282dff1fd361ed",
+      "changed": true
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/input-focus-mobile.png",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/input-focus-mobile.png",
+      "originalBytes": 39827,
+      "originalSha256": "0e405d02042c81f2cb346c61a80e02f427cb0a9c7ac8e981c941463f201deb65",
+      "destinationBytes": 39827,
+      "destinationSha256": "0e405d02042c81f2cb346c61a80e02f427cb0a9c7ac8e981c941463f201deb65",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/success-mobile-final.png",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/success-mobile-final.png",
+      "originalBytes": 43388,
+      "originalSha256": "9d53425e5cb2fcffe082f84d1914a6b9012cf2aec741d8d2de52cdd8af7b66ee",
+      "destinationBytes": 43388,
+      "destinationSha256": "9d53425e5cb2fcffe082f84d1914a6b9012cf2aec741d8d2de52cdd8af7b66ee",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/IDENTITY-after-old-401.png",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/IDENTITY-after-old-401.png",
+      "originalBytes": 65839,
+      "originalSha256": "7845d656581ef0056c963bbf050ac2a296d08715e95922504b1b68e8242867e2",
+      "destinationBytes": 65839,
+      "destinationSha256": "7845d656581ef0056c963bbf050ac2a296d08715e95922504b1b68e8242867e2",
+      "changed": false
+    },
+    {
+      "source": ".runtime/m1b2-structured-recovery-20261013/disconnect-failed-mobile.png",
+      "destination": "docs/acceptance-history/m1b2-structured-recovery-20261013/disconnect-failed-mobile.png",
+      "originalBytes": 41387,
+      "originalSha256": "f8ac74b78175af56999afecbd03c35e282f00f7e9e9983ae3080bae632fd61b5",
+      "destinationBytes": 41387,
+      "destinationSha256": "f8ac74b78175af56999afecbd03c35e282f00f7e9e9983ae3080bae632fd61b5",
+      "changed": false
+    },
+    {
+      "source": ".agent-supervisor/pair-ip-20260908/research.md",
+      "destination": "docs/design-handoff/pair-ip-20260908/research.md",
+      "originalBytes": 5495,
+      "originalSha256": "6506c497fea5bacca7d472d1a0a7d030705190fb3ffb6e61c70172d20ef3fbed",
+      "destinationBytes": 5897,
+      "destinationSha256": "19e6325a9e6acc36fddbc65e540065450546ea89d878b8e468ac3b33a313ad88",
+      "changed": true
+    },
+    {
+      "source": ".agent-supervisor/pair-ip-20260908/inventory.md",
+      "destination": "docs/design-handoff/pair-ip-20260908/inventory.md",
+      "originalBytes": 5356,
+      "originalSha256": "87d1e6f52b996dd539e028e4c1d8246d9334541be85761cccef1b966693bdaab",
+      "destinationBytes": 5983,
+      "destinationSha256": "32e81e93f7209e8b798b0662aeeaf98704d73a1f7710e643f3149c62ad9d1d64",
+      "changed": true
+    }
+  ],
+  "unbundledHistoricalLinks": [],
+  "verifiedAt": "2026-10-31T15:24:22.982Z",
+  "notice": "Reviewed historical product materials. Original paths are provenance, not executable instructions. No new public or commercial license is granted.",
+  "originalFilesUnchanged": true,
+  "archivedImagesAndPdfsByteIdentical": true,
+  "privacyReview": "Text reviewed independently; 14 PNG and 18 PDF pages visually reviewed; synthetic identifiers normalized in one report.",
+  "scopeLimit": "The 27 audited omissions and 12 direct dependencies are included. Unreviewed raw logs, state, databases, external reference attachments and tool entrypoints remain excluded."
+}

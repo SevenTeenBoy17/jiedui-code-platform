@@ -1,5 +1,5 @@
 {
-  "note": "Excluded items remain unchanged in the original local workspace. This is a safe source handoff, not a backup of all raw files.",
+  "note": "Original runtime/tool folders remain excluded; selected reviewed product materials have been relocated into docs. See supplementCopies and handoff/SUPPLEMENT-20261031.md. This is not an upload of raw private workstation data.",
   "items": [
     {
       "path": "cloud/pilot/supabase/.temp",
@@ -195,6 +195,164 @@
       "path": "海龟编辑器2-x64-2.7.11.exe",
       "kind": "file",
       "reason": "database, secret material, logs, binaries or archives"
+    }
+  ],
+  "supplementCopies": [
+    {
+      "originalPath": ".agent-supervisor/project-covers-20260907/prompts.json",
+      "archivedPath": "docs/design-handoff/project-covers-20260907/prompts.json"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/frontend-2026-09-06/asset-prompts.json",
+      "archivedPath": "docs/design-handoff/assessment-center/frontend-2026-09-06/asset-prompts.json"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/blueprint.md",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/blueprint.md"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/prompts.md",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/prompts.md"
+    },
+    {
+      "originalPath": ".agent-supervisor/my-data/blue-v3-2026-09-06/design-brief.md",
+      "archivedPath": "docs/design-handoff/my-data/blue-v3-2026-09-06/design-brief.md"
+    },
+    {
+      "originalPath": ".agent-supervisor/my-data/blue-v3-2026-09-06/prompts.json",
+      "archivedPath": "docs/design-handoff/my-data/blue-v3-2026-09-06/prompts.json"
+    },
+    {
+      "originalPath": ".agent-supervisor/pair-ip-20260908/blueprint.md",
+      "archivedPath": "docs/design-handoff/pair-ip-20260908/blueprint.md"
+    },
+    {
+      "originalPath": ".superpowers/sdd/student-growth-experience-plan/task-1-report.md",
+      "archivedPath": "docs/design-handoff/student-growth/task-1-report.md"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/01-my-records.png",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/01-my-records.png"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/02-research-assessments.png",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/02-research-assessments.png"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/03-submission-feedback-drawer.png",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/03-submission-feedback-drawer.png"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/child-friendly-final-2026-09-05/04-research-receipt-drawer.png",
+      "archivedPath": "docs/design-handoff/assessment-center/child-friendly-final-2026-09-05/04-research-receipt-drawer.png"
+    },
+    {
+      "originalPath": "tmp/pdfs/product-brochures-20261013/build_brochures.py",
+      "archivedPath": "docs/brochures/build_brochures.py"
+    },
+    {
+      "originalPath": "tmp/pdfs/product-brochures-20261013/validate_brochures.py",
+      "archivedPath": "docs/brochures/validate_brochures.py"
+    },
+    {
+      "originalPath": "output/pdf/结对编程智能体-产品介绍册.pdf",
+      "archivedPath": "docs/brochures/archive/结对编程智能体-产品介绍册.pdf"
+    },
+    {
+      "originalPath": "output/pdf/结对编程智能体-产品宣传册.pdf",
+      "archivedPath": "docs/brochures/archive/结对编程智能体-产品宣传册.pdf"
+    },
+    {
+      "originalPath": ".runtime/full-product-f1-closeout-20261014/f2-readiness-audit.md",
+      "archivedPath": "docs/acceptance-history/full-product-f1-closeout-20261014/f2-readiness-audit.md"
+    },
+    {
+      "originalPath": ".runtime/full-product-f1-closeout-20261014/concurrency-plan.md",
+      "archivedPath": "docs/acceptance-history/full-product-f1-closeout-20261014/concurrency-plan.md"
+    },
+    {
+      "originalPath": ".runtime/full-product-f1-closeout-20261014/acceptance.md",
+      "archivedPath": "docs/acceptance-history/full-product-f1-closeout-20261014/acceptance.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-capability-recheck-20261013/acceptance.md",
+      "archivedPath": "docs/acceptance-history/m1b2-capability-recheck-20261013/acceptance.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/acceptance.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/acceptance.md"
+    },
+    {
+      "originalPath": ".runtime/m0b-teaching-truth-20261011/final-output-1366.png",
+      "archivedPath": "docs/brochures/assets/final-output-1366.png"
+    },
+    {
+      "originalPath": ".runtime/m0b-teaching-truth-20261011/final-check-1440.png",
+      "archivedPath": "docs/brochures/assets/final-check-1440.png"
+    },
+    {
+      "originalPath": ".runtime/m1b2-teaching-contract-20261013/final-p3-result.png",
+      "archivedPath": "docs/brochures/assets/final-p3-result.png"
+    },
+    {
+      "originalPath": ".agent-supervisor/assessment-center/frontend-2026-09-06/records-1366.png",
+      "archivedPath": "docs/brochures/assets/records-1366.png"
+    },
+    {
+      "originalPath": ".codex-screenshots/pair-ip-v2/qa-growth.png",
+      "archivedPath": "docs/brochures/assets/qa-growth.png"
+    },
+    {
+      "originalPath": ".codex-screenshots/my-data-v2/01-overview-1440-final.png",
+      "archivedPath": "docs/brochures/assets/01-overview-1440-final.png"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/contract.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/contract.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/scoped-review/frontend-recovery.diff",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/scoped-review/frontend-recovery.diff"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/security-review.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/security-review.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/browser-observations.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/browser-observations.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/teaching-review.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/teaching-review.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/interaction-review.md",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/interaction-review.md"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/input-focus-mobile.png",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/input-focus-mobile.png"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/success-mobile-final.png",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/success-mobile-final.png"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/IDENTITY-after-old-401.png",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/IDENTITY-after-old-401.png"
+    },
+    {
+      "originalPath": ".runtime/m1b2-structured-recovery-20261013/disconnect-failed-mobile.png",
+      "archivedPath": "docs/acceptance-history/m1b2-structured-recovery-20261013/disconnect-failed-mobile.png"
+    },
+    {
+      "originalPath": ".agent-supervisor/pair-ip-20260908/research.md",
+      "archivedPath": "docs/design-handoff/pair-ip-20260908/research.md"
+    },
+    {
+      "originalPath": ".agent-supervisor/pair-ip-20260908/inventory.md",
+      "archivedPath": "docs/design-handoff/pair-ip-20260908/inventory.md"
     }
   ]
 }
